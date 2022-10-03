@@ -14,121 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 2249
-    y: 302.5
-    width: 1206
-    height: 715
+    x: 0
+    y: 43
+    width: 1920
+    height: 1037
   m_ShowMode: 4
-  m_Title: 
-  m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_Title: GitHub
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
+  m_Maximized: 1
 --- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 9}
-  - {fileID: 3}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 1206
-    height: 665
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
-  vertical: 0
-  controlID: 119
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 921
-    y: 0
-    width: 285
-    height: 665
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
-  m_Panes:
-  - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 228
-    height: 394
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 394
-    width: 921
-    height: 271
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 12}
-  m_Panes:
-  - {fileID: 12}
-  - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,18 +37,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 7}
-  - {fileID: 2}
-  - {fileID: 8}
+  - {fileID: 3}
+  - {fileID: 5}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1206
-    height: 715
-  m_MinSize: {x: 875, y: 300}
+    width: 1920
+    height: 1037
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &7
+  m_UseTopView: 1
+  m_TopViewHeight: 30
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,14 +69,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1206
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LoadedToolbars: []
-  m_MainToolbar: {fileID: 18}
-  m_LastLoadedLayoutName: Default
---- !u!114 &8
+  m_LastLoadedLayoutName: MyLayout
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,11 +90,117 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 695
-    width: 1206
+    y: 1017
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 9}
+  - {fileID: 10}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1920
+    height: 987
+  m_MinSize: {x: 531, y: 492}
+  m_MaxSize: {x: 34289, y: 14042}
+  vertical: 0
+  controlID: 240
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 8}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 500
+    height: 987
+  m_MinSize: {x: 231, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 144
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 500
+    height: 658
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 658
+    width: 500
+    height: 329
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 15}
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,23 +209,26 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneView
   m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 10}
-  - {fileID: 5}
+  m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 500
     y: 0
-    width: 921
-    height: 665
-  m_MinSize: {x: 403, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
-  vertical: 1
-  controlID: 92
+    width: 839
+    height: 987
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,23 +237,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
   m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 4}
-  - {fileID: 11}
+  m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 1339
     y: 0
-    width: 921
-    height: 394
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-  controlID: 93
+    width: 238
+    height: 987
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  m_Selected: 0
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -255,26 +263,2863 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: Window
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 228
+    x: 1577
     y: 0
-    width: 693
-    height: 394
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 15}
+    width: 343
+    height: 987
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 12}
   m_Panes:
-  - {fileID: 15}
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
+  - {fileID: 21}
+  - {fileID: 12}
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 363648761, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: GitHub
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1577
+    y: 73
+    width: 342
+    height: 966
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  progressMessageClearTime: 676.8440118
+  notificationClearTime: -1
+  timeSinceLastRotation: -1
+  currentBranchAndRemoteHasUpdate: 0
+  currentTrackingStatusHasUpdate: 0
+  currentStatusEntriesHasUpdate: 0
+  repositoryProgressHasUpdate: 1
+  appManagerProgressHasUpdate: 0
+  changeTab: 3
+  activeTab: 3
+  initProjectView:
+    hasCompletedInitialCheck: 0
+    isUserDataPresent: 0
+    lastCheckUserChangedEvent:
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      cacheType: 8
+  branchesView:
+    treeLocals:
+      IsRemote: 0
+      folders:
+        keys:
+        - Local branches
+        values:
+        - path: Local branches
+          label: Local branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: Local branches
+      pathSeparator: /
+      displayRootNode: 1
+      isSelectable: 1
+      isCheckable: 0
+      nodes:
+      - path: Local branches
+        label: Local branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: main
+        label: main
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 1
+        treeIsCheckable: 0
+        checkState: 0
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+    treeRemotes:
+      IsRemote: 1
+      folders:
+        keys:
+        - Remote branches
+        - origin
+        values:
+        - path: Remote branches
+          label: Remote branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+        - path: origin
+          label: origin
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: Remote branches
+      pathSeparator: /
+      displayRootNode: 1
+      isSelectable: 1
+      isCheckable: 0
+      nodes:
+      - path: Remote branches
+        label: Remote branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin
+        label: origin
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/HEAD
+        label: HEAD
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/main
+        label: main
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+    mode: 0
+    newBranchName: 
+    scroll: {x: 0, y: 0}
+    disableDelete: 1
+    disableCreate: 1
+    lastLocalAndRemoteBranchListChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:56.206+02:00
+      cacheType: 2
+    lastCurrentBranchAndRemoteChange:
+      updatedTimeString: 2022-10-03T20:45:49.847+02:00
+      cacheType: 1
+    currentBranch:
+      name: main
+      tracking: origin/main
+    currentRemote:
+      name: origin
+      url: https://github.com/RoundTableStudioo/Leave-Something-Behind.git
+      login: 
+      user: 
+      host: 
+      function: 0
+      token: 
+    localBranches:
+    - name: main
+      tracking: origin/main
+    remoteBranches:
+    - name: origin/HEAD
+      tracking: '[None]'
+    - name: origin/main
+      tracking: '[None]'
+  changesView:
+    currentBranchHasUpdate: 0
+    currentStatusEntriesHasUpdate: 0
+    currentLocksHasUpdate: 0
+    commitBody: 
+    commitMessage: vbdcb
+    currentBranch: '[main]'
+    treeScroll: {x: 0, y: 0}
+    treeChanges:
+      assets:
+        keys: []
+        values: []
+      folders:
+        keys:
+        - LeaveSomethingBehind
+        - LeaveSomethingBehind\Assets
+        - LeaveSomethingBehind\Assets\Plugins
+        - LeaveSomethingBehind\Assets\Plugins\GitHub
+        - LeaveSomethingBehind\Assets\Plugins\GitHub\Editor
+        - LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64
+        - LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86
+        values:
+        - path: LeaveSomethingBehind
+          label: LeaveSomethingBehind
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets
+          label: Assets
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Plugins
+          label: Plugins
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Plugins\GitHub
+          label: GitHub
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor
+          label: Editor
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64
+          label: x64
+          level: 5
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86
+          label: x86
+          level: 5
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: 
+      pathSeparator: \
+      displayRootNode: 0
+      isSelectable: 1
+      isCheckable: 1
+      isUsingGlobalSelection: 1
+      nodes:
+      - path: 
+        label: 
+        level: -1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind
+        label: LeaveSomethingBehind
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets
+        label: Assets
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Plugins.meta
+        label: Plugins.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins.meta
+          projectPath: Assets\Plugins.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins
+        label: Plugins
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+        label: GitHub.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+          projectPath: Assets\Plugins\GitHub.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub
+        label: GitHub
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+        label: Editor.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+          projectPath: Assets\Plugins\GitHub\Editor.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor
+        label: Editor
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+        label: AsyncBridge.Net35.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+          projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+        label: AsyncBridge.Net35.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+        label: big-logo@2x.png
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+          projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+        label: big-logo@2x.png.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+          projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+        label: credits.txt
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+          projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+        label: credits.txt.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+          projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+        label: eula.txt
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+          projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+        label: eula.txt.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+          projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+        label: ExtensionLoader.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+          projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+        label: ExtensionLoader.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+          projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+        label: GitHub.Api.45.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+        label: GitHub.Api.45.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+        label: GitHub.Api.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+        label: GitHub.Api.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+        label: GitHub.Logging.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+        label: GitHub.Logging.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+        label: GitHub.Unity.45.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+        label: GitHub.Unity.45.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+        label: GitHub.Unity.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+        label: GitHub.Unity.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+        label: GitHub.UnityShim.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+        label: GitHub.UnityShim.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+        label: libsfw.bundle
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+          projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+        label: libsfw.bundle.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+          projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+        label: libsfw.so
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+          projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+        label: libsfw.so.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+          projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+        label: Mono.Posix.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+          projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+        label: Mono.Posix.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+        label: QuickGuide.pdf
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+          projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+        label: QuickGuide.pdf.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+          projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+        label: ReadOnlyCollectionsInterfaces.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+          projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+        label: ReadOnlyCollectionsInterfaces.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+        label: sfw.net.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+          projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+        label: sfw.net.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+        label: System.Threading.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+          projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+        label: System.Threading.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+        label: UnityAPIWrapper.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+          projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+        label: UnityAPIWrapper.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+          projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+        label: x64.meta
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+          projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64
+        label: x64
+        level: 5
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+        label: pthreadVC2.dll
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+          projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+        label: pthreadVC2.dll.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+        label: sfw_x64.dll
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+          projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+        label: sfw_x64.dll.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+        label: x86.meta
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+          projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86
+        label: x86
+        level: 5
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+        label: pthreadVC2.dll
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+          projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+        label: pthreadVC2.dll.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+        label: sfw_x86.dll
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+          projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+        label: sfw_x86.dll.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+          projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+    gitStatusEntries:
+    - path: LeaveSomethingBehind\Assets\Plugins.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins.meta
+      projectPath: Assets\Plugins.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+      projectPath: Assets\Plugins\GitHub.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+      projectPath: Assets\Plugins\GitHub\Editor.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    changedFilesText: 51 changed files
+    lastCurrentBranchChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:49.847+02:00
+      cacheType: 1
+    lastStatusEntriesChangedEvent:
+      updatedTimeString: 2022-10-03T20:46:17.395+02:00
+      cacheType: 6
+    lastLocksChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:50.600+02:00
+      cacheType: 7
+  historyView:
+    currentLogHasUpdate: 0
+    currentTrackingStatusHasUpdate: 0
+    logEntries:
+    - commitID: e7105dc666e705a402b1ee6446a1c3c3a390b521
+      mergeA: 
+      mergeB: 
+      authorName: "David Antonio V\xE9lez Rebollo"
+      authorEmail: david_velezreb@hotmail.com
+      commitEmail: david_velezreb@hotmail.com
+      commitName: "David Antonio V\xE9lez Rebollo"
+      summary: Initial Commit
+      description: 
+      timeString: 2022-10-03T20:40:18.000+02:00
+      commitTimeString: 2022-10-03T20:40:18.000+02:00
+      changes:
+      - path: LeaveSomethingBehind\Assets\Scenes.meta
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Scenes.meta
+        projectPath: Assets\Scenes.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Scenes\SampleScene.unity
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Scenes\SampleScene.unity
+        projectPath: Assets\Scenes\SampleScene.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\Assets\Scenes\SampleScene.unity.meta
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Scenes\SampleScene.unity.meta
+        projectPath: Assets\Scenes\SampleScene.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\Packages\manifest.json
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Packages\manifest.json
+        projectPath: Packages\manifest.json
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\Packages\packages-lock.json
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Packages\packages-lock.json
+        projectPath: Packages\packages-lock.json
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\AudioManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\AudioManager.asset
+        projectPath: ProjectSettings\AudioManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\ClusterInputManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\ClusterInputManager.asset
+        projectPath: ProjectSettings\ClusterInputManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\DynamicsManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\DynamicsManager.asset
+        projectPath: ProjectSettings\DynamicsManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\EditorBuildSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\EditorBuildSettings.asset
+        projectPath: ProjectSettings\EditorBuildSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\EditorSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\EditorSettings.asset
+        projectPath: ProjectSettings\EditorSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\GraphicsSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\GraphicsSettings.asset
+        projectPath: ProjectSettings\GraphicsSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\InputManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\InputManager.asset
+        projectPath: ProjectSettings\InputManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\MemorySettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\MemorySettings.asset
+        projectPath: ProjectSettings\MemorySettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\NavMeshAreas.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\NavMeshAreas.asset
+        projectPath: ProjectSettings\NavMeshAreas.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\NetworkManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\NetworkManager.asset
+        projectPath: ProjectSettings\NetworkManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\PackageManagerSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\PackageManagerSettings.asset
+        projectPath: ProjectSettings\PackageManagerSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\Physics2DSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\Physics2DSettings.asset
+        projectPath: ProjectSettings\Physics2DSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\PresetManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\PresetManager.asset
+        projectPath: ProjectSettings\PresetManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\ProjectSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\ProjectSettings.asset
+        projectPath: ProjectSettings\ProjectSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\ProjectVersion.txt
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\ProjectVersion.txt
+        projectPath: ProjectSettings\ProjectVersion.txt
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\QualitySettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\QualitySettings.asset
+        projectPath: ProjectSettings\QualitySettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\SceneTemplateSettings.json
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\SceneTemplateSettings.json
+        projectPath: ProjectSettings\SceneTemplateSettings.json
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\TagManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\TagManager.asset
+        projectPath: ProjectSettings\TagManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\TimeManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\TimeManager.asset
+        projectPath: ProjectSettings\TimeManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\UnityConnectSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\UnityConnectSettings.asset
+        projectPath: ProjectSettings\UnityConnectSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\VFXManager.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\VFXManager.asset
+        projectPath: ProjectSettings\VFXManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\VersionControlSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\VersionControlSettings.asset
+        projectPath: ProjectSettings\VersionControlSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\XRSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\XRSettings.asset
+        projectPath: ProjectSettings\XRSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\ProjectSettings\boot.config
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\boot.config
+        projectPath: ProjectSettings\boot.config
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\UserSettings\EditorUserSettings.asset
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\UserSettings\EditorUserSettings.asset
+        projectPath: UserSettings\EditorUserSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: LeaveSomethingBehind\UserSettings\Layouts\default-2021.dwlt
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\UserSettings\Layouts\default-2021.dwlt
+        projectPath: UserSettings\Layouts\default-2021.dwlt
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+    - commitID: d42c83030ed98751d21d5749b82c4548fab75ca2
+      mergeA: 
+      mergeB: 
+      authorName: RoundTableStudioo
+      authorEmail: 114949415+RoundTableStudioo@users.noreply.github.com
+      commitEmail: noreply@github.com
+      commitName: GitHub
+      summary: Update .gitignore
+      description: 
+      timeString: 2022-10-03T20:31:30.000+02:00
+      commitTimeString: 2022-10-03T20:31:30.000+02:00
+      changes:
+      - path: .gitignore
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\.gitignore
+        projectPath: ..\.gitignore
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: 9cbc089c18dabf3e974407f2a250be40ce770bca
+      mergeA: 
+      mergeB: 
+      authorName: RoundTableStudioo
+      authorEmail: 114949415+RoundTableStudioo@users.noreply.github.com
+      commitEmail: noreply@github.com
+      commitName: GitHub
+      summary: Initial commit
+      description: 
+      timeString: 2022-10-03T20:31:04.000+02:00
+      commitTimeString: 2022-10-03T20:31:04.000+02:00
+      changes:
+      - path: .gitignore
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\.gitignore
+        projectPath: ..\.gitignore
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: README.md
+        fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\README.md
+        projectPath: ..\README.md
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+    statusAhead: 0
+    lastLogChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:49.854+02:00
+      cacheType: 3
+    lastTrackingStatusChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:49.849+02:00
+      cacheType: 5
+    historyControl:
+      scroll: {x: 0, y: 0}
+      entries:
+      - commitID: e7105dc666e705a402b1ee6446a1c3c3a390b521
+        mergeA: 
+        mergeB: 
+        authorName: "David Antonio V\xE9lez Rebollo"
+        authorEmail: david_velezreb@hotmail.com
+        commitEmail: david_velezreb@hotmail.com
+        commitName: "David Antonio V\xE9lez Rebollo"
+        summary: Initial Commit
+        description: 
+        timeString: 2022-10-03T20:40:18.000+02:00
+        commitTimeString: 2022-10-03T20:40:18.000+02:00
+        changes:
+        - path: LeaveSomethingBehind\Assets\Scenes.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Scenes.meta
+          projectPath: Assets\Scenes.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Scenes\SampleScene.unity
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Scenes\SampleScene.unity
+          projectPath: Assets\Scenes\SampleScene.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\Assets\Scenes\SampleScene.unity.meta
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Scenes\SampleScene.unity.meta
+          projectPath: Assets\Scenes\SampleScene.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\Packages\manifest.json
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Packages\manifest.json
+          projectPath: Packages\manifest.json
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\Packages\packages-lock.json
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Packages\packages-lock.json
+          projectPath: Packages\packages-lock.json
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\AudioManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\AudioManager.asset
+          projectPath: ProjectSettings\AudioManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\ClusterInputManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\ClusterInputManager.asset
+          projectPath: ProjectSettings\ClusterInputManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\DynamicsManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\DynamicsManager.asset
+          projectPath: ProjectSettings\DynamicsManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\EditorBuildSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\EditorBuildSettings.asset
+          projectPath: ProjectSettings\EditorBuildSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\EditorSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\EditorSettings.asset
+          projectPath: ProjectSettings\EditorSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\GraphicsSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\GraphicsSettings.asset
+          projectPath: ProjectSettings\GraphicsSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\InputManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\InputManager.asset
+          projectPath: ProjectSettings\InputManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\MemorySettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\MemorySettings.asset
+          projectPath: ProjectSettings\MemorySettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\NavMeshAreas.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\NavMeshAreas.asset
+          projectPath: ProjectSettings\NavMeshAreas.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\NetworkManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\NetworkManager.asset
+          projectPath: ProjectSettings\NetworkManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\PackageManagerSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\PackageManagerSettings.asset
+          projectPath: ProjectSettings\PackageManagerSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\Physics2DSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\Physics2DSettings.asset
+          projectPath: ProjectSettings\Physics2DSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\PresetManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\PresetManager.asset
+          projectPath: ProjectSettings\PresetManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\ProjectSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\ProjectSettings.asset
+          projectPath: ProjectSettings\ProjectSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\ProjectVersion.txt
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\ProjectVersion.txt
+          projectPath: ProjectSettings\ProjectVersion.txt
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\QualitySettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\QualitySettings.asset
+          projectPath: ProjectSettings\QualitySettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\SceneTemplateSettings.json
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\SceneTemplateSettings.json
+          projectPath: ProjectSettings\SceneTemplateSettings.json
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\TagManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\TagManager.asset
+          projectPath: ProjectSettings\TagManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\TimeManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\TimeManager.asset
+          projectPath: ProjectSettings\TimeManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\UnityConnectSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\UnityConnectSettings.asset
+          projectPath: ProjectSettings\UnityConnectSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\VFXManager.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\VFXManager.asset
+          projectPath: ProjectSettings\VFXManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\VersionControlSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\VersionControlSettings.asset
+          projectPath: ProjectSettings\VersionControlSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\XRSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\XRSettings.asset
+          projectPath: ProjectSettings\XRSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\ProjectSettings\boot.config
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\ProjectSettings\boot.config
+          projectPath: ProjectSettings\boot.config
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\UserSettings\EditorUserSettings.asset
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\UserSettings\EditorUserSettings.asset
+          projectPath: UserSettings\EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: LeaveSomethingBehind\UserSettings\Layouts\default-2021.dwlt
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\UserSettings\Layouts\default-2021.dwlt
+          projectPath: UserSettings\Layouts\default-2021.dwlt
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - commitID: d42c83030ed98751d21d5749b82c4548fab75ca2
+        mergeA: 
+        mergeB: 
+        authorName: RoundTableStudioo
+        authorEmail: 114949415+RoundTableStudioo@users.noreply.github.com
+        commitEmail: noreply@github.com
+        commitName: GitHub
+        summary: Update .gitignore
+        description: 
+        timeString: 2022-10-03T20:31:30.000+02:00
+        commitTimeString: 2022-10-03T20:31:30.000+02:00
+        changes:
+        - path: .gitignore
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\.gitignore
+          projectPath: ..\.gitignore
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 9cbc089c18dabf3e974407f2a250be40ce770bca
+        mergeA: 
+        mergeB: 
+        authorName: RoundTableStudioo
+        authorEmail: 114949415+RoundTableStudioo@users.noreply.github.com
+        commitEmail: noreply@github.com
+        commitName: GitHub
+        summary: Initial commit
+        description: 
+        timeString: 2022-10-03T20:31:04.000+02:00
+        commitTimeString: 2022-10-03T20:31:04.000+02:00
+        changes:
+        - path: .gitignore
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\.gitignore
+          projectPath: ..\.gitignore
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: README.md
+          fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\README.md
+          projectPath: ..\README.md
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      statusAhead: 0
+      selectedIndex: -1
+    selectedEntry:
+      commitID: 
+      mergeA: 
+      mergeB: 
+      authorName: 
+      authorEmail: 
+      commitEmail: 
+      commitName: 
+      summary: 
+      description: 
+      timeString: 0001-01-01T00:00:00.000+00:00
+      commitTimeString: 0001-01-01T00:00:00.000+00:00
+      changes: []
+    treeChanges:
+      assets:
+        keys: []
+        values: []
+      folders:
+        keys: []
+        values: []
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: 
+      pathSeparator: /
+      displayRootNode: 0
+      isSelectable: 1
+      isCheckable: 0
+      isUsingGlobalSelection: 0
+      nodes: []
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+    detailsScroll: {x: 0, y: 0}
+  settingsView:
+    gitPathView:
+      gitPath: C:\Program Files\Git\cmd\git.exe
+      gitLfsPath: C:\Users\david\AppData\Local\GitHubUnity\git-lfs\git-lfs.exe
+      errorMessage: 
+      resetToBundled: 0
+      resetToSystem: 0
+      changingManually: 0
+    hasRemote: 1
+    lastCurrentRemoteChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:49.847+02:00
+      cacheType: 1
+    metricsEnabled: 1
+    newRepositoryRemoteUrl: https://github.com/RoundTableStudioo/Leave-Something-Behind.git
+    repositoryRemoteName: origin
+    repositoryRemoteUrl: https://github.com/RoundTableStudioo/Leave-Something-Behind.git
+    scroll: {x: 0, y: 0}
+    userSettingsView:
+      gitName: "David Antonio V\xE9lez Rebollo"
+      gitEmail: david_velezreb@hotmail.com
+      newGitName: "David Antonio V\xE9lez Rebollo"
+      newGitEmail: david_velezreb@hotmail.com
+      needsSaving: 0
+      lastCheckUserChangedEvent:
+        updatedTimeString: 2022-10-03T20:45:57.857+02:00
+        cacheType: 8
+    webTimeout: 3000
+    gitTimeout: 5000
+  locksView:
+    currentRemoteHasUpdate: 0
+    currentStatusEntriesHasUpdate: 0
+    currentLocksHasUpdate: 0
+    keychainHasUpdate: 0
+    locksControl:
+      scroll: {x: 0, y: 0}
+      gitLockEntries: []
+      assets:
+        keys: []
+        values: []
+      gitStatusDictionary:
+        keys: []
+        values: []
+      selectedEntry:
+        gitLock:
+          id: 
+          path: 
+          owner:
+            name: 
+            email: 
+          lockedAtString: 
+        gitFileStatus: 0
+        lockedAt: 1 ene. 0001, 01:00
+    lastCurrentRemoteChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:49.847+02:00
+      cacheType: 1
+    lastLocksChangedEvent:
+      updatedTimeString: 2022-10-03T20:45:50.600+02:00
+      cacheType: 7
+    lastStatusEntriesChangedEvent:
+      updatedTimeString: 2022-10-03T20:46:05.103+02:00
+      cacheType: 6
+    lockedFiles: []
+    gitStatusEntries:
+    - path: LeaveSomethingBehind\Assets\Plugins.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins.meta
+      projectPath: Assets\Plugins.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub.meta
+      projectPath: Assets\Plugins\GitHub.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor.meta
+      projectPath: Assets\Plugins\GitHub\Editor.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      fullPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    currentUsername: 
+    unlockFileMenuContent:
+      m_Text: Release Lock
+      m_Image: {fileID: 0}
+      m_Tooltip: 
+    forceUnlockFileMenuContent:
+      m_Text: Release Lock (forced)
+      m_Image: {fileID: 0}
+      m_Tooltip: 
+  hasRemote: 1
+  currentRemoteName: origin
+  currentBranch: main
+  currentRemoteUrl: https://github.com/RoundTableStudioo/Leave-Something-Behind.git
+  statusAhead: 0
+  statusBehind: 0
+  hasItemsToCommit: 1
+  isTrackingRemoteBranch: 1
+  currentBranchContent:
+    m_Text: main
+    m_Image: {fileID: 0}
+    m_Tooltip: Active branch
+  currentRemoteUrlContent:
+    m_Text: https://github.com/RoundTableStudioo/Leave-Something-Behind.git
+    m_Image: {fileID: 0}
+    m_Tooltip: Url of the origin remote
+  lastCurrentBranchAndRemoteChangedEvent:
+    updatedTimeString: 2022-10-03T20:45:49.847+02:00
+    cacheType: 1
+  lastTrackingStatusChangedEvent:
+    updatedTimeString: 2022-10-03T20:45:49.849+02:00
+    cacheType: 5
+  lastStatusEntriesChangedEvent:
+    updatedTimeString: 2022-10-03T20:46:17.395+02:00
+    cacheType: 6
+  pullButtonContent:
+    m_Text: Pull
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  pushButtonContent:
+    m_Text: Push
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  refreshButtonContent:
+    m_Text: Refresh
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  fetchButtonContent:
+    m_Text: Fetch
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  repositoryProgressValue: 0
+  repositoryProgressMessage: Listing changed files...
+  appManagerProgressValue: 1
+  appManagerProgressMessage: Initialized
+  connections: []
+  primaryConnectionUsername: 
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 73
+    width: 499
+    height: 637
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 1920, y: 1080}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -960
+    m_HBaseRangeMax: 960
+    m_VBaseRangeMin: -540
+    m_VBaseRangeMax: 540
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 1
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 499
+      height: 616
+    m_Scale: {x: 0.35975653, y: 0.35975653}
+    m_Translation: {x: 249.91086, y: 308}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -694.6666
+      y: -856.1346
+      width: 1387.0492
+      height: 1712.2692
+    m_MinimalGUI: 1
+  m_defaultScale: 0.25989583
+  m_LastWindowPixelSize: {x: 499, y: 637}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,11 +3139,14 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2249
-    y: 726.5
-    width: 920
-    height: 250
+    x: 0
+    y: 731
+    width: 499
+    height: 308
   m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -314,19 +3162,20 @@ MonoBehaviour:
     m_Folders:
     - Assets
     m_Globs: []
+    m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 16
   m_LastFolders:
   - Assets
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: U:\layout
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: F:\_PROGRAMACION\_UNITY\Leave-Something-Behind\LeaveSomethingBehind
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4350000
-    m_LastClickedID: 13812
-    m_ExpandedIDs: 00000000f435000000ca9a3b
+    m_SelectedIDs: 2e650000
+    m_LastClickedID: 25902
+    m_ExpandedIDs: 000000002e65000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -342,7 +3191,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 8}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -354,7 +3203,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f4350000
+    m_ExpandedIDs: 000000002e65000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -381,8 +3230,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000f84500009043000092430000584400008644000092440000ba440000a645000098450000f8420000fc4200006c4400007e44000014430000726a00009e43000096430000a45cfdff9a4300001c47010042590000124500003870000052650000fe4500000046000036470000104f0000c84e0000184c0000004c0000f84e0000ec4d0000484c0000d04b0000245f0000a65e0000aa450000504600002c460000164600004c4600009c550000d8460000a6480000aa480000b0ab0000e2460000ee4a0000224b00006247000074a30000c447000000000000d6460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -398,7 +3247,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -407,306 +3256,10 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 207
---- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 3170
-    y: 332.5
-    width: 284
-    height: 644
-  m_ViewDataDictionary: {fileID: 0}
-  m_ObjectsLockedBeforeSerialization: []
-  m_InstanceIDsLockedBeforeSerialization: 
-  m_PreviewResizer:
-    m_CachedPref: 160
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
-  m_AssetGUID: 
-  m_InstanceID: 0
-  m_LockTracker:
-    m_IsLocked: 0
-  m_PreviewWindow: {fileID: 0}
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 2249
-    y: 332.5
-    width: 227
-    height: 373
-  m_ViewDataDictionary: {fileID: 0}
-  m_SceneHierarchy:
-    m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 42fbffff
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_ExpandedScenes: []
-    m_CurrenRootInstanceID: 0
-    m_LockTracker:
-      m_IsLocked: 0
-    m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 4c969a2b90040154d917609493e03593
+  m_DirectoriesAreaWidth: 164
 --- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 2477
-    y: 332.5
-    width: 691
-    height: 373
-  m_ViewDataDictionary: {fileID: 0}
-  m_ShowContextualTools: 0
-  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 1
-  m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 1
-  m_SceneLighting: 1
-  m_2DMode: 0
-  m_isRotationLocked: 0
-  m_PlayAudio: 0
-  m_AudioPlay: 0
-  m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
-    speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
-  m_RenderMode: 0
-  m_CameraMode:
-    drawMode: 0
-    name: Shaded
-    section: Shading Mode
-  m_ValidateTrueMetals: 0
-  m_DoValidateTrueMetals: 0
-  m_ExposureSliderValue: 0
-  m_SceneViewState:
-    showFog: 1
-    showMaterialUpdate: 0
-    showSkybox: 1
-    showFlares: 1
-    showImageEffects: 1
-    showParticleSystems: 1
-    showVisualEffectGraphs: 1
-  m_Grid:
-    xGrid:
-      m_Fade:
-        m_Target: 0
-        speed: 2
-        m_Value: 0
-      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
-      m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
-    yGrid:
-      m_Fade:
-        m_Target: 1
-        speed: 2
-        m_Value: 1
-      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
-      m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
-    zGrid:
-      m_Fade:
-        m_Target: 0
-        speed: 2
-        m_Value: 0
-      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
-      m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
-    m_ShowGrid: 1
-    m_GridAxis: 1
-    m_gridOpacity: 0.5
-  m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-    speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-  m_Size:
-    m_Target: 10
-    speed: 2
-    m_Value: 10
-  m_Ortho:
-    m_Target: 0
-    speed: 2
-    m_Value: 0
-  m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
-    m_SpeedMin: 0.001
-    m_SpeedMax: 2
-    m_EasingEnabled: 1
-    m_EasingDuration: 0.4
-    m_AccelerationEnabled: 1
-    m_FieldOfView: 90
-    m_NearClip: 0.03
-    m_FarClip: 10000
-    m_DynamicClip: 1
-    m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_LastSceneViewOrtho: 0
-  m_ReplacementShader: {fileID: 0}
-  m_ReplacementString: 
-  m_SceneVisActive: 1
-  m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 0
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 507
-    y: 94
-    width: 1532
-    height: 790
-  m_ViewDataDictionary: {fileID: 0}
-  m_SerializedViewsNames: []
-  m_SerializedViewsValues: []
-  m_PlayModeViewName: GameView
-  m_ShowGizmos: 0
-  m_TargetDisplay: 0
-  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 640, y: 480}
-  m_TextureFilterMode: 0
-  m_TextureHideFlags: 61
-  m_RenderIMGUI: 0
-  m_MaximizeOnPlay: 0
-  m_UseMipMap: 0
-  m_VSyncEnabled: 0
-  m_Gizmos: 0
-  m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_ZoomArea:
-    m_HRangeLocked: 0
-    m_VRangeLocked: 0
-    hZoomLockedByDefault: 0
-    vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -766
-    m_HBaseRangeMax: 766
-    m_VBaseRangeMin: -395
-    m_VBaseRangeMax: 395
-    m_HAllowExceedBaseRangeMin: 1
-    m_HAllowExceedBaseRangeMax: 1
-    m_VAllowExceedBaseRangeMin: 1
-    m_VAllowExceedBaseRangeMax: 1
-    m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
-    m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
-    m_EnableSliderZoomHorizontal: 0
-    m_EnableSliderZoomVertical: 0
-    m_UniformScale: 1
-    m_UpDirection: 1
-    m_DrawArea:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 1532
-      height: 790
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 766, y: 395}
-    m_MarginLeft: 0
-    m_MarginRight: 0
-    m_MarginTop: 0
-    m_MarginBottom: 0
-    m_LastShownAreaInsideMargins:
-      serializedVersion: 2
-      x: -766
-      y: -395
-      width: 1532
-      height: 790
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1532, y: 790}
-  m_ClearInEditMode: 1
-  m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000000000000
-  m_XRRenderMode: 0
-  m_RenderTexture: {fileID: 0}
---- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -726,21 +3279,707 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2249
-    y: 726.5
-    width: 920
-    height: 250
+    x: 0
+    y: 731
+    width: 499
+    height: 308
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &18
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &16
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13963, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DontSaveToLayout: 0
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 731
+    width: 670
+    height: 308
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 17572
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 500
+    y: 73
+    width: 837
+    height: 966
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData:
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: -101, y: -26}
+      snapCorner: 3
+      id: Tool Settings
+      index: 0
+      layout: 1
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -141, y: 149}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-grid-and-snap-toolbar
+      index: 1
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-scene-view-toolbar
+      index: 0
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-search-toolbar
+      index: 1
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Open Tile Palette
+      index: 2
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap Focus
+      index: 3
+      layout: 4
+    - dockPosition: 0
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-transform-toolbar
+      index: 0
+      layout: 2
+    - dockPosition: 0
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 67.5, y: 86}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Orientation
+      index: 0
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Light Settings
+      index: 0
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Camera
+      index: 1
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Constraints
+      index: 2
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Collisions
+      index: 3
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Navmesh Display
+      index: 4
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Agent Display
+      index: 5
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Obstacle Display
+      index: 6
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Occlusion Culling
+      index: 7
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Physics Debugger
+      index: 8
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Scene Visibility
+      index: 9
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Particles
+      index: 10
+      layout: 4
+  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+  m_Gizmos: 1
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
+  m_SceneLighting: 1
+  m_2DMode: 1
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: -0.15832041, y: -1.0243062, z: -0.14475794}
+    speed: 2
+    m_Value: {x: -0.15832041, y: -1.0243062, z: -0.14475794}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_ExposureSliderValue: 0
+  m_SceneViewState:
+    m_AlwaysRefresh: 0
+    showFog: 1
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+    showVisualEffectGraphs: 1
+    m_FxEnabled: 1
+  m_Grid:
+    xGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    yGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    zGrid:
+      m_Fade:
+        m_Target: 1
+        speed: 2
+        m_Value: 1
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 1
+    m_GridAxis: 0
+    m_gridOpacity: 0.51
+  m_Rotation:
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
+  m_Size:
+    m_Target: 11.685888
+    speed: 2
+    m_Value: 11.685888
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
+  m_CameraSettings:
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+    m_SpeedMin: 0.001
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_AccelerationEnabled: 1
+    m_FieldOfViewHorizontalOrVertical: 60
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 1
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 733
+    y: 73
+    width: 587
+    height: 620
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: 5360505272377876190, guid: 779632aeafbe3814f9b7ce073c959858, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 779632aeafbe3814f9b7ce073c959858, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 5360505272377876190, guid: 779632aeafbe3814f9b7ce073c959858, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 1
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12373, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Audio Mixer
+    m_Image: {fileID: 2344599766593239149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 671
+    y: 73
+    width: 666
+    height: 966
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_MixersTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 18134
+    m_ExpandedIDs: 12eb343c
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 0
+      m_ClientGUIView: {fileID: 8}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_LayoutStripsOnTop:
+    m_VerticalSplitter:
+      ID: 0
+      splitterInitialOffset: 0
+      currentActiveSplitter: -1
+      realSizes:
+      - 65
+      - 35
+      relativeSizes:
+      - 0.65
+      - 0.35000002
+      minSizes:
+      - 85
+      - 105
+      maxSizes:
+      - 0
+      - 0
+      lastTotalSize: 0
+      splitSize: 6
+      xOffset: 0
+      m_Version: 1
+      oldRealSizes: 
+      oldMinSizes: 
+      oldMaxSizes: 
+      oldSplitSize: 0
+    m_HorizontalSplitter:
+      ID: 0
+      splitterInitialOffset: 0
+      currentActiveSplitter: -1
+      realSizes:
+      - 60
+      - 60
+      - 60
+      - 60
+      relativeSizes:
+      - 0.25
+      - 0.25
+      - 0.25
+      - 0.25
+      minSizes:
+      - 85
+      - 85
+      - 85
+      - 85
+      maxSizes:
+      - 0
+      - 0
+      - 0
+      - 0
+      lastTotalSize: 0
+      splitSize: 6
+      xOffset: 0
+      m_Version: 1
+      oldRealSizes: 
+      oldMinSizes: 
+      oldMaxSizes: 
+      oldSplitSize: 0
+  m_LayoutStripsOnRight:
+    m_VerticalSplitter:
+      ID: 0
+      splitterInitialOffset: 0
+      currentActiveSplitter: -1
+      realSizes:
+      - 60
+      - 60
+      - 60
+      - 60
+      relativeSizes:
+      - 0.25
+      - 0.25
+      - 0.25
+      - 0.25
+      minSizes:
+      - 100
+      - 85
+      - 85
+      - 85
+      maxSizes:
+      - 0
+      - 0
+      - 0
+      - 0
+      lastTotalSize: 0
+      splitSize: 6
+      xOffset: 0
+      m_Version: 1
+      oldRealSizes: 
+      oldMinSizes: 
+      oldMaxSizes: 
+      oldSplitSize: 0
+    m_HorizontalSplitter:
+      ID: 1557
+      splitterInitialOffset: 197
+      currentActiveSplitter: -1
+      realSizes:
+      - 200
+      - 466
+      relativeSizes:
+      - 0.3003003
+      - 0.6996997
+      minSizes:
+      - 160
+      - 160
+      maxSizes:
+      - 0
+      - 0
+      lastTotalSize: 666
+      splitSize: 6
+      xOffset: 0
+      m_Version: 1
+      oldRealSizes: 
+      oldMinSizes: 
+      oldMaxSizes: 
+      oldSplitSize: 0
+  m_SectionOrder: 00000000030000000100000002000000
+  m_LayoutMode: 1
+  m_SortGroupsAlphabetically: 0
+  m_ShowReferencedBuses: 1
+  m_ShowBusConnections: 0
+  m_ShowBusConnectionsOfSelection: 0
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1339
+    y: 73
+    width: 236
+    height: 966
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1cfbffff46fbffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 10}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1577
+    y: 73
+    width: 342
+    height: 966
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: 292
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
