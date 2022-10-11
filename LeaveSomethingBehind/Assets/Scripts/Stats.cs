@@ -1,0 +1,10 @@
+namespace RoundTableStudio
+{
+    [System.Serializable]
+    public class Stats {
+        public float HP;
+        public float Damage;
+        public float Defense;
+        public float Speed;
+    }
+}

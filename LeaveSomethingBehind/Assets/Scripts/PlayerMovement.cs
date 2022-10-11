@@ -6,30 +6,25 @@ using UnityEngine;
 namespace RoundTableStudio {
     public class PlayerMovement : MonoBehaviour
     {
-        public float MovementSpeed = 5f;
-        //public Animator animator;
-
+        private PlayerManager _manager;
         private Rigidbody2D _rb;
         private Vector2 _movement;
-
-
+        
         private void Start() {
             _rb = GetComponent<Rigidbody2D>();
+            _manager = GetComponent<PlayerManager>();
         }
 
-        private void Update()
+        public void TickUpdate()
         {
             _movement.x = Input.GetAxisRaw("Horizontal");
             _movement.y = Input.GetAxisRaw("Vertical");
-
-            // animator.SetFloat("Horizontal", movimiento.x);
-            // animator.SetFloat("Vertical", movimiento.y);
-            // animator.SetFloat("Velocidad", movimiento.sqrMagnitude);
         }
 
-        private void FixedUpdate()
-        {
-            _rb.MovePosition(_rb.position + _movement * (MovementSpeed * Time.fixedDeltaTime));
+        public void FixedTickUpdate() {
+            float movementSpeed = _manager.Stats.Speed;
+
+            _rb.MovePosition(_rb.position + _movement * (movementSpeed * Time.fixedDeltaTime));
         }
 
     }

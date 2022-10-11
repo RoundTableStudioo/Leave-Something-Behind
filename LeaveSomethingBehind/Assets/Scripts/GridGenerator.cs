@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -33,7 +34,7 @@ namespace RoundTableStudio
 
         private void Start() {
             GenerateRandomGrid();
-            ColorGrid();
+            StartCoroutine(ColorGrid());
         }
 
         private void GenerateRandomGrid() {
@@ -64,7 +65,7 @@ namespace RoundTableStudio
             }
         }
 
-        private void ColorGrid() {
+        private IEnumerator ColorGrid() {
             for (int y = 0; y < GridHeight; y++) {
                 for (int x = 0; x < GridWidth; x++) {
                     Cell cell = _grid[x, y];
@@ -83,6 +84,8 @@ namespace RoundTableStudio
                     }
                     
                     GrassTileMap.SetTile(pos, GrassTile);
+                    
+                    yield return new WaitForSeconds(0.005f);
                 }
             }
         }
