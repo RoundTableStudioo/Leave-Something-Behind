@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 764814835}
   - component: {fileID: 764814836}
+  - component: {fileID: 764814837}
   m_Layer: 0
   m_Name: ProceduralGeneration
   m_TagString: Untagged
@@ -412,7 +413,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764814833}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd5c1ff0c029a7846aa579baf4bf853f, type: 3}
   m_Name: 
@@ -426,6 +427,21 @@ MonoBehaviour:
   BotMap: {fileID: 637476422}
   TopTile: {fileID: 11400000, guid: 598199f0eb39ffd449359e2997c340a5, type: 2}
   BotTile: {fileID: 11400000, guid: c631dc30f08138e45bc50bfb448f8108, type: 2}
+--- !u!114 &764814837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764814833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5991f747b494945a028700bfde9d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GridSize: 100
+  Scale: 0.301
+  WaterLevel: 0.4
 --- !u!1 &1175802453
 GameObject:
   m_ObjectHideFlags: 0
