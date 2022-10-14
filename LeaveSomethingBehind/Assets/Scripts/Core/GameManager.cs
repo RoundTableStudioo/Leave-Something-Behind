@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
+using RoundTableStudio.Player;
 
-namespace RoundTableStudio
+namespace RoundTableStudio.Core
 {
     public class GameManager : MonoBehaviour
     {

@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace RoundTableStudio {
-    public class PlayerMovement : MonoBehaviour
-    {
+namespace RoundTableStudio.Player {
+    public class PlayerMovement : MonoBehaviour {
+        
         private PlayerManager _manager;
         private Rigidbody2D _rb;
         private Vector2 _movement;
@@ -23,10 +20,9 @@ namespace RoundTableStudio {
 
         public void FixedTickUpdate() {
             float movementSpeed = _manager.Stats.Speed;
-
+            
             _rb.MovePosition(_rb.position + _movement * (movementSpeed * Time.fixedDeltaTime));
         }
-
     }
 }
 
