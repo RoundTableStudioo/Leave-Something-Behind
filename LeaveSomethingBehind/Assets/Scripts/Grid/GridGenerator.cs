@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace RoundTableStudio
+namespace RoundTableStudio.Grid
 {
 
     public class Cell {

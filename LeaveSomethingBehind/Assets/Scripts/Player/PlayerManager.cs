@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
+using RoundTableStudio.Stats;
 
-namespace RoundTableStudio
+namespace RoundTableStudio.Player
 {
     public class PlayerManager : MonoBehaviour {
         public PlayerStats Stats;

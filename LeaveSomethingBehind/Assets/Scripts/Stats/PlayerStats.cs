@@ -1,4 +1,4 @@
-namespace RoundTableStudio
+namespace RoundTableStudio.Stats
 {
     [System.Serializable]
     public class PlayerStats : Stats {

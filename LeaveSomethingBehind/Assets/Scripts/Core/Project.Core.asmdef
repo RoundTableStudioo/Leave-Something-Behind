@@ -1,0 +1,16 @@
+{
+    "name": "Project.Core",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8b9e11501d59ec34083e8d2d53ce2aaf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
