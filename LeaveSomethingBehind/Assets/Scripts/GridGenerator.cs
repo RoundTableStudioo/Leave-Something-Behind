@@ -84,13 +84,13 @@ namespace RoundTableStudio
                     else if (rotation == 1) rotationAmount = 90;
 
                     if (cell.IsFlower) {
-                        int flowerNum = Random.Range(1, 3);
+                        int flowerNum = Random.Range(1, GrassTile.Length - 1);
                         
                         DecorationTileMap.SetTile(pos, GrassTile[flowerNum]);
                         DecorationTileMap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0f, 0f, rotationAmount)));
                     }
                     if (cell.IsRock) {
-                        int rockNum = Random.Range(0, 2);
+                        int rockNum = Random.Range(0, RockTiles.Length - 1);
 
                         DecorationTileMap.SetTile(pos, RockTiles[rockNum]);
                         DecorationTileMap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0f, 0f, rotationAmount)));
