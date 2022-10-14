@@ -164,8 +164,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1175802454}
   - {fileID: 637476420}
+  - {fileID: 1175802454}
   - {fileID: 2142951788}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 637476422}
   - component: {fileID: 637476421}
   m_Layer: 0
-  m_Name: GrassTilemap
+  m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244150672}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &637476421
 TilemapRenderer:
@@ -420,14 +420,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GridHeight: 45
   GridWidth: 80
-  Scale: 0.346
-  BushDensity: 0.196
-  TreeDensity: 0.248
-  BushTileMap: {fileID: 1175802456}
+  Scale: 0.4
+  FlowerDensity: 0.25
+  RockDensity: 0.3
+  TreeDensity: 0.2
   GrassTileMap: {fileID: 637476422}
-  TreeTileMap: {fileID: 2142951790}
-  GrassTile: {fileID: 11400000, guid: 0201c7f73111f77439d16ca2bf58f661, type: 2}
-  BushTile: {fileID: 11400000, guid: a9ccab29940239943bab67999355ca99, type: 2}
+  DecorationTileMap: {fileID: 1175802456}
+  StructureTileMap: {fileID: 2142951790}
+  GrassTile:
+  - {fileID: 11400000, guid: 713c7eea40f3880418ae76f5d90c50ca, type: 2}
+  - {fileID: 11400000, guid: 00c2a21b47c793241aa8e4373feb3bbc, type: 2}
+  - {fileID: 11400000, guid: 9157c078f5a1df74fb5b2e7b32a0ef86, type: 2}
+  - {fileID: 11400000, guid: 5d10e358aea38794ea0a755f11f30e3e, type: 2}
+  RockTiles:
+  - {fileID: 11400000, guid: a8acec515d5f87b4a96fa4f1a80c6963, type: 2}
+  - {fileID: 11400000, guid: 6e5471b22b129a54681757eebbfd9f28, type: 2}
+  - {fileID: 11400000, guid: 35789f07174cb0f4e9d16af9f741a3b0, type: 2}
   TreeTiles:
   - {fileID: 11400000, guid: be070ad8e92408b488381ca5803b752a, type: 2}
   - {fileID: 11400000, guid: 3b00ca5c27553574cbb603095e5a12b8, type: 2}
@@ -444,7 +452,7 @@ GameObject:
   - component: {fileID: 1175802455}
   - component: {fileID: 1175802457}
   m_Layer: 0
-  m_Name: BushTilemap
+  m_Name: Decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +471,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244150672}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1175802455
 TilemapRenderer:
@@ -581,7 +589,7 @@ GameObject:
   - component: {fileID: 2142951789}
   - component: {fileID: 2142951791}
   m_Layer: 0
-  m_Name: TreeTilemap
+  m_Name: Structure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
