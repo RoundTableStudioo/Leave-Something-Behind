@@ -8,6 +8,7 @@ namespace RoundTableStudio.Player
     public class PlayerManager : MonoBehaviour {
         [HideInInspector] public InputHandler Input;
         public PlayerStats Stats;
+        public Camera MainCamera;
         
         private PlayerMovement _playerMovement;
         private PlayerAttack _attack;
