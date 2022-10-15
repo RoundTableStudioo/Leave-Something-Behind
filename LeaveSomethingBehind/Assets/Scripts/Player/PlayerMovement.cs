@@ -12,10 +12,9 @@ namespace RoundTableStudio.Player {
             _manager = GetComponent<PlayerManager>();
         }
 
-        public void TickUpdate()
-        {
-            _movement.x = Input.GetAxisRaw("Horizontal");
-            _movement.y = Input.GetAxisRaw("Vertical");
+        public void TickUpdate() {
+            _movement.x = _manager.Input.Movement.x;
+            _movement.y = _manager.Input.Movement.y;
         }
 
         public void FixedTickUpdate() {

@@ -1,9 +1,8 @@
 {
-    "name": "Project.Player",
+    "name": "Project.Input",
     "rootNamespace": "",
     "references": [
-        "GUID:da609a2e6dc0b1c489090ff29d08fc7e",
-        "GUID:5c41d5378f60bb34a8f014f004d5f5d4"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
