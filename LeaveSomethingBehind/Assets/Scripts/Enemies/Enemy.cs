@@ -14,7 +14,7 @@ namespace RoundTableStudio.Enemies {
 		private float _immuneTime;
 		private float _lastImmune;
 		
-		private Vector3 _playerPosition;
+		private Transform _player;
 		private Vector3 _pushDirection;
 		private Vector2 _movement;
 
@@ -27,9 +27,13 @@ namespace RoundTableStudio.Enemies {
 			_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 			
 			if (GameObject.FindGameObjectWithTag("Player").transform != null)
-				_playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+				_player = GameObject.FindGameObjectWithTag("Player").transform;
 
 			_currentHp = Stats.MaxHp;
+		}
+
+		private void FixedUpdate() {
+			FollowPlayer();
 		}
 
 		private void TakeDamage(Damage damage) {
@@ -46,9 +50,9 @@ namespace RoundTableStudio.Enemies {
 				Die();
 		}
 
-		private void FollowPlayer(Transform playerPosition) {
+		private void FollowPlayer() {
 
-			Vector3 objective = Stats.Speed * Time.fixedDeltaTime * (_playerPosition - transform.position).normalized;
+			Vector3 objective = Stats.Speed * Time.fixedDeltaTime * (_player.position - transform.position).normalized;
 			
 			if(!_damaged)
 				_rb.MovePosition(transform.position + objective);
