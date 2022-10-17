@@ -10,35 +10,69 @@ namespace RoundTableStudio.Grid
         public bool IsFlower;
         public bool IsTreeBottom;
         public bool IsTreeTop;
+        public bool IsProp;
     }
     
     public class GridGenerator : MonoBehaviour {
         
         [Header("Grid Proprieties")]
+        [Tooltip("Height of the map")]
         public int GridHeight = 100;
+        [Tooltip("Width of the map")]
         public int GridWidth = 100;
+        [Tooltip("Scale of the Perlin Noise maps")]
         [Range(0, 1)]
         public float Scale;
+        
+        [Space(10)]
+        [Header("Density Properties")]
+        [Tooltip("Percentage of flowers around the map")]
         [Range(0, 1)]
         public float FlowerDensity;
+        [Tooltip("Percentage of rocks around the map")]
         [Range(0, 1)] 
         public float RockDensity;
-        [Range(0, 1)] 
+        [Tooltip("Percentage of trees around the map")]
+        [Range(0, 1)]
         public float TreeDensity;
+        [Tooltip("Number of hays")]
+        [Range(0, 7)]
+        public int HaysNumber;
+        [Tooltip("Number of cars")] 
+        [Range(0, 7)]
+        public int CarsNumber;
+        [Tooltip("Number of lights")] 
+        [Range(0, 7)]
+        public int LightsNumbers;
+        [Tooltip("Number of towers")] 
+        [Range(0, 5)]
+        public int TowersNumber;
 
-        [Header("Tiles")]
+        [Space(10)]
+        [Header("TileMaps")]
+        [Tooltip("Tilemap where the grass will be drawn")]
         public Tilemap GrassTileMap;
+        [Tooltip("Tilemap where the decoration tiles will be drawn")]
         public Tilemap DecorationTileMap;
+        [Tooltip("Tilemap where the structures will be drawn")]
         public Tilemap StructureTileMap;
+        
+        [Space(10)]
+        [Header("Tiles")]
+        [Tooltip("Tiles of the grass")]
         public Tile[] GrassTile;
+        [Tooltip("Tiles of the rocks")]
         public Tile[] RockTiles;
+        [Tooltip("Tiles of the trees")]
         public Tile[] TreeTiles;
+        [Tooltip("Tiles of the props")]
+        public Tile[] PropsTiles;
 
         private Cell[,] _grid;
 
         private void Start() {
             GenerateRandomGrid();
-            StartCoroutine(ColorGrid());
+            ColorGrid();
         }
 
         private void GenerateRandomGrid() {
@@ -49,9 +83,9 @@ namespace RoundTableStudio.Grid
             for (int y = 0; y < GridHeight; y++) {
                 for (int x = 0; x < GridWidth; x++) {
 
-                    float flowerNoiseValue = Mathf.PerlinNoise(y * Scale + xOffset, x * Scale + yOffset);
-                    float rockNoiseValue = Mathf.PerlinNoise(y * Scale + xOffset, x + Scale * yOffset);
-                    float treeNoiseValue = Mathf.PerlinNoise(y * Scale + xOffset, x * Scale * yOffset);
+                    float flowerNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y * Scale + yOffset);
+                    float rockNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y + Scale * yOffset);
+                    float treeNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y * Scale * yOffset);
 
                     Cell cell = new Cell();
 
@@ -62,7 +96,9 @@ namespace RoundTableStudio.Grid
                             if (!cell.IsFlower)
                                 cell.IsRock = rockNoiseValue < RockDensity;
                         }
-                        if (!cell.IsFlower && !cell.IsRock && !_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
+                        
+                        if (!cell.IsFlower && !cell.IsRock
+                            &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
                             cell.IsTreeBottom = treeNoiseValue < TreeDensity;
                     }
 
@@ -71,7 +107,7 @@ namespace RoundTableStudio.Grid
             }
         }
 
-        private IEnumerator ColorGrid() {
+        private void ColorGrid() {
             for (int y = 0; y < GridHeight; y++) {
                 for (int x = 0; x < GridWidth; x++) {
                     Cell cell = _grid[x, y];
@@ -104,10 +140,8 @@ namespace RoundTableStudio.Grid
                             _grid[x, y + 1].IsTreeTop = true;
                         }
                     }
-                    
+
                     GrassTileMap.SetTile(pos, GrassTile[0]);
-                    
-                    yield return new WaitForSeconds(0.005f);
                 }
             }
         }

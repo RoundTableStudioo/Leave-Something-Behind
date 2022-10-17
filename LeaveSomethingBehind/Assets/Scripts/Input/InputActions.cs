@@ -35,6 +35,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""5139f2f8-8b73-4581-8c06-8258c5e4d21e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,17 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9284397-8189-430f-ac68-611b7e1aaa59"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -152,6 +172,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         // Locomotion
         m_Locomotion = asset.FindActionMap("Locomotion", throwIfNotFound: true);
         m_Locomotion_Movement = m_Locomotion.FindAction("Movement", throwIfNotFound: true);
+        m_Locomotion_Mouse = m_Locomotion.FindAction("Mouse", throwIfNotFound: true);
         // Interaction
         m_Interaction = asset.FindActionMap("Interaction", throwIfNotFound: true);
         m_Interaction_Mouse = m_Interaction.FindAction("Mouse", throwIfNotFound: true);
@@ -215,11 +236,13 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Locomotion;
     private ILocomotionActions m_LocomotionActionsCallbackInterface;
     private readonly InputAction m_Locomotion_Movement;
+    private readonly InputAction m_Locomotion_Mouse;
     public struct LocomotionActions
     {
         private @InputActions m_Wrapper;
         public LocomotionActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Locomotion_Movement;
+        public InputAction @Mouse => m_Wrapper.m_Locomotion_Mouse;
         public InputActionMap Get() { return m_Wrapper.m_Locomotion; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_LocomotionActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_LocomotionActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_LocomotionActionsCallbackInterface.OnMovement;
+                @Mouse.started -= m_Wrapper.m_LocomotionActionsCallbackInterface.OnMouse;
+                @Mouse.performed -= m_Wrapper.m_LocomotionActionsCallbackInterface.OnMouse;
+                @Mouse.canceled -= m_Wrapper.m_LocomotionActionsCallbackInterface.OnMouse;
             }
             m_Wrapper.m_LocomotionActionsCallbackInterface = instance;
             if (instance != null)
@@ -239,6 +265,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Mouse.started += instance.OnMouse;
+                @Mouse.performed += instance.OnMouse;
+                @Mouse.canceled += instance.OnMouse;
             }
         }
     }
@@ -297,6 +326,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     public interface ILocomotionActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnMouse(InputAction.CallbackContext context);
     }
     public interface IInteractionActions
     {

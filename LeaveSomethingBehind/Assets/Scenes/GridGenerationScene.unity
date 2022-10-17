@@ -424,6 +424,10 @@ MonoBehaviour:
   FlowerDensity: 0.25
   RockDensity: 0.3
   TreeDensity: 0.2
+  HaysNumber: 7
+  CarsNumber: 7
+  LightsNumbers: 7
+  TowersNumber: 5
   GrassTileMap: {fileID: 637476422}
   DecorationTileMap: {fileID: 1175802456}
   StructureTileMap: {fileID: 2142951790}
@@ -437,8 +441,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e5471b22b129a54681757eebbfd9f28, type: 2}
   - {fileID: 11400000, guid: 35789f07174cb0f4e9d16af9f741a3b0, type: 2}
   TreeTiles:
-  - {fileID: 11400000, guid: be070ad8e92408b488381ca5803b752a, type: 2}
-  - {fileID: 11400000, guid: 3b00ca5c27553574cbb603095e5a12b8, type: 2}
+  - {fileID: 11400000, guid: aa745858ce276854cad656f981ff7fd2, type: 2}
+  - {fileID: 11400000, guid: c7eddc7d7964fdb4a99c1b1f89ac46e9, type: 2}
+  PropsTiles:
+  - {fileID: 11400000, guid: 18730c96bbbd4b74893787024579b228, type: 2}
+  - {fileID: 11400000, guid: b9aa5a20d3511514baddc411672626da, type: 2}
+  - {fileID: 11400000, guid: f967999051f787a4abbec444e38939d1, type: 2}
+  - {fileID: 11400000, guid: d5dde8b982d2b1f49add065183b0f49b, type: 2}
+  - {fileID: 11400000, guid: fb154b5eb4da0254194327cc7e087a49, type: 2}
+  - {fileID: 11400000, guid: 70bc118430ec64c43839bcecb4759a57, type: 2}
 --- !u!1 &1175802453
 GameObject:
   m_ObjectHideFlags: 0

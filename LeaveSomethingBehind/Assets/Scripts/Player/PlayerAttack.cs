@@ -2,8 +2,13 @@ using System.Collections;
 using UnityEngine;
 
 namespace RoundTableStudio.Player {
+	public enum AttackType {
+		Melee,
+		Range,
+		Magic
+	};
+	
 	public class PlayerAttack : MonoBehaviour {
-
 		[Header("Melee Attributes")] 
 		[Tooltip("Cost of the melee attack")]
 		public float MeleeStaminaCost;
@@ -31,43 +36,51 @@ namespace RoundTableStudio.Player {
 		public float ProjectileSpeed;
 		
 		private PlayerManager _manager;
+		[SerializeField]
+		private AttackType _selectedAttack;
 		private bool _isAttacking;
+		private Vector3 _mousePosition;
+		private Rigidbody2D _rb;
 
 		private void Start() {
 			_manager = GetComponentInParent<PlayerManager>();
+			_rb = GetComponentInParent<Rigidbody2D>();
 		}
 
 		public void TickUpdate() {
 			if (!_manager.Input.AttackInput) return;
-			
-			// TO DO - Chose between the attacks
-			
-			if (_manager.Stats.RemainingStamina < MeleeStaminaCost) {
-				Debug.LogWarning("TO DO - Show 'not enough stamina' message");
-				return;
-			}
 
-			if (!_isAttacking)
-				StartCoroutine(Attack());
+			if (_selectedAttack == AttackType.Melee) Attack();
+			
+			if(_selectedAttack == AttackType.Range) Shoot();
+			
+			if(_selectedAttack == AttackType.Magic) Cast();
 		}
 
 		private IEnumerator Attack() {
-			_manager.Stats.RemainingStamina -= MeleeStaminaCost;
 			yield return new WaitForSeconds(0.5f);
 		}
 		
-		public void Shoot() {
+		private void Shoot() {
+			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
+			float angle = Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg;
+
 			GameObject arrow = Instantiate(ArrowPrefab, FirePoint.position, FirePoint.rotation);
 			Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
 			
-			rb.AddForce(FirePoint.up * ArrowSpeed, ForceMode2D.Impulse);
+			rb.AddForce(-FirePoint.up * ArrowSpeed, ForceMode2D.Impulse);
+			arrow.transform.eulerAngles = new Vector3(0, 0, angle);
 		}
 		
-		public void Cast() {
-			GameObject arrow = Instantiate(ProjectilePrefab, FirePoint.position, FirePoint.rotation);
-			Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+		private void Cast() {
+			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
+			float angle = Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg;
 			
-			rb.AddForce(FirePoint.up * ProjectileSpeed, ForceMode2D.Impulse);
+			GameObject magic = Instantiate(ProjectilePrefab, FirePoint.position, FirePoint.rotation);
+			Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
+			
+			rb.AddForce(-FirePoint.up * ProjectileSpeed, ForceMode2D.Impulse);
+			magic.transform.eulerAngles = new Vector3(0, 0, angle);
 		}
 	}
 	
