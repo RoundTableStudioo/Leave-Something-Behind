@@ -62,25 +62,38 @@ namespace RoundTableStudio.Player {
 		}
 		
 		private void Shoot() {
+			// Mouse position
 			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
-			float angle = Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg;
-
-			GameObject arrow = Instantiate(ArrowPrefab, FirePoint.position, FirePoint.rotation);
-			Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
 			
-			rb.AddForce(-FirePoint.up * ArrowSpeed, ForceMode2D.Impulse);
-			arrow.transform.eulerAngles = new Vector3(0, 0, angle);
+			// Direction of the arrow normalized
+			Vector2 direction = (_mousePosition - transform.position).normalized;
+
+			// Arrow facing towards the mouse
+			Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+
+			// Creates the arrow
+			GameObject arrow = Instantiate(ArrowPrefab, FirePoint.position, rotation);
+			Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+
+			// Gives speed to the arrow
+			rb.velocity = direction * ArrowSpeed;
 		}
 		
 		private void Cast() {
+			// Mouse position
 			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
-			float angle = Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg;
 			
-			GameObject magic = Instantiate(ProjectilePrefab, FirePoint.position, FirePoint.rotation);
+			// Direction of the spell normalized
+			Vector2 direction = (_mousePosition - transform.position).normalized;
+			
+			// Spell facing towards the mouse
+			Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg);
+			
+			// Creates the magic spell
+			GameObject magic = Instantiate(ProjectilePrefab, FirePoint.position, rotation);
 			Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
-			
-			rb.AddForce(-FirePoint.up * ProjectileSpeed, ForceMode2D.Impulse);
-			magic.transform.eulerAngles = new Vector3(0, 0, angle);
+
+			rb.velocity = direction * ProjectileSpeed;
 		}
 	}
 	

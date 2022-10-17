@@ -186,21 +186,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25607224a3d9f9e43b06e1fc980d458f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Input: {fileID: 0}
   Stats:
     HP: 0
     Damage: 0
     Defense: 0
     Speed: 2
     Stamina: 0
-    RemainingStamina: 0
     Mana: 0
-    RemainingMana: 0
     MagicDamage: 0
     LifeRegeneration: 0
     ManaRegeneration: 0
     StaminaRegeneration: 0
   MainCamera: {fileID: 1207332196}
+  Input: {fileID: 0}
+  Mana: {fileID: 0}
+  Stamina: {fileID: 0}
 --- !u!50 &120049031
 Rigidbody2D:
   serializedVersion: 4
@@ -699,10 +699,10 @@ MonoBehaviour:
   FirePoint: {fileID: 1309974121}
   ArrowPrefab: {fileID: 2627395674842270867, guid: 0a1f493bde61cd84ba7894899a33e2ed, type: 3}
   RangeStaminaCost: 0
-  ArrowSpeed: 10
+  ArrowSpeed: 20
   ProjectilePrefab: {fileID: 809352603583158726, guid: caee8843ed9fa95458dd0d415367ff8b, type: 3}
   ManaCost: 0
-  ProjectileSpeed: 10
+  ProjectileSpeed: 20
   _selectedAttack: 1
 --- !u!1 &1309974120
 GameObject:
