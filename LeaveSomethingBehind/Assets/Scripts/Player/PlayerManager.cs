@@ -6,8 +6,12 @@ using UnityEngine;
 namespace RoundTableStudio.Player
 {
     public class PlayerManager : MonoBehaviour {
-        [HideInInspector] public InputHandler Input;
+        [HideInInspector] 
+        public InputHandler Input;
         public PlayerStats Stats;
+
+        [HideInInspector]
+        public ManaBar Mana;
         public Camera MainCamera;
         
         private PlayerMovement _playerMovement;
@@ -17,6 +21,7 @@ namespace RoundTableStudio.Player
             _playerMovement = GetComponent<PlayerMovement>();
             Input = GetComponent<InputHandler>();
             _attack = GetComponentInChildren<PlayerAttack>();
+            Mana = GetComponent<ManaBar>();
         }
 
         public void Update() {

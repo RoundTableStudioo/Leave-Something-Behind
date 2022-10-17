@@ -58,7 +58,6 @@ namespace RoundTableStudio.Player {
 		}
 
 		private IEnumerator Attack() {
-			_manager.Stats.RemainingStamina -= MeleeStaminaCost;
 			yield return new WaitForSeconds(0.5f);
 		}
 		
