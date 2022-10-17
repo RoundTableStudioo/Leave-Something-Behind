@@ -6,12 +6,10 @@ namespace RoundTableStudio.Stats
     public class PlayerStats : Stats {
         [Space(10)]
         [Header("Stamina Stats")]
-        public float Stamina;
-        public float RemainingStamina;
+        public int Stamina;
         [Space(10)]
         [Header("Mana Stats")]
-        public float Mana;
-        public float RemainingMana;
+        public int Mana;
         public float MagicDamage;
         [Space(10)]
         [Header("Regeneration Stats")]

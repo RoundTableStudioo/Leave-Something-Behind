@@ -42,8 +42,8 @@ namespace RoundTableStudio.Player {
 			
 			// TO DO - Chose between the attacks
 			
-			if (_manager.Stats.RemainingStamina < MeleeStaminaCost) {
-				Debug.LogWarning("TO DO - Show 'not enough stamina' message");
+			if (_manager.Mana.CurrentMana < MeleeStaminaCost) {
+				Debug.LogWarning("TO DO - Show 'not enough mana' message");
 				return;
 			}
 
@@ -52,7 +52,6 @@ namespace RoundTableStudio.Player {
 		}
 
 		private IEnumerator Attack() {
-			_manager.Stats.RemainingStamina -= MeleeStaminaCost;
 			yield return new WaitForSeconds(0.5f);
 		}
 		
