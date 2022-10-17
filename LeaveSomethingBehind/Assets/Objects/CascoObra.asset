@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8e91db85acad4bb09633c04b3064b, type: 3}
   m_Name: CascoObra
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
-  Description: 
+  Icon: {fileID: 21300000, guid: 7943f53470a147b4185d1fef58443bf1, type: 3}
+  Name: Casco de obra
+  Description: "Un casco de obra.\nMuy \xFAtil si no quieres un hacha\nclavada en
+    la cabeza."
+  TechnicalDescription: "Las unidades orcas te hacen un 10% menos de da\xF1o"

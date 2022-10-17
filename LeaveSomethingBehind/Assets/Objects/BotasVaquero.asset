@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8e91db85acad4bb09633c04b3064b, type: 3}
   m_Name: BotasVaquero
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
-  Description: 
+  Icon: {fileID: 21300000, guid: 6de49ca60b512e2458058f98ee15e004, type: 3}
+  Name: Botas de vaquero
+  Description: "Unas botas con espuelas.\nPor alg\xFAn motivo, a los elfos\nparecen
+    no hacerle mucha gracia."
+  TechnicalDescription: "Las unidades \xE9lficas te hacen un 10% menos de da\xF1o"

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: "C\xE1mara"
   m_EditorClassIdentifier: 
   Icon: {fileID: 0}
-  Name: 
-  Description: 
+  Name: "C\xE1mara"
+  Description: "Una c\xE1mara fotogr\xE1fica reflex.\nCon ella, nada se escapa a
+    tu visi\xF3n."
+  TechnicalDescription: "Tu campo de visi\xF3n aumenta."

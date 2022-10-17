@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8e91db85acad4bb09633c04b3064b, type: 3}
   m_Name: CosplayMago
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
-  Description: 
+  Icon: {fileID: 21300000, guid: a601291d50c9f2948817b34dac9cde26, type: 3}
+  Name: Cosplay de mago
+  Description: 'Traje de mago con su sombrero.
+
+    Con este disfraz, la magia corre
+
+    por
+    tus venas (o no).'
+  TechnicalDescription: "Las unidades m\xE1gicas te hacen un 10% menos de da\xF1o."

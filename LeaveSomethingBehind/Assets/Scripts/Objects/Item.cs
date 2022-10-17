@@ -12,5 +12,7 @@ namespace RoundTableStudio.Items
         [Tooltip("Description of the item")] 
         [Multiline]
         public string Description;
+        [Tooltip("What the item does")]
+        public string TechnicalDescription;
     }
 }

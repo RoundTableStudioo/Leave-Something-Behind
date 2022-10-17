@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Chancla
   m_EditorClassIdentifier: 
   Icon: {fileID: 0}
-  Name: 
-  Description: 
+  Name: Chancla
+  Description: "La chancla de tu mam\xE1.\nTiene el poder para destruir\nmundos,
+    pero no sabes muy bien\nc\xF3mo."
+  TechnicalDescription: Empujas a los enemigos al atacarlos.

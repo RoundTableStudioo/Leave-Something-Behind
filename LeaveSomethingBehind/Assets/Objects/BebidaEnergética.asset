@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8e91db85acad4bb09633c04b3064b, type: 3}
   m_Name: "BebidaEnerg\xE9tica"
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
-  Description: 
+  Icon: {fileID: 21300000, guid: 1f5d86d62ac075743805a42a8d93afd5, type: 3}
+  Name: "Bebida energ\xE9tica"
+  Description: "Bebida energ\xE9tica de la marca\nNonster.\nGracias a su cafeina
+    y su taurina,\nsentir\xE1s que no puedes parar de atacar."
+  TechnicalDescription: "El enfriamiento de tu ataque f\xEDsico se reduce en un 20%"

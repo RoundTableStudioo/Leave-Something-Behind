@@ -72,7 +72,7 @@ namespace RoundTableStudio.Grid
 
         private void Start() {
             GenerateRandomGrid();
-            StartCoroutine(ColorGrid());
+            ColorGrid();
         }
 
         private void GenerateRandomGrid() {
@@ -107,7 +107,7 @@ namespace RoundTableStudio.Grid
             }
         }
 
-        private IEnumerator ColorGrid() {
+        private void ColorGrid() {
             for (int y = 0; y < GridHeight; y++) {
                 for (int x = 0; x < GridWidth; x++) {
                     Cell cell = _grid[x, y];
@@ -142,8 +142,6 @@ namespace RoundTableStudio.Grid
                     }
 
                     GrassTileMap.SetTile(pos, GrassTile[0]);
-                    
-                    yield return new WaitForSeconds(0.0005f);
                 }
             }
         }

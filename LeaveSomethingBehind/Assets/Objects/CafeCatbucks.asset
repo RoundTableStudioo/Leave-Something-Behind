@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 6cea67196705af9418c3b69b10fb990e, type: 3}
   Name: "Caf\xE9 Catbucks"
-  Description: "Proporciona regeneraci\xF3n\nde vida al personaje."
+  Description: "Un caf\xE9 de la marca Catbucks.\nSu logo resulta extra\xF1amente\nadorable."
+  TechnicalDescription: Tu vida se regenera un 25% por minuto.
