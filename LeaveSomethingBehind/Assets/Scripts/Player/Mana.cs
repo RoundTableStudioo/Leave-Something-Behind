@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace  RoundTableStudio.Player {
-    public class ManaBar : MonoBehaviour {
+    public class Mana : MonoBehaviour {
         public Slider Bar;
         [HideInInspector]
         public int CurrentMana;

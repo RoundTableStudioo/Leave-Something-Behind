@@ -6,13 +6,14 @@ using UnityEngine;
 namespace RoundTableStudio.Player
 {
     public class PlayerManager : MonoBehaviour {
+        public PlayerStats Stats;
+        public Camera MainCamera;
         [HideInInspector] 
         public InputHandler Input;
-        public PlayerStats Stats;
-
         [HideInInspector]
-        public ManaBar Mana;
-        public Camera MainCamera;
+        public Mana Mana;
+        [HideInInspector] 
+        public Stamina Stamina;
         
         private PlayerMovement _playerMovement;
         private PlayerAttack _attack;
@@ -21,7 +22,8 @@ namespace RoundTableStudio.Player
             _playerMovement = GetComponent<PlayerMovement>();
             Input = GetComponent<InputHandler>();
             _attack = GetComponentInChildren<PlayerAttack>();
-            Mana = GetComponent<ManaBar>();
+            Mana = GetComponent<Mana>();
+            Stamina = GetComponent<Stamina>();
         }
 
         public void Update() {
