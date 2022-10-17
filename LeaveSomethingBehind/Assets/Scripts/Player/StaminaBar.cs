@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StaminaBar : MonoBehaviour
 {
-    public Slider staminaBar;
+    public Slider Bar;
 
     private int _maxStamina = 10;
     private int _currentStamina;
@@ -13,18 +13,11 @@ public class StaminaBar : MonoBehaviour
     private WaitForSeconds _regenTick = new WaitForSeconds(2f);
     private Coroutine _regen;
 
-    public static StaminaBar instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     void Start()
     {
         _currentStamina = _maxStamina;
-        staminaBar.maxValue = _maxStamina;
-        staminaBar.value = _maxStamina;
+        Bar.maxValue = _maxStamina;
+        Bar.value = _maxStamina;
     }
 
     public void UseStamina(int amount)
@@ -32,7 +25,7 @@ public class StaminaBar : MonoBehaviour
         if (_currentStamina - amount >= 0)
         {
             _currentStamina -= amount;
-            staminaBar.value = _currentStamina;
+            Bar.value = _currentStamina;
 
             if (_regen != null)
                 StopCoroutine(_regen);
@@ -41,7 +34,7 @@ public class StaminaBar : MonoBehaviour
         }
         else 
         {
-            Debug.Log("No tienes suficiente estamina");
+            Debug.Log("TO DO - Not enough stamina message");
         }
     }
 
@@ -52,9 +45,9 @@ public class StaminaBar : MonoBehaviour
         while (_currentStamina < _maxStamina)
         {
             _currentStamina += _maxStamina / 100;
-            staminaBar.value = _currentStamina;
-            yield return _regenTick;
+            Bar.value = _currentStamina;
         }
+        
         _regen = null;
     }
 
