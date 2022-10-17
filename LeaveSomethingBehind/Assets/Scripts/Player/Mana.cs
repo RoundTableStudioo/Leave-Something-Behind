@@ -43,6 +43,7 @@ namespace  RoundTableStudio.Player {
             {
                 CurrentMana += _maxMana / 100;
                 Bar.value = CurrentMana;
+                yield return new WaitForSeconds(5);
             }
 
             if (CurrentMana > _maxMana)
@@ -56,7 +57,7 @@ namespace  RoundTableStudio.Player {
             
             if (CurrentMana > _maxMana) {
                 CurrentMana = _maxMana;
-            } 
+            }
         }
     }
 }

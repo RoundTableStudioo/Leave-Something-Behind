@@ -1,6 +1,5 @@
-using System;
 using RoundTableStudio.Input;
-using RoundTableStudio.Stats;
+using RoundTableStudio.Shared;
 using UnityEngine;
 
 namespace RoundTableStudio.Player
@@ -19,11 +18,12 @@ namespace RoundTableStudio.Player
         private PlayerAttack _attack;
 
         public void Start() {
-            _playerMovement = GetComponent<PlayerMovement>();
             Input = GetComponent<InputHandler>();
-            _attack = GetComponentInChildren<PlayerAttack>();
             Mana = GetComponent<Mana>();
             Stamina = GetComponent<Stamina>();
+            
+            _playerMovement = GetComponent<PlayerMovement>();
+            _attack = GetComponentInChildren<PlayerAttack>();
         }
 
         public void Update() {
