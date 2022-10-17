@@ -9,8 +9,10 @@ namespace RoundTableStudio.Player
         [HideInInspector] 
         public InputHandler Input;
         public PlayerStats Stats;
+
         [HideInInspector]
         public ManaBar Mana;
+        public Camera MainCamera;
         
         private PlayerMovement _playerMovement;
         private PlayerAttack _attack;

@@ -4,6 +4,8 @@ namespace RoundTableStudio.Input {
 	public class InputHandler : MonoBehaviour {
 		[HideInInspector]
 		public Vector2 Movement;
+		[HideInInspector]
+		public Vector2 MousePosition;
 		[HideInInspector] 
 		public bool AttackInput;
 		
@@ -15,6 +17,7 @@ namespace RoundTableStudio.Input {
 			}
 
 			_control.Locomotion.Movement.performed += i => Movement = i.ReadValue<Vector2>();
+			_control.Locomotion.Mouse.performed += i => MousePosition = i.ReadValue<Vector2>();
 		}
 
 		public void TickUpdate() {
