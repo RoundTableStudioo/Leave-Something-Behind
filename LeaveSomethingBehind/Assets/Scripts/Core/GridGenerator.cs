@@ -4,9 +4,17 @@ using UnityEngine.Tilemaps;
 namespace RoundTableStudio.Core
 {
     public class GridGenerator : MonoBehaviour {
+        #region Unity Fields
+        
+        [Header("Unity Fields")] 
+        [Tooltip("Main camera of the scene")]
+        public Camera MainCamera;
+
+        #endregion
 
         #region Grid Proprieties
 
+        [Space(10)]
         [Header("Grid Proprieties")]
         [Tooltip("Height of the map")]
         public int GridHeight = 100;
@@ -77,13 +85,42 @@ namespace RoundTableStudio.Core
 
         private Cell[,] _grid;
 
+        [SerializeField]
+        private float _minX;
+        [SerializeField]
+        private float _minY;
+        [SerializeField]
+        private float _maxX;
+        [SerializeField]
+        private float _maxY;
+
+        public void CalculateCameraBounds() {
+            float verticalExtend = MainCamera.orthographicSize;
+            float horizontalExtend = verticalExtend * Screen.width / Screen.height;
+
+            _minX = horizontalExtend - GridWidth / 2;
+            _maxX = GridWidth / 2 - horizontalExtend;
+            _minY = verticalExtend - GridHeight / 2;
+            _maxY = GridHeight - verticalExtend / 2;
+
+        }
+
         public void GenerateMap() {
+            CalculateCameraBounds();
             GenerateRandomGrid();
             ColorGrid();
         }
 
         public Cell GetGridPosition(int x, int y) {
             return _grid[x, y];
+        }
+
+        private void InfiniteGeneration() {
+            Cell[,] newGrid = new Cell[GridWidth, GridHeight];
+
+            if (true) {
+                
+            }
         }
 
         private void GenerateRandomGrid() {
@@ -113,7 +150,7 @@ namespace RoundTableStudio.Core
                                            &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
                             cell.IsTreeBottom = treeNoiseValue < TreeDensity;
 
-                        if (cell.IsFlower || cell.IsRock || cell.IsTreeBottom || cell.IsProp)
+                        if (cell.IsTreeBottom || cell.IsProp)
                             cell.IsEmpty = false;
                         else
                             cell.IsEmpty = true;

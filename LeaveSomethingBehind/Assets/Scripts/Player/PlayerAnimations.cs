@@ -7,7 +7,7 @@ namespace RoundTableStudio {
 		private SpriteRenderer _spriteRenderer;
 		private Animator _animator;
 
-		private void Start() {
+		private void OnEnable() {
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_animator = GetComponent<Animator>();
 		}

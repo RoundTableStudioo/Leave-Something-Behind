@@ -24,7 +24,7 @@ namespace RoundTableStudio.Player
         private const float _IMMUNE_TIME = 1f;
         private float _lastImmune;
 
-        public void Start() {
+        public void OnEnable() {
             Input = GetComponent<InputHandler>();
             Mana = GetComponent<Mana>();
             Stamina = GetComponent<Stamina>();

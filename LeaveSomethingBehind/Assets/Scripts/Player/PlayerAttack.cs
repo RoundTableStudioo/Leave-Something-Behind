@@ -1,20 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using RoundTableStudio.Shared;
 
 namespace RoundTableStudio.Player {
-	public enum AttackType {
-		Melee,
-		Range,
-		Magic
-	};
-	
 	public class PlayerAttack : MonoBehaviour {
 		[Header("Melee Attributes")] 
 		[Tooltip("Cost of the melee attack")]
 		public float MeleeStaminaCost;
-		[Tooltip("Force that the enemy will be pushed")]
-		public float PushForce;
-		
+
 		[Space(10)]
 		[Header("Range Attributes")]
 		[Tooltip("Place where the arrow or the magic projectile will be shot")]
@@ -36,13 +29,12 @@ namespace RoundTableStudio.Player {
 		public float ProjectileSpeed;
 		
 		private PlayerManager _manager;
-		[SerializeField]
 		private AttackType _selectedAttack;
 		private bool _isAttacking;
 		private Vector3 _mousePosition;
 		private Rigidbody2D _rb;
 
-		private void Start() {
+		private void OnEnable() {
 			_manager = GetComponentInParent<PlayerManager>();
 			_rb = GetComponentInParent<Rigidbody2D>();
 		}
@@ -66,7 +58,7 @@ namespace RoundTableStudio.Player {
 			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
 			
 			// Direction of the arrow normalized
-			Vector2 direction = (_mousePosition - transform.position).normalized;
+			Vector2 direction = _mousePosition - transform.position;
 
 			// Arrow facing towards the mouse
 			Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
@@ -76,7 +68,7 @@ namespace RoundTableStudio.Player {
 			Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
 
 			// Gives speed to the arrow
-			rb.velocity = direction * ArrowSpeed;
+			rb.velocity = new Vector2(direction.x, direction.y).normalized * ArrowSpeed;
 		}
 		
 		private void Cast() {
@@ -84,7 +76,7 @@ namespace RoundTableStudio.Player {
 			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
 			
 			// Direction of the spell normalized
-			Vector2 direction = (_mousePosition - transform.position).normalized;
+			Vector2 direction = _mousePosition - transform.position;
 			
 			// Spell facing towards the mouse
 			Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg);
@@ -93,7 +85,8 @@ namespace RoundTableStudio.Player {
 			GameObject magic = Instantiate(ProjectilePrefab, FirePoint.position, rotation);
 			Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
 
-			rb.velocity = direction * ProjectileSpeed;
+			// Gives speed to the projectile
+			rb.velocity = new Vector2(direction.x, direction.y).normalized * ProjectileSpeed;
 		}
 	}
 	
