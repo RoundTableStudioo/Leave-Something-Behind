@@ -1,8 +1,9 @@
 using UnityEngine;
 
-namespace RoundTableStudio.Grid {
-	public class Cell
-	{
+namespace RoundTableStudio.Core {
+	public class Cell {
+		public bool IsEmpty;
+		
 		public bool IsRock;
 		public bool IsFlower;
 		public bool IsTreeBottom;

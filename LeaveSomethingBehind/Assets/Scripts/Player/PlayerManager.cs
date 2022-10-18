@@ -7,6 +7,7 @@ namespace RoundTableStudio.Player
 {
     public class PlayerManager : MonoBehaviour {
         public PlayerStats Stats;
+        [HideInInspector]
         public Camera MainCamera;
         [HideInInspector] 
         public InputHandler Input;
@@ -27,7 +28,8 @@ namespace RoundTableStudio.Player
             Input = GetComponent<InputHandler>();
             Mana = GetComponent<Mana>();
             Stamina = GetComponent<Stamina>();
-            
+            MainCamera = Camera.main;
+
             _playerMovement = GetComponent<PlayerMovement>();
             _attack = GetComponentInChildren<PlayerAttack>();
             _animations = GetComponentInChildren<PlayerAnimations>();

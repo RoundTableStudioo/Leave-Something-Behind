@@ -1,12 +1,12 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace RoundTableStudio.Grid
+namespace RoundTableStudio.Core
 {
-
     public class GridGenerator : MonoBehaviour {
-        
+
+        #region Grid Proprieties
+
         [Header("Grid Proprieties")]
         [Tooltip("Height of the map")]
         public int GridHeight = 100;
@@ -15,6 +15,11 @@ namespace RoundTableStudio.Grid
         [Tooltip("Scale of the Perlin Noise maps")]
         [Range(0, 1)]
         public float Scale;
+        
+        #endregion
+
+        #region Density Properties
+
         
         [Space(10)]
         [Header("Density Properties")]
@@ -40,6 +45,10 @@ namespace RoundTableStudio.Grid
         [Range(0, 5)]
         public int TowersNumber;
 
+        #endregion
+
+        #region TileMaps
+
         [Space(10)]
         [Header("TileMaps")]
         [Tooltip("Tilemap where the grass will be drawn")]
@@ -49,6 +58,10 @@ namespace RoundTableStudio.Grid
         [Tooltip("Tilemap where the structures will be drawn")]
         public Tilemap StructureTileMap;
         
+        #endregion
+
+        #region Tiles
+
         [Space(10)]
         [Header("Tiles")]
         [Tooltip("Tiles of the grass")]
@@ -60,11 +73,17 @@ namespace RoundTableStudio.Grid
         [Tooltip("Tiles of the props")]
         public Tile[] PropsTiles;
 
+        #endregion
+
         private Cell[,] _grid;
 
-        private void Start() {
+        public void GenerateMap() {
             GenerateRandomGrid();
             ColorGrid();
+        }
+
+        public Cell GetGridPosition(int x, int y) {
+            return _grid[x, y];
         }
 
         private void GenerateRandomGrid() {
@@ -85,13 +104,19 @@ namespace RoundTableStudio.Grid
                         if (!_grid[x, y - 1].IsTreeBottom) {
                             cell.IsFlower = flowerNoiseValue < FlowerDensity;
 
-                            if (!cell.IsFlower)
+                            if (!cell.IsFlower) {
                                 cell.IsRock = rockNoiseValue < RockDensity;
+                            }
                         }
-                        
+
                         if (!cell.IsFlower && !cell.IsRock
-                            &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
+                                           &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
                             cell.IsTreeBottom = treeNoiseValue < TreeDensity;
+
+                        if (cell.IsFlower || cell.IsRock || cell.IsTreeBottom || cell.IsProp)
+                            cell.IsEmpty = false;
+                        else
+                            cell.IsEmpty = true;
                     }
 
                     _grid[x, y] = cell;
