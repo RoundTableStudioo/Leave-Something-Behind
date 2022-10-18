@@ -36,7 +36,6 @@ namespace RoundTableStudio.Player {
 
             Vector2 lookDirection = _mousePosition - _rb.position;
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg + 90f;
-            _rb.rotation = angle;
         }
     }
 }

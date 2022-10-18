@@ -75,7 +75,7 @@ namespace RoundTableStudio.Enemies {
 		private void OnCollisionEnter2D(Collision2D col) {
 			if (!col.collider.CompareTag("Player")) return;
 
-			Damage damage = new Damage{ Amount = Stats.Damage, PushOrigin = transform.position, PushForce = PushForce };
+			Damage damage = new Damage { Amount = Stats.Damage, PushOrigin = transform.position, PushForce = PushForce };
 
 			col.collider.SendMessage("TakeDamage", damage);
 			

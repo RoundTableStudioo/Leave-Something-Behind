@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b8e91db85acad4bb09633c04b3064b, type: 3}
   m_Name: GafasVR
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: a208c28c1cd6ae6449ba0c7546e196f6, type: 3}
   Name: 
   Description: 
+  TechnicalDescription: 

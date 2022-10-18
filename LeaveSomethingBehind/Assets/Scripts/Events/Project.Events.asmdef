@@ -1,11 +1,8 @@
 {
-    "name": "Project.Player",
+    "name": "Project.Events",
     "rootNamespace": "",
     "references": [
-        "GUID:da609a2e6dc0b1c489090ff29d08fc7e",
-        "GUID:5c41d5378f60bb34a8f014f004d5f5d4",
-        "GUID:23b29949f39c5d74c84795b06211a83a",
-        "GUID:b6cee879fc02b1d4886c5ae786a5b4b8"
+        "GUID:23b29949f39c5d74c84795b06211a83a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

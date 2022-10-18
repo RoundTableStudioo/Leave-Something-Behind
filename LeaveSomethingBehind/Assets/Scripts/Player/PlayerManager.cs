@@ -17,8 +17,8 @@ namespace RoundTableStudio.Player
         
         private PlayerMovement _playerMovement;
         private PlayerAttack _attack;
-
-        [SerializeField]
+        private PlayerAnimations _animations;
+        
         private float _currentHp;
         private const float _IMMUNE_TIME = 1f;
         private float _lastImmune;
@@ -30,6 +30,7 @@ namespace RoundTableStudio.Player
             
             _playerMovement = GetComponent<PlayerMovement>();
             _attack = GetComponentInChildren<PlayerAttack>();
+            _animations = GetComponentInChildren<PlayerAnimations>();
 
             _currentHp = Stats.MaxHp;
         }
@@ -55,6 +56,7 @@ namespace RoundTableStudio.Player
             _currentHp -= damage.Amount;
             
             _playerMovement.PushDirection = (transform.position - damage.PushOrigin).normalized * damage.PushForce;
+            StartCoroutine(_animations.ChangePlayerColor(Color.red));
             _playerMovement.Damaged = true;
 
             if (_currentHp <= 0) {

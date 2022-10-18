@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e2a00ee95d57e945ba2578762d6796d
+guid: 2f384b3195b87b04d8f0c905e3790b71
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 240
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tower_Top
+      name: Character_S_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 240
-        height: 240
+        y: 2000
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9581eabc116f4d54dbc7377be89c0c61
-      internalID: -542533525
+      spriteID: db5ede0435c3e354bb11050b26ed5eba
+      internalID: 1284027079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Car
+      name: Character_S_1
       rect:
         serializedVersion: 2
-        x: 480
-        y: 240
-        width: 240
-        height: 240
+        x: 1000
+        y: 2000
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e911090b1913864b96d722f8cc13ef3
-      internalID: -1551273789
+      spriteID: 261a96516f53fbb49a33bea87d5d2b23
+      internalID: -195671066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_Top
+      name: Character_S_4
       rect:
         serializedVersion: 2
-        x: 720
-        y: 240
-        width: 240
-        height: 240
+        x: 2000
+        y: 2000
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 874a5aee4cfe6734fb660e2464105844
-      internalID: -2027833679
+      spriteID: c9ea0855adc16994f9db0eb4e17aa123
+      internalID: 1014174003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower_Bottom
+      name: Character_S_3
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2000
+        width: 1000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f0e487cc9cbe748b4ffa862914d91e
+      internalID: 1170921813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_S_2
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2000
+        width: 1000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64af34a8e07ace41b917c27459a4257
+      internalID: -1863206461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_N_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 240
-        height: 240
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569f326dd446fe543b618dc6bd82c00d
-      internalID: 14670424
+      spriteID: f5e8fcf4f1d64644d85718f9d97be4ac
+      internalID: -1874936320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hay
+      name: Character_N_1
       rect:
         serializedVersion: 2
-        x: 480
+        x: 1000
         y: 0
-        width: 240
-        height: 240
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc521aafba024be449a79449d7920d6f
-      internalID: 1752961021
+      spriteID: e10022ffd58c5e046baf62434b11f45b
+      internalID: -2108199135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_Bottom
+      name: Character_N_2
       rect:
         serializedVersion: 2
-        x: 720
+        x: 2000
         y: 0
-        width: 240
-        height: 240
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,41 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e949b3de11c6d6847b479a91bde00277
-      internalID: 1735845303
+      spriteID: 13eba7bf949723c46a1ea6c6ad734f74
+      internalID: -831096768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_Top1
+      name: Character_N_3
       rect:
         serializedVersion: 2
-        x: 240
-        y: 240
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ca89a6488733e346a496dacac30fb85
-      internalID: -949824899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tree_Bottom1
-      rect:
-        serializedVersion: 2
-        x: 240
+        x: 3000
         y: 0
-        width: 240
-        height: 240
+        width: 1000
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +287,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12b9919b3d77d2946b258ffc84ef7d30
-      internalID: -1815942568
+      spriteID: 9d95c7e641c56114e86b76584df2e90e
+      internalID: -197646237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_N_4
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87d07b0e175bdd45982b5957cb48836
+      internalID: -899068924
       vertices: []
       indices: 
       edges: []
@@ -283,14 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tower_Top: -542533525
-      Light_Top: -2027833679
-      Light_Bottom: 1735845303
-      Tree_Bottom1: -1815942568
-      Hay: 1752961021
-      Tower_Bottom: 14670424
-      Tree_Top1: -949824899
-      Car: -1551273789
+      Character_N_3: -197646237
+      Character_S_0: -195671066
+      Character_N_4: -899068924
+      Character_S_3: -1863206461
+      Character_S_1: 1014174003
+      Character_N_1: -2108199135
+      Character_S_4: 1014174003
+      Character_N_0: -1874936320
+      Character_S_2: -1863206461
+      Character_N_2: -831096768
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
