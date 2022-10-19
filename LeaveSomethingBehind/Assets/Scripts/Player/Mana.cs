@@ -1,16 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace  RoundTableStudio.Player {
     public class Mana : MonoBehaviour {
-        public Slider Bar;
+        public Image Bar;
         [HideInInspector]
-        public int CurrentMana;
+        public float CurrentMana;
 
         private PlayerManager _manager;
-        private int _maxMana;
+        private float _maxMana;
         private Coroutine _regen;
 
         private void Start() {
@@ -18,14 +17,13 @@ namespace  RoundTableStudio.Player {
             _maxMana = _manager.Stats.Mana;
             
             CurrentMana = _maxMana;
-            Bar.maxValue = _maxMana;
-            Bar.value = _maxMana;
+            Bar.fillAmount = 1f;
         }
 
         public void UseMana(int amount) {
             if (CurrentMana - amount >= 0) {
                 CurrentMana -= amount;
-                Bar.value = CurrentMana;
+                Bar.fillAmount = CurrentMana / _maxMana;
 
                 if (_regen != null)
                     StopCoroutine(_regen);
@@ -42,7 +40,7 @@ namespace  RoundTableStudio.Player {
             while (CurrentMana < _maxMana)
             {
                 CurrentMana += _maxMana / 100;
-                Bar.value = CurrentMana;
+                Bar.fillAmount = CurrentMana / _maxMana;
                 yield return new WaitForSeconds(5);
             }
 
@@ -52,12 +50,9 @@ namespace  RoundTableStudio.Player {
             _regen = null;
         }
 
-        public void AddMana(int amount) {
-            CurrentMana += amount;
-            
-            if (CurrentMana > _maxMana) {
+        public void AddMana(){
+            if(CurrentMana < _maxMana)
                 CurrentMana = _maxMana;
-            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RoundTableStudio.Enemies;
+using RoundTableStudio.Items;
 
 namespace RoundTableStudio.Core
 {
@@ -21,12 +22,21 @@ namespace RoundTableStudio.Core
         #endregion
 
         public GameObject Player;
+        public ItemManager ItemManager;
         public List<Enemy> Enemies;
+
+        [HideInInspector] 
+        public bool GameStarted;
+        [HideInInspector] 
+        public bool GamePaused;
+        [HideInInspector] 
+        public bool GameEnded;
 
         private GridGenerator _map;
 
         private void Start() {
             _map = GetComponent<GridGenerator>();
+            ItemManager = GetComponent<ItemManager>();
             
             _map.GenerateMap();
             RespawnPlayer();
