@@ -33,7 +33,8 @@ namespace RoundTableStudio.Player {
 		
 		// Numeric values
 		private Vector3 _mousePosition;
-		private float _cooldownTick;
+		private float _rangeCooldownTick;
+		private float _magicCooldownTick;
 		
 		// Booleans
 		private bool _isAttacking;
@@ -44,9 +45,21 @@ namespace RoundTableStudio.Player {
 		}
 
 		public void TickUpdate() {
-			if(_manager.Input.RangeAttackInput) Shoot();
+			if (_rangeCooldownTick > 0)
+				_rangeCooldownTick -= Time.deltaTime;
+
+			if (_magicCooldownTick > 0)
+				_magicCooldownTick -= Time.deltaTime;
 			
-			if(_manager.Input.MagicAttackInput) Cast();
+			if (_manager.Input.RangeAttackInput && _rangeCooldownTick <= 0) {
+				Shoot();
+				_rangeCooldownTick = RangeCooldown;
+			}
+
+			if (_manager.Input.MagicAttackInput && _magicCooldownTick <= 0) {
+				Cast();
+				_magicCooldownTick = MagicCooldown;
+			}
 		}
 
 		private void Shoot() {

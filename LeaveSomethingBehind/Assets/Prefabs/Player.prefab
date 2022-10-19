@@ -226,14 +226,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1215b995fb7157f40a23742cf7cdbdce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MeleeStaminaCost: 0
-  FirePoint: {fileID: 8488840133243008554}
   ArrowPrefab: {fileID: 2627395674842270867, guid: 0a1f493bde61cd84ba7894899a33e2ed, type: 3}
-  RangeStaminaCost: 0
-  ArrowSpeed: 20
   ProjectilePrefab: {fileID: 809352603583158726, guid: caee8843ed9fa95458dd0d415367ff8b, type: 3}
+  FirePoint: {fileID: 8488840133243008554}
+  RangeStaminaCost: 0
+  RangeCooldown: 0.3
   ManaCost: 0
-  ProjectileSpeed: 20
+  MagicCooldown: 0.5
 --- !u!114 &8488840133347109798
 MonoBehaviour:
   m_ObjectHideFlags: 0
