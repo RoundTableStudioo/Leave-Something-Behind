@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 150602200446660810}
   - component: {fileID: 6178537543603448569}
   - component: {fileID: 164663974890605711}
-  m_Layer: 0
-  m_Name: Magic_Proyectile
+  m_Layer: 6
+  m_Name: MagicProyectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,10 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2e126b5febf1a4b838737bfdc879a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 5
   ProjectileDamage:
     Amount: 2
     PushOrigin: {x: 0, y: 0, z: 0}
     PushForce: 50
+  Rigidbody2D: {fileID: 0}
 --- !u!212 &150602200446660810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -137,6 +139,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17678282, y: 0.019648269}
+  m_Offset: {x: 0.13057321, y: 0.012464404}
   serializedVersion: 2
-  m_Radius: 0.17985621
+  m_Radius: 0.11314994

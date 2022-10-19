@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1207516354108283046}
   - component: {fileID: 7535514275191338121}
   - component: {fileID: 7097659220170513517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -47,10 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2e126b5febf1a4b838737bfdc879a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 5
   ProjectileDamage:
     Amount: 1
     PushOrigin: {x: 0, y: 0, z: 0}
     PushForce: 50
+  Rigidbody2D: {fileID: 0}
 --- !u!212 &1207516354108283046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -137,16 +139,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.41473967, y: 0.0033047497}
+  m_Offset: {x: 0.272098, y: 0.0034519732}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.6666667, y: 0.6666667}
     newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17997348, y: 0.12207705}
+  m_Size: {x: 0.11323559, y: 0.08216113}
   m_EdgeRadius: 0

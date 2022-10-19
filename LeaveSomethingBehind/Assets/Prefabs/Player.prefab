@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8488840133091725312}
   - component: {fileID: 8488840133091725313}
   - component: {fileID: 8488840133091725314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8488840133243008554}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 8488840133347109792}
   - component: {fileID: 8488840133347109798}
   - component: {fileID: 8488840133347109799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CharacterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8488840133458513062}
   - component: {fileID: 8488840133458513061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 8488840134168683979}
   - component: {fileID: 8488840134168683972}
   - component: {fileID: 8488840134168683978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -430,7 +430,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Movement: {x: 0, y: 0}
   MousePosition: {x: 0, y: 0}
-  AttackInput: 0
+  RangeAttackInput: 0
+  MagicAttackInput: 0
 --- !u!50 &8488840134168683972
 Rigidbody2D:
   serializedVersion: 4

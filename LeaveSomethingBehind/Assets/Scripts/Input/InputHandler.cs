@@ -7,7 +7,9 @@ namespace RoundTableStudio.Input {
 		[HideInInspector]
 		public Vector2 MousePosition;
 		[HideInInspector] 
-		public bool AttackInput;
+		public bool RangeAttackInput;
+		[HideInInspector]
+		public bool MagicAttackInput;
 		
 		private InputActions _control;
 		
@@ -21,15 +23,21 @@ namespace RoundTableStudio.Input {
 		}
 
 		public void TickUpdate() {
-			HandleAttackInput();
+			HandleRangeInput();
+			HandleMagicInput();
 		}
 
 		public void LateTickUpdate() {
-			AttackInput = false;
+			RangeAttackInput = false;
+			MagicAttackInput = false;
 		}
 
-		private void HandleAttackInput() {
-			_control.Interaction.Mouse.performed += i => AttackInput = true;
+		private void HandleRangeInput() {
+			_control.Interaction.LeftMouse.performed += i => RangeAttackInput = true;
+		}
+
+		private void HandleMagicInput() {
+			_control.Interaction.RightMouse.performed += i => MagicAttackInput = true;
 		}
 
 		private void OnEnable() {

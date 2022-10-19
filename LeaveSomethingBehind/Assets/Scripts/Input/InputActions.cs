@@ -120,9 +120,18 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
             ""id"": ""e696b3c2-d02d-4f4b-9d9b-a801580508fc"",
             ""actions"": [
                 {
-                    ""name"": ""Mouse"",
+                    ""name"": ""LeftMouse"",
                     ""type"": ""Button"",
                     ""id"": ""febdaa30-d889-4586-aa90-139ab1909bf8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a891306-a4c4-42e3-a96a-02d169bb16d2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Tap"",
@@ -137,7 +146,18 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
-                    ""action"": ""Mouse"",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e38e419-e950-4afd-a2ea-da60eb57a8c4"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""RightMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -175,7 +195,8 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Locomotion_Mouse = m_Locomotion.FindAction("Mouse", throwIfNotFound: true);
         // Interaction
         m_Interaction = asset.FindActionMap("Interaction", throwIfNotFound: true);
-        m_Interaction_Mouse = m_Interaction.FindAction("Mouse", throwIfNotFound: true);
+        m_Interaction_LeftMouse = m_Interaction.FindAction("LeftMouse", throwIfNotFound: true);
+        m_Interaction_RightMouse = m_Interaction.FindAction("RightMouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,12 +297,14 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     // Interaction
     private readonly InputActionMap m_Interaction;
     private IInteractionActions m_InteractionActionsCallbackInterface;
-    private readonly InputAction m_Interaction_Mouse;
+    private readonly InputAction m_Interaction_LeftMouse;
+    private readonly InputAction m_Interaction_RightMouse;
     public struct InteractionActions
     {
         private @InputActions m_Wrapper;
         public InteractionActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Mouse => m_Wrapper.m_Interaction_Mouse;
+        public InputAction @LeftMouse => m_Wrapper.m_Interaction_LeftMouse;
+        public InputAction @RightMouse => m_Wrapper.m_Interaction_RightMouse;
         public InputActionMap Get() { return m_Wrapper.m_Interaction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -291,16 +314,22 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_InteractionActionsCallbackInterface != null)
             {
-                @Mouse.started -= m_Wrapper.m_InteractionActionsCallbackInterface.OnMouse;
-                @Mouse.performed -= m_Wrapper.m_InteractionActionsCallbackInterface.OnMouse;
-                @Mouse.canceled -= m_Wrapper.m_InteractionActionsCallbackInterface.OnMouse;
+                @LeftMouse.started -= m_Wrapper.m_InteractionActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.performed -= m_Wrapper.m_InteractionActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.canceled -= m_Wrapper.m_InteractionActionsCallbackInterface.OnLeftMouse;
+                @RightMouse.started -= m_Wrapper.m_InteractionActionsCallbackInterface.OnRightMouse;
+                @RightMouse.performed -= m_Wrapper.m_InteractionActionsCallbackInterface.OnRightMouse;
+                @RightMouse.canceled -= m_Wrapper.m_InteractionActionsCallbackInterface.OnRightMouse;
             }
             m_Wrapper.m_InteractionActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Mouse.started += instance.OnMouse;
-                @Mouse.performed += instance.OnMouse;
-                @Mouse.canceled += instance.OnMouse;
+                @LeftMouse.started += instance.OnLeftMouse;
+                @LeftMouse.performed += instance.OnLeftMouse;
+                @LeftMouse.canceled += instance.OnLeftMouse;
+                @RightMouse.started += instance.OnRightMouse;
+                @RightMouse.performed += instance.OnRightMouse;
+                @RightMouse.canceled += instance.OnRightMouse;
             }
         }
     }
@@ -330,6 +359,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     }
     public interface IInteractionActions
     {
-        void OnMouse(InputAction.CallbackContext context);
+        void OnLeftMouse(InputAction.CallbackContext context);
+        void OnRightMouse(InputAction.CallbackContext context);
     }
 }

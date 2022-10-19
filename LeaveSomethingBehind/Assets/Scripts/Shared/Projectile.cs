@@ -4,10 +4,15 @@ using UnityEngine;
 namespace RoundTableStudio.Shared {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class Projectile : MonoBehaviour {
+		[Tooltip("Force given to the projectile")]
+		public float Speed;
 		[Tooltip("Projectile damage attributes")]
 		public Damage ProjectileDamage;
+		[HideInInspector] 
+		public Rigidbody2D Rigidbody2D;
 
-		private void Start() {
+		private void OnEnable() {
+			Rigidbody2D = GetComponent<Rigidbody2D>();
 			ProjectileDamage.PushOrigin = transform.position;
 		}
 

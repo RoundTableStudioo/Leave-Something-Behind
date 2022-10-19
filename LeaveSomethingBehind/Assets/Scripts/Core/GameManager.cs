@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using RoundTableStudio.Player;
 using RoundTableStudio.Enemies;
 
 namespace RoundTableStudio.Core
@@ -37,16 +36,15 @@ namespace RoundTableStudio.Core
             bool placed = false;
 
             while (!placed) {
-                int x = Random.Range(0, _map.GridWidth);
-                int y = Random.Range(0, _map.GridHeight);
+                int x = Random.Range(_map.GridWidth / 2 - 5, _map.GridWidth / 2 + 5);
+                int y = _map.GridHeight / 2;
                 
                 if (_map.GetGridPosition(x, y).IsEmpty && 
                     _map.GetGridPosition(x + 1, y).IsEmpty && _map.GetGridPosition(x - 1, y).IsEmpty
                     && _map.GetGridPosition(x, y + 1).IsEmpty && _map.GetGridPosition(x, y - 1).IsEmpty) {
                     Vector3Int pos = new Vector3Int(-x + _map.GridWidth / 2, -y + _map.GridHeight / 2, 0);
                     
-                    GameObject instantiatedPlayer =
-                        Instantiate(Player, pos, Quaternion.identity);
+                    Instantiate(Player, pos, Quaternion.identity);
                     
                     placed = true;
                 }

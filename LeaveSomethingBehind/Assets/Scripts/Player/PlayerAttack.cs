@@ -4,35 +4,39 @@ using RoundTableStudio.Shared;
 
 namespace RoundTableStudio.Player {
 	public class PlayerAttack : MonoBehaviour {
-		[Header("Melee Attributes")] 
-		[Tooltip("Cost of the melee attack")]
-		public float MeleeStaminaCost;
-
-		[Space(10)]
-		[Header("Range Attributes")]
-		[Tooltip("Place where the arrow or the magic projectile will be shot")]
-		public Transform FirePoint;
+		[Header("Prefabs")]
 		[Tooltip("Prefab of the arrow that will be shot")]
 		public GameObject ArrowPrefab;
-		[Tooltip("Cost of the range attack")]
-		public float RangeStaminaCost;
-		[Tooltip("Speed of the arrow")]
-		public float ArrowSpeed;
-		
-		[Space(10)]
-		[Header("Magic Attributes")]
 		[Tooltip("Prefab of the magic projectile")]
 		public GameObject ProjectilePrefab;
+		[Tooltip("Place where the arrow or the magic projectile will be shot")]
+		public Transform FirePoint;
+		
+		[Space(10)]
+		[Header("Range Attributes")]
+		[Tooltip("Cost of the range attack")]
+		public float RangeStaminaCost;
+		[Tooltip("Cooldown of the range attack")]
+		public float RangeCooldown;
+
+		[Space(10)]
+		[Header("Magic Attributes")]
 		[Tooltip("Cost of the magic attack")]
 		public float ManaCost;
-		[Tooltip("Speed of the magic projectile")]
-		public float ProjectileSpeed;
-		
+		[Tooltip("Cooldown of the magic attack")]
+		public float MagicCooldown;
+
+		// References
 		private PlayerManager _manager;
 		private AttackType _selectedAttack;
-		private bool _isAttacking;
-		private Vector3 _mousePosition;
 		private Rigidbody2D _rb;
+		
+		// Numeric values
+		private Vector3 _mousePosition;
+		private float _cooldownTick;
+		
+		// Booleans
+		private bool _isAttacking;
 
 		private void OnEnable() {
 			_manager = GetComponentInParent<PlayerManager>();
@@ -40,19 +44,11 @@ namespace RoundTableStudio.Player {
 		}
 
 		public void TickUpdate() {
-			if (!_manager.Input.AttackInput) return;
-
-			if (_selectedAttack == AttackType.Melee) Attack();
+			if(_manager.Input.RangeAttackInput) Shoot();
 			
-			if(_selectedAttack == AttackType.Range) Shoot();
-			
-			if(_selectedAttack == AttackType.Magic) Cast();
+			if(_manager.Input.MagicAttackInput) Cast();
 		}
 
-		private IEnumerator Attack() {
-			yield return new WaitForSeconds(0.5f);
-		}
-		
 		private void Shoot() {
 			// Mouse position
 			_mousePosition = _manager.MainCamera.ScreenToWorldPoint(_manager.Input.MousePosition);
@@ -64,11 +60,11 @@ namespace RoundTableStudio.Player {
 			Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 
 			// Creates the arrow
-			GameObject arrow = Instantiate(ArrowPrefab, FirePoint.position, rotation);
-			Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+			GameObject arrowGo = Instantiate(ArrowPrefab, FirePoint.position, rotation);
+			Projectile arrow = arrowGo.GetComponent<Projectile>();
 
 			// Gives speed to the arrow
-			rb.velocity = new Vector2(direction.x, direction.y).normalized * ArrowSpeed;
+			arrow.Rigidbody2D.velocity = new Vector2(direction.x, direction.y).normalized * arrow.Speed;
 		}
 		
 		private void Cast() {
@@ -79,14 +75,15 @@ namespace RoundTableStudio.Player {
 			Vector2 direction = _mousePosition - transform.position;
 			
 			// Spell facing towards the mouse
-			Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg);
+			Quaternion rotation = Quaternion.Euler(0, 0, 
+				Mathf.Atan2(_mousePosition.y, _mousePosition.x) * Mathf.Rad2Deg);
 			
 			// Creates the magic spell
-			GameObject magic = Instantiate(ProjectilePrefab, FirePoint.position, rotation);
-			Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
+			GameObject magicGo = Instantiate(ProjectilePrefab, FirePoint.position, rotation);
+			Projectile magic = magicGo.GetComponent<Projectile>();
 
 			// Gives speed to the projectile
-			rb.velocity = new Vector2(direction.x, direction.y).normalized * ProjectileSpeed;
+			magic.Rigidbody2D.velocity = new Vector2(direction.x, direction.y).normalized * magic.Speed;
 		}
 	}
 	

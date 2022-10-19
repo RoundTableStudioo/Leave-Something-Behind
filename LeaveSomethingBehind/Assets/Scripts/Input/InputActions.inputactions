@@ -98,9 +98,18 @@
             "id": "e696b3c2-d02d-4f4b-9d9b-a801580508fc",
             "actions": [
                 {
-                    "name": "Mouse",
+                    "name": "LeftMouse",
                     "type": "Button",
                     "id": "febdaa30-d889-4586-aa90-139ab1909bf8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightMouse",
+                    "type": "Button",
+                    "id": "2a891306-a4c4-42e3-a96a-02d169bb16d2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Tap",
@@ -115,7 +124,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "Mouse",
+                    "action": "LeftMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e38e419-e950-4afd-a2ea-da60eb57a8c4",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "RightMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

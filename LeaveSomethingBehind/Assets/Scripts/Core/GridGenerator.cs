@@ -17,8 +17,10 @@ namespace RoundTableStudio.Core
         [Space(10)]
         [Header("Grid Proprieties")]
         [Tooltip("Height of the map")]
+        [Range(10, 100)]
         public int GridHeight = 100;
         [Tooltip("Width of the map")]
+        [Range(10, 100)]
         public int GridWidth = 100;
         [Tooltip("Scale of the Perlin Noise maps")]
         [Range(0, 1)]
