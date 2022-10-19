@@ -18,11 +18,14 @@ namespace RoundTableStudio.Items {
         private List<Item> _userItems;
 
         private void Start() {
+            
             _initialBuffItems = BuffItems;
             _initialHistoryItems = HistoryItems;
         }
 
         public void InitializeUserItems() {
+            _userItems = new List<Item>();
+            
             // Buffs items
             for (int i = 0; i < _BUFFS_ITEMS_NUMBER; i++) {
                 int itemNumber = Random.Range(0, BuffItems.Count);
