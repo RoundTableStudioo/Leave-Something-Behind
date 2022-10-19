@@ -28,7 +28,6 @@ namespace RoundTableStudio.Player {
 
 		// References
 		private PlayerManager _manager;
-		private AttackType _selectedAttack;
 		private Rigidbody2D _rb;
 		
 		// Numeric values
@@ -52,13 +51,17 @@ namespace RoundTableStudio.Player {
 				_magicCooldownTick -= Time.deltaTime;
 			
 			if (_manager.Input.RangeAttackInput && _rangeCooldownTick <= 0) {
-				Shoot();
-				_rangeCooldownTick = RangeCooldown;
+				if(_manager.Stamina.UseStamina(2)) {
+					Shoot();
+					_rangeCooldownTick = RangeCooldown;
+				}
 			}
 
 			if (_manager.Input.MagicAttackInput && _magicCooldownTick <= 0) {
-				Cast();
-				_magicCooldownTick = MagicCooldown;
+				if(_manager.Mana.UseMana(3)) {
+					Cast();
+					_magicCooldownTick = MagicCooldown;
+				}
 			}
 		}
 

@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace RoundTableStudio.Player {
     public class Stamina : MonoBehaviour {
-        public Slider Bar;
+        public Image Bar;
         
-        private int _maxStamina;
-        private int _currentStamina;
+        private float _maxStamina;
+        private float _currentStamina;
         private PlayerManager _manager;
         private Coroutine _regen;
 
@@ -16,32 +16,27 @@ namespace RoundTableStudio.Player {
             _maxStamina = _manager.Stats.Stamina;
             
             _currentStamina = _maxStamina;
-            Bar.maxValue = _maxStamina;
-            Bar.value = _maxStamina;
+            Bar.fillAmount = 1f;
         }
 
-        public void UseStamina(int amount) {
-            if (_currentStamina - amount >= 0) {
-                _currentStamina -= amount;
-                Bar.value = _currentStamina;
+        public bool UseStamina(int amount) {
+            if (!(_currentStamina - amount >= 0)) return false;
+            _currentStamina -= amount;
+            Bar.fillAmount = _currentStamina / _maxStamina;
 
-                if (_regen != null)
-                    StopCoroutine(_regen);
+            if (_regen != null)
+                StopCoroutine(_regen);
 
-                _regen = StartCoroutine(RegenStamina());
-            }
-            else {
-                Debug.Log("TO DO - Not enough stamina message");
-            }
+            _regen = StartCoroutine(RegenStamina());
+
+            return true;
         }
 
         private IEnumerator RegenStamina() {
-            yield return new WaitForSeconds(2);
-
-            while (_currentStamina < _maxStamina)
-            {
-                _currentStamina += _maxStamina / 100;
-                Bar.value = _currentStamina;
+            while (_currentStamina < _maxStamina) {
+                _currentStamina += _manager.Stats.StaminaRegeneration;
+                Bar.fillAmount = _currentStamina / _maxStamina;
+                yield return new WaitForSeconds(2);
             }
             
             _regen = null;

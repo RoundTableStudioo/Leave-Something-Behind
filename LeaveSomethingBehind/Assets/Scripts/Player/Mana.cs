@@ -20,26 +20,24 @@ namespace  RoundTableStudio.Player {
             Bar.fillAmount = 1f;
         }
 
-        public void UseMana(int amount) {
-            if (CurrentMana - amount >= 0) {
-                CurrentMana -= amount;
-                Bar.fillAmount = CurrentMana / _maxMana;
+        public bool UseMana(int amount) {
+            if (!(CurrentMana - amount >= 0)) return false;
+            
+            CurrentMana -= amount;
+            Bar.fillAmount = CurrentMana / _maxMana;
 
-                if (_regen != null)
-                    StopCoroutine(_regen);
+            if (_regen != null)
+                StopCoroutine(_regen);
 
-                _regen = StartCoroutine(RegenMana());
-            } else {
-                Debug.Log("TO DO - Not enough mana message");
-            }
+            _regen = StartCoroutine(RegenMana());
+
+            return true;
         }
 
         private IEnumerator RegenMana() {
-            yield return new WaitForSeconds(5);
-
             while (CurrentMana < _maxMana)
             {
-                CurrentMana += _maxMana / 100;
+                CurrentMana += _manager.Stats.ManaRegeneration;
                 Bar.fillAmount = CurrentMana / _maxMana;
                 yield return new WaitForSeconds(5);
             }
