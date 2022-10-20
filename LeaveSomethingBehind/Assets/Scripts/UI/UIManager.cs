@@ -22,13 +22,12 @@ namespace RoundTableStudio.UI {
 		private GameStates _gameStates;
 
 		private const int _MINUTES_PER_PHASE = 1;
-		private const int _TOTAL_PHASES = 6; // _MINUTES_PER_PHASE / _TOTAL_TIME;
-		private const int _TOTAL_TIME = 30;
-		[HideInInspector]
-		public int PhaseNumber = 0;
 		private float _timer;
 		private float _secondsCount;
-		private float _minutesCount;
+		private int _minutesCount;
+
+		private bool _itemPicked;
+		private int _lastPickMinute;
 
 		private void Start() {
 			_buttons = GetComponentsInChildren<ItemButton>(true);
@@ -45,9 +44,13 @@ namespace RoundTableStudio.UI {
 			
 			HandleTimer();
 
-			if ((_minutesCount + 1) % (_MINUTES_PER_PHASE + 1) == 0 &&
-			    PhaseNumber != _TOTAL_TIME / _TOTAL_PHASES * (6 - PhaseNumber)) {
+			if (_minutesCount != _lastPickMinute)
+				_itemPicked = false;
+
+			if (_minutesCount % _MINUTES_PER_PHASE == 0 && _minutesCount != 0 && !_itemPicked) {
 					HandleItemSelector();
+					_itemPicked = true;
+					_lastPickMinute = _minutesCount;
 			}
 		}
 
