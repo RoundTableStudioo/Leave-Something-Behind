@@ -39,7 +39,7 @@ namespace RoundTableStudio.Player
         }
 
         public void Update() {
-            if (GameStates.Instance.GetPauseState()) return;
+            //if (GameStates.Instance.GetPauseState()) return;
             
             _playerMovement.TickUpdate();
             Input.TickUpdate();
@@ -48,13 +48,13 @@ namespace RoundTableStudio.Player
         }
 
         public void FixedUpdate() {
-            if (GameStates.Instance.GetPauseState()) return;
+            //if (GameStates.Instance.GetPauseState()) return;
             
             _playerMovement.FixedTickUpdate();
         }
 
         public void LateUpdate() {
-            if (GameStates.Instance.GetPauseState()) return;
+            //if (GameStates.Instance.GetPauseState()) return;
             
             Input.LateTickUpdate();
         }

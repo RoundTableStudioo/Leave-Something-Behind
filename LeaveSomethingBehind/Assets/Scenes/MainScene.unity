@@ -438,8 +438,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1555708132}
-        m_TargetAssemblyTypeName: RoundTableStudio.Core.GameManager, Project.Core
+      - m_Target: {fileID: 1555708134}
+        m_TargetAssemblyTypeName: RoundTableStudio.Shared.GameStates, Project.Shared
         m_MethodName: SetPauseState
         m_Mode: 6
         m_Arguments:
@@ -588,6 +588,7 @@ MonoBehaviour:
   TimerText: {fileID: 1154151962}
   ItemSelectorAnimator: {fileID: 2057476330}
   _buttons: []
+  PhaseNumber: 0
 --- !u!1 &162080106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,8 +2602,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1555708132}
-        m_TargetAssemblyTypeName: RoundTableStudio.Core.GameManager, Project.Core
+      - m_Target: {fileID: 1555708134}
+        m_TargetAssemblyTypeName: RoundTableStudio.Shared.GameStates, Project.Shared
         m_MethodName: SetPauseState
         m_Mode: 6
         m_Arguments:
@@ -3038,6 +3039,7 @@ GameObject:
   - component: {fileID: 1555708132}
   - component: {fileID: 1555708131}
   - component: {fileID: 1555708133}
+  - component: {fileID: 1555708134}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3123,8 +3125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 8488840134168683968, guid: 4a6a772737e81ba4793ec52d2f5d8a3d, type: 3}
   Enemies: []
-  GameStarted: 0
-  GameEnded: 0
 --- !u!114 &1555708133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3154,6 +3154,18 @@ MonoBehaviour:
   Player: {fileID: 0}
   ShowEnemyHealth: 0
   UserItems: []
+--- !u!114 &1555708134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555708129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35895e247ebadf148a74aec10c8d1482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1616478071
 GameObject:
   m_ObjectHideFlags: 0
