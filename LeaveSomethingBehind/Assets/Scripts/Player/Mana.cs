@@ -5,9 +5,9 @@ using UnityEngine.UI;
 namespace  RoundTableStudio.Player {
     public class Mana : MonoBehaviour {
         public Image Bar;
-        [HideInInspector]
-        public float CurrentMana;
-
+        public float RegenerationCooldown;
+        
+        private float _currentMana;
         private PlayerManager _manager;
         private float _maxMana;
         private Coroutine _regen;
@@ -16,15 +16,15 @@ namespace  RoundTableStudio.Player {
             _manager = GetComponent<PlayerManager>();
             _maxMana = _manager.Stats.Mana;
             
-            CurrentMana = _maxMana;
+            _currentMana = _maxMana;
             Bar.fillAmount = 1f;
         }
 
         public bool UseMana(int amount) {
-            if (!(CurrentMana - amount >= 0)) return false;
+            if (!(_currentMana - amount >= 0)) return false;
             
-            CurrentMana -= amount;
-            Bar.fillAmount = CurrentMana / _maxMana;
+            _currentMana -= amount;
+            Bar.fillAmount = _currentMana / _maxMana;
 
             if (_regen != null)
                 StopCoroutine(_regen);
@@ -35,22 +35,21 @@ namespace  RoundTableStudio.Player {
         }
 
         private IEnumerator RegenMana() {
-            while (CurrentMana < _maxMana)
-            {
-                CurrentMana += _manager.Stats.ManaRegeneration;
-                Bar.fillAmount = CurrentMana / _maxMana;
-                yield return new WaitForSeconds(5);
+            while (_currentMana < _maxMana) {
+                _currentMana += _manager.Stats.ManaRegeneration;
+                Bar.fillAmount = _currentMana / _maxMana;
+                yield return new WaitForSeconds(RegenerationCooldown);
             }
 
-            if (CurrentMana > _maxMana)
-                CurrentMana = _maxMana;
+            if (_currentMana > _maxMana)
+                _currentMana = _maxMana;
             
             _regen = null;
         }
 
         public void AddMana(){
-            if(CurrentMana < _maxMana)
-                CurrentMana = _maxMana;
+            if(_currentMana < _maxMana)
+                _currentMana = _maxMana;
         }
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine.UI;
 namespace RoundTableStudio.Player {
     public class Stamina : MonoBehaviour {
         public Image Bar;
+        public float RegenerationCooldown;
         
         private float _maxStamina;
+        [SerializeField]
         private float _currentStamina;
         private PlayerManager _manager;
         private Coroutine _regen;
@@ -21,6 +23,7 @@ namespace RoundTableStudio.Player {
 
         public bool UseStamina(int amount) {
             if (!(_currentStamina - amount >= 0)) return false;
+            
             _currentStamina -= amount;
             Bar.fillAmount = _currentStamina / _maxStamina;
 
@@ -36,8 +39,11 @@ namespace RoundTableStudio.Player {
             while (_currentStamina < _maxStamina) {
                 _currentStamina += _manager.Stats.StaminaRegeneration;
                 Bar.fillAmount = _currentStamina / _maxStamina;
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(RegenerationCooldown);
             }
+            
+            if (_currentStamina > _maxStamina)
+                _currentStamina = _maxStamina;
             
             _regen = null;
         }

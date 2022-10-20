@@ -15,9 +15,10 @@ namespace RoundTableStudio.Player
         public Mana Mana;
         [HideInInspector] 
         public Stamina Stamina;
+        [HideInInspector]
+        public PlayerAttack Attack;
         
         private PlayerMovement _playerMovement;
-        private PlayerAttack _attack;
         private PlayerAnimations _animations;
         
         private float _currentHp;
@@ -31,7 +32,7 @@ namespace RoundTableStudio.Player
             MainCamera = Camera.main;
 
             _playerMovement = GetComponent<PlayerMovement>();
-            _attack = GetComponentInChildren<PlayerAttack>();
+            Attack = GetComponentInChildren<PlayerAttack>();
             _animations = GetComponentInChildren<PlayerAnimations>();
 
             _currentHp = Stats.MaxHp;
@@ -40,7 +41,8 @@ namespace RoundTableStudio.Player
         public void Update() {
             _playerMovement.TickUpdate();
             Input.TickUpdate();
-            _attack.TickUpdate();
+            _animations.TickUpdate();
+            Attack.TickUpdate();
         }
 
         public void FixedUpdate() {

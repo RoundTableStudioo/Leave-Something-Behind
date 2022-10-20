@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using RoundTableStudio.Shared;
+using UnityEngine.UI;
 
 namespace RoundTableStudio.Enemies {
 	[RequireComponent(typeof(Rigidbody2D))]
@@ -10,6 +11,8 @@ namespace RoundTableStudio.Enemies {
 
 		private Rigidbody2D _rb;
 		private SpriteRenderer _spriteRenderer;
+
+		private Image _healthBar;
 
 		private float _immuneTime;
 		private float _lastImmune;
@@ -22,10 +25,10 @@ namespace RoundTableStudio.Enemies {
 		
 		private float _currentHp;
 
-		private void Start() {
+		private void OnEnable() {
 			_rb = GetComponent<Rigidbody2D>();
 			_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-			
+
 			if (GameObject.FindGameObjectWithTag("Player").transform != null)
 				_player = GameObject.FindGameObjectWithTag("Player").transform;
 

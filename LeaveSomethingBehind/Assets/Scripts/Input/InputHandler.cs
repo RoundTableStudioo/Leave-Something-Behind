@@ -4,6 +4,8 @@ namespace RoundTableStudio.Input {
 	public class InputHandler : MonoBehaviour {
 		[HideInInspector]
 		public Vector2 Movement;
+		[HideInInspector] 
+		public float MovementAmount;
 		[HideInInspector]
 		public Vector2 MousePosition;
 		[HideInInspector] 
@@ -25,11 +27,16 @@ namespace RoundTableStudio.Input {
 		public void TickUpdate() {
 			HandleRangeInput();
 			HandleMagicInput();
+			HandleMovementInput();
 		}
 
 		public void LateTickUpdate() {
 			RangeAttackInput = false;
 			MagicAttackInput = false;
+		}
+
+		private void HandleMovementInput() {
+			MovementAmount = Mathf.Clamp01(Mathf.Abs(Movement.x) + Mathf.Abs(Movement.y));
 		}
 
 		private void HandleRangeInput() {

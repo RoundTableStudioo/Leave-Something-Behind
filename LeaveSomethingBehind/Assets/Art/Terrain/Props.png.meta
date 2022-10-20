@@ -231,7 +231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_Top1
+      name: Tree_Top
       rect:
         serializedVersion: 2
         x: 240
@@ -252,7 +252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_Bottom1
+      name: Tree_Bottom
       rect:
         serializedVersion: 2
         x: 240
@@ -285,11 +285,11 @@ TextureImporter:
     nameFileIdTable:
       Tower_Top: -542533525
       Light_Top: -2027833679
+      Tree_Top: -949824899
       Light_Bottom: 1735845303
-      Tree_Bottom1: -1815942568
+      Tree_Bottom: -1815942568
       Hay: 1752961021
       Tower_Bottom: 14670424
-      Tree_Top1: -949824899
       Car: -1551273789
   spritePackingTag: 
   pSDRemoveMatte: 0

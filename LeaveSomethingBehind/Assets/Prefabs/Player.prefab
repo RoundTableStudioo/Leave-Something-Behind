@@ -653,9 +653,9 @@ MonoBehaviour:
   m_YDamping: 0
   m_ZDamping: 0
   m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
+  m_PitchDamping: 4.5
+  m_YawDamping: 6.8
+  m_RollDamping: 3.5
   m_AngularDamping: 0
 --- !u!1 &8488840133243008555
 GameObject:
@@ -791,9 +791,9 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 2627395674842270867, guid: 0a1f493bde61cd84ba7894899a33e2ed, type: 3}
   ProjectilePrefab: {fileID: 809352603583158726, guid: caee8843ed9fa95458dd0d415367ff8b, type: 3}
   FirePoint: {fileID: 8488840133243008554}
-  RangeStaminaCost: 0
+  RangeStaminaCost: 2
   RangeCooldown: 0.3
-  ManaCost: 0
+  ManaCost: 3
   MagicCooldown: 0.5
 --- !u!114 &8488840133347109798
 MonoBehaviour:
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Follow: {fileID: 8488840134168683975}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 4
+    OrthographicSize: 2
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 432980222878466815}
   - component: {fileID: 4436930244004232156}
   - component: {fileID: 8488840134168683972}
-  - component: {fileID: 8488840134168683978}
+  - component: {fileID: 6721786151784748976}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -955,6 +955,11 @@ MonoBehaviour:
     MaxHp: 15
     Damage: 2
     Speed: 2
+    PhysicalDefense: 0
+    RangeDefense: 0
+    MagicDefense: 0
+    HumanDefense: 0
+    GoblinDefense: 0
     Stamina: 10
     RangeDamage: 2
     Mana: 6
@@ -966,6 +971,7 @@ MonoBehaviour:
   Input: {fileID: 0}
   Mana: {fileID: 0}
   Stamina: {fileID: 0}
+  Attack: {fileID: 0}
 --- !u!114 &8488840134168683974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,6 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Movement: {x: 0, y: 0}
+  MovementAmount: 0
   MousePosition: {x: 0, y: 0}
   RangeAttackInput: 0
   MagicAttackInput: 0
@@ -1009,6 +1016,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bar: {fileID: 2140561526}
+  RegenerationCooldown: 2
+  _currentStamina: 0
 --- !u!114 &4436930244004232156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,7 +1031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bar: {fileID: 2133348622}
-  CurrentMana: 0
+  RegenerationCooldown: 5
 --- !u!50 &8488840134168683972
 Rigidbody2D:
   serializedVersion: 4
@@ -1044,8 +1053,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &8488840134168683978
-EdgeCollider2D:
+--- !u!70 &6721786151784748976
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1057,44 +1066,6 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.2472071, y: 0.05096388}
-  - {x: -0.20386912, y: -0.1843512}
-  - {x: -0.16209531, y: -0.20718205}
-  - {x: -0.12977538, y: -0.48098922}
-  - {x: -0.11580605, y: -0.672765}
-  - {x: -0.1252624, y: -0.9750701}
-  - {x: -0.06497223, y: -0.9878339}
-  - {x: -0.0004332699, y: -0.97216934}
-  - {x: 0.065094255, y: -0.9929783}
-  - {x: 0.12193052, y: -0.970196}
-  - {x: 0.12184201, y: -0.57041776}
-  - {x: 0.156649, y: -0.23145008}
-  - {x: 0.19951068, y: -0.18836832}
-  - {x: 0.20851141, y: -0.08226073}
-  - {x: 0.22483991, y: -0.070320964}
-  - {x: 0.28751755, y: 0.24710011}
-  - {x: 0.22579376, y: 0.5577712}
-  - {x: 0.1582515, y: 0.6021328}
-  - {x: 0.072248735, y: 0.6267178}
-  - {x: 0.0565138, y: 0.67344904}
-  - {x: 0.12452705, y: 0.75529385}
-  - {x: 0.12920474, y: 0.8683691}
-  - {x: 0.098565385, y: 0.93572164}
-  - {x: -0.00948336, y: 0.9677551}
-  - {x: -0.06575583, y: 0.9587538}
-  - {x: -0.10813141, y: 0.93716764}
-  - {x: -0.13138533, y: 0.86449814}
-  - {x: -0.12509048, y: 0.7518749}
-  - {x: -0.05791785, y: 0.6746156}
-  - {x: -0.07598643, y: 0.62573504}
-  - {x: -0.22266741, y: 0.5691316}
-  - {x: -0.25095052, y: 0.45125985}
-  - {x: -0.28642964, y: 0.23850644}
-  - {x: -0.24586642, y: 0.04510641}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: -0.00714574, y: -0.010718584}
+  m_Size: {x: 0.17701237, y: 0.97856283}
+  m_Direction: 0

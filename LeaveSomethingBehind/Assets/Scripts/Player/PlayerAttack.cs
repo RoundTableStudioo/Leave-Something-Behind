@@ -15,14 +15,14 @@ namespace RoundTableStudio.Player {
 		[Space(10)]
 		[Header("Range Attributes")]
 		[Tooltip("Cost of the range attack")]
-		public float RangeStaminaCost;
+		public int RangeStaminaCost;
 		[Tooltip("Cooldown of the range attack")]
 		public float RangeCooldown;
 
 		[Space(10)]
 		[Header("Magic Attributes")]
 		[Tooltip("Cost of the magic attack")]
-		public float ManaCost;
+		public int ManaCost;
 		[Tooltip("Cooldown of the magic attack")]
 		public float MagicCooldown;
 
@@ -51,14 +51,14 @@ namespace RoundTableStudio.Player {
 				_magicCooldownTick -= Time.deltaTime;
 			
 			if (_manager.Input.RangeAttackInput && _rangeCooldownTick <= 0) {
-				if(_manager.Stamina.UseStamina(2)) {
+				if(_manager.Stamina.UseStamina(RangeStaminaCost)) {
 					Shoot();
 					_rangeCooldownTick = RangeCooldown;
 				}
 			}
 
 			if (_manager.Input.MagicAttackInput && _magicCooldownTick <= 0) {
-				if(_manager.Mana.UseMana(3)) {
+				if(_manager.Mana.UseMana(ManaCost)) {
 					Cast();
 					_magicCooldownTick = MagicCooldown;
 				}
