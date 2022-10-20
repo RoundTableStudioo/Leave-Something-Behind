@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: a17dabc1a3374ac48898419fbc25cd2e, type: 3}
   Name: Ebook
-  Description: "Tu ebook personal.\nLa \xFAltima vez que lo usaste, estabas\nleyendo
+  Description: "Tu ebook personal.\nLa \xFAltima vez que lo usaste, estabas leyendo
     tu libro favorito."
-  TechnicalDescription: 
+  TechnicalDescription: "Aumenta el da\xF1o del ataque m\xE1gico"

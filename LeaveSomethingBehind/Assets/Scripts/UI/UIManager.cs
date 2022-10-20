@@ -1,32 +1,53 @@
 using System.Collections.Generic;
-using RoundTableStudio.Core;
+using RoundTableStudio.Shared;
+using RoundTableStudio.Items;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace RoundTableStudio.UI {
 	public class UIManager : MonoBehaviour {
+		[Tooltip("Images representing the objects that you have")]
 		public List<Image> ObjectImages;
+		[Tooltip("Text that represents the timer")]
 		public TextMeshProUGUI TimerText;
+		[Tooltip("Animator selector")]
 		public Animator ItemSelectorAnimator;
 
+		[SerializeField]
+		private ItemButton[] _buttons;
+
+		private ItemManager _itemManager;
+		private GameStates _gameStates;
+
+		private const int _MINUTES_PER_PHASE = 1;
+		private const int _TOTAL_PHASES = 6; // _MINUTES_PER_PHASE / _TOTAL_TIME;
+		private const int _TOTAL_TIME = 30;
+		[HideInInspector]
+		public int PhaseNumber = 0;
 		private float _timer;
 		private float _secondsCount;
 		private float _minutesCount;
+
+		private void Start() {
+			_buttons = GetComponentsInChildren<ItemButton>(true);
+			_itemManager = ItemManager.Instance;
+			_gameStates = GameStates.Instance;
+		}
 
 		public void ChangeItemImage(Sprite item, int index) {
 			ObjectImages[index].sprite = item;
 		}
 
 		private void Update() {
-			if (GameManager.Instance.GetPauseState()) return;
+			if (_gameStates.GetPauseState()) return;
 			
 			HandleTimer();
 
-			if ((_minutesCount + 1) % 2 == 0) {
-				ItemSelectorAnimator.SetTrigger(Animator.StringToHash("Open"));
-				
-				GameManager.Instance.SetPauseState(true);
+			if ((_minutesCount + 1) % (_MINUTES_PER_PHASE + 1) == 0 &&
+			    PhaseNumber != _TOTAL_TIME / _TOTAL_PHASES * (6 - PhaseNumber)) {
+					HandleItemSelector();
 			}
 		}
 
@@ -36,6 +57,22 @@ namespace RoundTableStudio.UI {
 			_secondsCount = Mathf.FloorToInt(_timer % 60);
 			
 			TimerText.text = $"{_minutesCount:00}:{_secondsCount:00}";
+		}
+
+		private void HandleItemSelector() {
+			ItemSelectorAnimator.SetTrigger(Animator.StringToHash("Open"));
+
+			int first, second;
+
+			do {
+				first = Random.Range(0, _itemManager.UserItems.Count - 1);
+				second = Random.Range(0, _itemManager.UserItems.Count - 1);
+			} while (first == second);
+
+			_buttons[0].SetContainedItem(_itemManager.UserItems[first]);
+			_buttons[1].SetContainedItem(_itemManager.UserItems[second]);
+
+			_gameStates.SetPauseState(true);
 		}
 	}
 	

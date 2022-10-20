@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 6606c10a0652b5c4fb0e95a1d3ea85d4, type: 3}
   Name: "Auriculares inal\xE1mbricos"
-  Description: "Unos auriculares sin cables.\nCon ellos, la m\xFAsica fluye por\ntus
+  Description: "Unos auriculares sin cables.\nCon ellos, la m\xFAsica fluye por tus
     o\xEDdos."
   TechnicalDescription: "Escuchas la m\xFAsica."

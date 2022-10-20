@@ -24,13 +24,6 @@ namespace RoundTableStudio.Core
         public GameObject Player;
         public List<Enemy> Enemies;
 
-        [HideInInspector] 
-        public bool GameStarted;
-        [HideInInspector] 
-        public bool GameEnded;
-        
-        private bool _gamePause;
-
         private GridGenerator _map;
         private ItemManager _itemManager;
 
@@ -69,14 +62,6 @@ namespace RoundTableStudio.Core
 
         private void RespawnEnemies() {
             // TO DO
-        }
-
-        public void SetPauseState(bool pauseState) {
-            _gamePause = pauseState;
-        }
-
-        public bool GetPauseState() {
-            return _gamePause;
         }
     }
 }

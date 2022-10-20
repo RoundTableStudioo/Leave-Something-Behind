@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using RoundTableStudio.Player;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace RoundTableStudio.Items {
     public class ItemManager : MonoBehaviour {
@@ -32,10 +33,11 @@ namespace RoundTableStudio.Items {
         private const int _BUFFS_ITEMS_NUMBER = 4;
         private const int _HISTORY_ITEMS_NUMBER = 2;
         // Lists
+        
+        public List<Item> UserItems;
         private List<Item> _initialBuffItems;
         private List<Item> _initialHistoryItems;
-        [SerializeField]
-        private List<Item> _userItems;
+        
 
         private void Start() {
             _initialBuffItems = BuffItems;
@@ -43,13 +45,13 @@ namespace RoundTableStudio.Items {
         }
 
         public void InitializeUserItems() {
-            _userItems = new List<Item>();
+            UserItems = new List<Item>();
             
             // Buffs items
             for (int i = 0; i < _BUFFS_ITEMS_NUMBER; i++) {
                 int itemNumber = Random.Range(0, BuffItems.Count);
                 
-                _userItems.Add(BuffItems[itemNumber]);
+                UserItems.Add(BuffItems[itemNumber]);
                 BuffItems.RemoveAt(itemNumber);
             }
             
@@ -57,24 +59,24 @@ namespace RoundTableStudio.Items {
             for (int i = 0; i < _HISTORY_ITEMS_NUMBER; i++) {
                 int itemNumber = Random.Range(0, HistoryItems.Count);
                 
-                _userItems.Add(HistoryItems[itemNumber]);
+                UserItems.Add(HistoryItems[itemNumber]);
                 HistoryItems.RemoveAt(itemNumber);
             }
         }
 
         public void ApplyItemFunctions() {
-            foreach (Item item in _userItems) {
+            foreach (Item item in UserItems) {
                 item.ItemFunction();
             }
         }
 
         public void DeleteUserItem(Item item) {
-            _userItems.Find(i => i.Name == item.Name).ReverseItemFunction();
-            _userItems.Remove(item);
+            UserItems.Find(i => i.Name == item.Name).ReverseItemFunction();
+            UserItems.Remove(item);
         }
 
         public void RestartItems() {
-            _userItems.Clear();
+            UserItems.Clear();
             BuffItems = _initialBuffItems;
             HistoryItems = _initialHistoryItems;
         }

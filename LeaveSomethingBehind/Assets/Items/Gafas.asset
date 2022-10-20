@@ -16,8 +16,5 @@ MonoBehaviour:
   Name: Gafas
   Description: 'Unas gafas de lectura.
 
-    Tienen un aumento de 0.5 en el
-
-    ojo
-    derecho y de 10 en el izquierdo.'
+    Tienen un aumento de 0.5 y de 10'
   TechnicalDescription: Emborronan un poco la pantalla

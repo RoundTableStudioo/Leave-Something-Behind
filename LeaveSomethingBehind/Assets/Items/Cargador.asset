@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: e3ea2d446f2c46844940619b0a856f9d, type: 3}
   Name: Cargador
-  Description: "Un cargador para m\xF3viles.\nSu puerto USB hace que sea\nun accesorio
+  Description: "Un cargador para m\xF3viles.\nSu puerto USB hace que sea un accesorio
     de lo m\xE1s vers\xE1til."
   TechnicalDescription: "El enfriamiento de tu ataque m\xE1gico se reduce en un 15%"
