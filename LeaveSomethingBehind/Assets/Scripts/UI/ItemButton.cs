@@ -12,15 +12,13 @@ namespace RoundTableStudio.UI {
 		public TextMeshProUGUI TechnicalDescriptionText;
 
 		private ItemManager _itemManager;
-		private UIManager _uiManager;
-		
+
 		private void Start() {
 			_itemManager = ItemManager.Instance;
 		}
 
 		public void ChooseItem() {
 			_itemManager.DeleteUserItem(ContainedItem);
-			_uiManager.PhaseNumber++;
 		}
 
 		public void SetContainedItem(Item item) {

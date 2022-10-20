@@ -71,7 +71,7 @@ namespace RoundTableStudio.Items {
         }
 
         public void DeleteUserItem(Item item) {
-            UserItems.Find(i => i.Name == item.Name).ReverseItemFunction();
+            UserItems.Find(i => i == item).ReverseItemFunction();
             UserItems.Remove(item);
         }
 
