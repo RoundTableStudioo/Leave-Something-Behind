@@ -2,8 +2,7 @@
     "name": "Project.Enemies",
     "rootNamespace": "",
     "references": [
-        "GUID:23b29949f39c5d74c84795b06211a83a",
-        "GUID:b6cee879fc02b1d4886c5ae786a5b4b8"
+        "GUID:23b29949f39c5d74c84795b06211a83a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

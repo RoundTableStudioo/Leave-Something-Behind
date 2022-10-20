@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using RoundTableStudio.Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace RoundTableStudio.Items {
     public class ItemManager : MonoBehaviour {

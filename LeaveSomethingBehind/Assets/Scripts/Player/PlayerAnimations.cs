@@ -15,7 +15,7 @@ namespace RoundTableStudio {
 		private void OnEnable() {
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_animator = GetComponent<Animator>();
-			_input = GetComponentInParent<InputHandler>();
+			_input = InputHandler.Instance;
 		}
 
 		public void TickUpdate() {

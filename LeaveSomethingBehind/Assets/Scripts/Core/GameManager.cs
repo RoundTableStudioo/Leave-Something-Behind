@@ -4,6 +4,7 @@ using UnityEngine;
 using RoundTableStudio.Enemies;
 using RoundTableStudio.Items;
 using RoundTableStudio.Player;
+using RoundTableStudio.UI;
 
 namespace RoundTableStudio.Core
 {
@@ -22,8 +23,9 @@ namespace RoundTableStudio.Core
         #endregion
 
         public GameObject Player;
+        public UIManager UI;
         public List<Enemy> Enemies;
-
+        
         private GridGenerator _map;
         private ItemManager _itemManager;
 
@@ -38,6 +40,8 @@ namespace RoundTableStudio.Core
             
             _itemManager.InitializeUserItems();
             _itemManager.ApplyItemFunctions();
+            
+            UI.HandleItemsImages();
         }
 
         private void RespawnPlayer() {
@@ -47,7 +51,6 @@ namespace RoundTableStudio.Core
                 // TO DO - Bug: Look [x-1, y-1], [x-1, y+1]... Solve with a while
                 int x = Random.Range(_map.GridWidth / 2 - 5, _map.GridWidth / 2 + 5);
                 int y = _map.GridHeight / 2;
-                int i = -1;
 
                 if (_map.GetGridPosition(x, y).IsEmpty && 
                     _map.GetGridPosition(x + 1, y).IsEmpty && _map.GetGridPosition(x - 1, y).IsEmpty

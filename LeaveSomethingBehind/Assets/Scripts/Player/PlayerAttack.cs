@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using RoundTableStudio.Shared;
+using UnityEngine.EventSystems;
 
 namespace RoundTableStudio.Player {
 	public class PlayerAttack : MonoBehaviour {
@@ -44,6 +45,8 @@ namespace RoundTableStudio.Player {
 		}
 
 		public void TickUpdate() {
+			if (EventSystem.current.IsPointerOverGameObject()) return;
+			
 			if (_rangeCooldownTick > 0)
 				_rangeCooldownTick -= Time.deltaTime;
 

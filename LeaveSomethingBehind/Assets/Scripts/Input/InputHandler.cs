@@ -1,7 +1,9 @@
 using UnityEngine;
+using RoundTableStudio.Shared;
 
 namespace RoundTableStudio.Input {
 	public class InputHandler : MonoBehaviour {
+		public static InputHandler Instance;
 		[HideInInspector]
 		public Vector2 Movement;
 		[HideInInspector] 
@@ -12,22 +14,29 @@ namespace RoundTableStudio.Input {
 		public bool RangeAttackInput;
 		[HideInInspector]
 		public bool MagicAttackInput;
-		
-		private InputActions _control;
+		[HideInInspector]
+		public bool PauseInput;
+		[HideInInspector]
+		public InputActions Control;
 		
 		private void Awake() {
-			if (_control == null) {
-				_control = new InputActions();
+			if (Control == null) {
+				Control = new InputActions();
 			}
 
-			_control.Locomotion.Movement.performed += i => Movement = i.ReadValue<Vector2>();
-			_control.Locomotion.Mouse.performed += i => MousePosition = i.ReadValue<Vector2>();
+			Control.Locomotion.Movement.performed += i => Movement = i.ReadValue<Vector2>();
+			Control.Locomotion.Mouse.performed += i => MousePosition = i.ReadValue<Vector2>();
+
+			if (Instance != null) return;
+
+			Instance = this;
 		}
 
 		public void TickUpdate() {
 			HandleRangeInput();
 			HandleMagicInput();
 			HandleMovementInput();
+			HandlePauseInput();
 		}
 
 		public void LateTickUpdate() {
@@ -40,19 +49,24 @@ namespace RoundTableStudio.Input {
 		}
 
 		private void HandleRangeInput() {
-			_control.Interaction.LeftMouse.performed += i => RangeAttackInput = true;
+			Control.Interaction.LeftMouse.performed += i => RangeAttackInput = true;
 		}
 
 		private void HandleMagicInput() {
-			_control.Interaction.RightMouse.performed += i => MagicAttackInput = true;
+			Control.Interaction.RightMouse.performed += i => MagicAttackInput = true;
+		}
+
+		private void HandlePauseInput() {
+			Control.Interaction.Escape.performed += i => GameStates.Instance.SetPauseState(!GameStates.Instance.GetPauseState());
+			PauseInput = !PauseInput;
 		}
 
 		private void OnEnable() {
-			_control.Enable();
+			Control.Enable();
 		}
 
 		private void OnDisable() {
-			_control.Disable();
+			Control.Disable();
 		}
 	}
 	

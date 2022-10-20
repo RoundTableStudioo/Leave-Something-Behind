@@ -12,12 +12,15 @@ namespace RoundTableStudio.UI {
 		public TextMeshProUGUI TechnicalDescriptionText;
 
 		private ItemManager _itemManager;
+		private UIManager _ui;
 
 		private void Start() {
 			_itemManager = ItemManager.Instance;
+			_ui = GetComponentInParent<UIManager>();
 		}
 
 		public void ChooseItem() {
+			_ui.ObjectImages.Find(i => i.sprite == ContainedItem.Icon).color = new Color(1f, 1f, 1f, 0.5f);
 			_itemManager.DeleteUserItem(ContainedItem);
 		}
 

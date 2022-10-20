@@ -17,4 +17,4 @@ MonoBehaviour:
   Description: 'Unas gafas de lectura.
 
     Tienen un aumento de 0.5 y de 10'
-  TechnicalDescription: Emborronan un poco la pantalla
+  TechnicalDescription: "Aumenta el da\xF1o a distancia"
