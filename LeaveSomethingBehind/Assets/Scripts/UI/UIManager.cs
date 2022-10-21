@@ -49,6 +49,7 @@ namespace RoundTableStudio.UI {
 			_gameStates = GameStates.Instance;
 			
 			InputHandler.Instance.Control.Interaction.Escape.performed += i => HandlePauseMenu();
+			_onPause = false;
 		}
 
 		private void Update() {
@@ -72,7 +73,7 @@ namespace RoundTableStudio.UI {
 			ObjectImages[index].sprite = item;
 		}
 
-		private void HandlePauseMenu() {
+		public void HandlePauseMenu() {
 			if (_onPause) {
 				PauseMenuAnimator.SetBool(Animator.StringToHash("Pause"), false);
 				_onPause = false;

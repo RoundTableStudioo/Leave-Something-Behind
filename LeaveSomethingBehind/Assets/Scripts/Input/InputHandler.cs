@@ -36,7 +36,6 @@ namespace RoundTableStudio.Input {
 			HandleRangeInput();
 			HandleMagicInput();
 			HandleMovementInput();
-			HandlePauseInput();
 		}
 
 		public void LateTickUpdate() {
@@ -54,11 +53,6 @@ namespace RoundTableStudio.Input {
 
 		private void HandleMagicInput() {
 			Control.Interaction.RightMouse.performed += i => MagicAttackInput = true;
-		}
-
-		private void HandlePauseInput() {
-			Control.Interaction.Escape.performed += i => GameStates.Instance.SetPauseState(!GameStates.Instance.GetPauseState());
-			PauseInput = !PauseInput;
 		}
 
 		private void OnEnable() {

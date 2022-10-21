@@ -52,9 +52,9 @@ namespace RoundTableStudio.Core
                 int x = Random.Range(_map.GridWidth / 2 - 5, _map.GridWidth / 2 + 5);
                 int y = _map.GridHeight / 2;
 
-                if (_map.GetGridPosition(x, y).IsEmpty && 
-                    _map.GetGridPosition(x + 1, y).IsEmpty && _map.GetGridPosition(x - 1, y).IsEmpty
-                    && _map.GetGridPosition(x, y + 1).IsEmpty && _map.GetGridPosition(x, y - 1).IsEmpty) 
+                if (_map.GetGridCell(x, y).IsEmpty && 
+                    _map.GetGridCell(x + 1, y).IsEmpty && _map.GetGridCell(x - 1, y).IsEmpty
+                    && _map.GetGridCell(x, y + 1).IsEmpty && _map.GetGridCell(x, y - 1).IsEmpty) 
                 {
                     Vector3Int pos = new Vector3Int(-x + _map.GridWidth / 2, -y + _map.GridHeight / 2, 0);
                     Player = Instantiate(Player, pos, Quaternion.identity);

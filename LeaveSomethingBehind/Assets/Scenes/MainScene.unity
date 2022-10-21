@@ -458,9 +458,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124668985}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
 --- !u!1 &160081116
 GameObject:
@@ -884,7 +884,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 210326352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1555708134}
+        m_TargetAssemblyTypeName: RoundTableStudio.Shared.GameStates, Project.Shared
+        m_MethodName: SetPauseState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 160081121}
+        m_TargetAssemblyTypeName: RoundTableStudio.UI.UIManager, Project.UI
+        m_MethodName: HandlePauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pause
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &211199981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,9 +3335,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311411053}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
 --- !u!95 &1311411061
 Animator:
@@ -3797,10 +3821,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d5dde8b982d2b1f49add065183b0f49b, type: 2}
   - {fileID: 11400000, guid: fb154b5eb4da0254194327cc7e087a49, type: 2}
   - {fileID: 11400000, guid: 70bc118430ec64c43839bcecb4759a57, type: 2}
-  _minX: 0
-  _minY: 0
-  _maxX: 0
-  _maxY: 0
+  _playerCellPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1555708132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4245,9 +4266,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057476325}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &2057476330
 Animator:
