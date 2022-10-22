@@ -8,7 +8,6 @@ namespace RoundTableStudio.Player {
         public float RegenerationCooldown;
         
         private float _maxStamina;
-        [SerializeField]
         private float _currentStamina;
         private PlayerManager _manager;
         private Coroutine _regen;

@@ -15,13 +15,14 @@ namespace RoundTableStudio.Player
         public Mana Mana;
         [HideInInspector] 
         public Stamina Stamina;
+        [HideInInspector] 
+        public Life Life;
         [HideInInspector]
         public PlayerAttack Attack;
         
         private PlayerMovement _playerMovement;
         private PlayerAnimations _animations;
         
-        private float _currentHp;
         private const float _IMMUNE_TIME = 1f;
         private float _lastImmune;
 
@@ -29,13 +30,12 @@ namespace RoundTableStudio.Player
             Input = InputHandler.Instance;
             Mana = GetComponent<Mana>();
             Stamina = GetComponent<Stamina>();
+            Life = GetComponent<Life>();
             MainCamera = Camera.main;
 
             _playerMovement = GetComponent<PlayerMovement>();
             Attack = GetComponentInChildren<PlayerAttack>();
             _animations = GetComponentInChildren<PlayerAnimations>();
-
-            _currentHp = Stats.MaxHp;
         }
 
         public void Update() {
@@ -63,15 +63,13 @@ namespace RoundTableStudio.Player
             if (Time.time - _lastImmune < _IMMUNE_TIME) return;
 
             _lastImmune = Time.time;
-            _currentHp -= damage.Amount;
+            if (Life.LoseHp(damage.Amount)) {
+                Die();
+            }
             
             _playerMovement.PushDirection = (transform.position - damage.PushOrigin).normalized * damage.PushForce;
             StartCoroutine(_animations.ChangePlayerColor(Color.red));
             _playerMovement.Damaged = true;
-
-            if (_currentHp <= 0) {
-                Die();
-            }
         }
 
         private void Die() {

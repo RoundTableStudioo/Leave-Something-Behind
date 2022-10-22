@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using RoundTableStudio.Shared;
 using RoundTableStudio.Items;
-using Random = UnityEngine.Random;
 
 namespace RoundTableStudio.UI {
 	public class UIManager : MonoBehaviour {
@@ -88,7 +87,7 @@ namespace RoundTableStudio.UI {
 			_gameStates.SetPauseState(_onPause);
 		}
 
-		public void HandleItemsImages() {
+		private void HandleItemsImages() {
 			for (int i = 0; i < _itemManager.UserItems.Count; i++) {
 				ChangeItemImage(_itemManager.UserItems[i].Icon, i);
 			}

@@ -7,14 +7,26 @@ namespace RoundTableStudio.Sound {
 		Music, 
 		SoundEffect
 	}
+	
 	public class SoundManager : MonoBehaviour {
 		public static SoundManager Instance;
+		
+		[SerializeField]
+		private AudioMixerGroup GeneralMixerGroup;
+		[SerializeField]
+		private AudioMixerGroup MusicMixerGroup;
+		[SerializeField]
+		private AudioMixerGroup SoundEffectMixerGroup;
 
-		public AudioMixerGroup GeneralMixerGroup;
-		public AudioMixerGroup MusicMixerGroup;
-		public AudioMixerGroup SoundEffectMixerGroup;
+		[HideInInspector] 
+		public float GeneralVolume;
+		[HideInInspector]
+		public float MusicVolume;
+		[HideInInspector] 
+		public float SoundEffectsVolume;
 
-		public Sound[] Sounds;
+		[SerializeField]
+		private Sound[] Sounds;
 
 		private void Awake() {
 			if (Instance != null) return;
@@ -63,7 +75,9 @@ namespace RoundTableStudio.Sound {
 		}
 
 		public void UpdateMixerVolume() {
-			// TO DO
+			GeneralMixerGroup.audioMixer.SetFloat("GeneralVolume", GeneralVolume);
+			SoundEffectMixerGroup.audioMixer.SetFloat("SoundEffectsVolume", SoundEffectsVolume);
+			MusicMixerGroup.audioMixer.SetFloat("MusicVolume", MusicVolume);
 		}
 
 	}
