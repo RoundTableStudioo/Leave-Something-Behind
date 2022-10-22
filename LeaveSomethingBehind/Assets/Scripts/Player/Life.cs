@@ -8,6 +8,7 @@ namespace RoundTableStudio.Player {
 		public float RegenerationCooldown = 60f;
 
 		private PlayerManager _manager;
+		[SerializeField]
 		private float _currentHp;
 		private float _maxHp;
 		private Coroutine _regen;
@@ -25,10 +26,11 @@ namespace RoundTableStudio.Player {
 			_currentHp -= amount;
 			Bar.fillAmount = _currentHp / _maxHp;
 
-			if (_regen != null && _manager.Stats.LifeRegeneration != 0)
-				StopCoroutine(RegenerateLife());
-
-			StartCoroutine(RegenerateLife());
+			// if (_regen != null)
+			// 	StopCoroutine(RegenerateLife());
+			//
+			// if(_manager.Stats.LifeRegeneration != 0)
+			// 	StartCoroutine(RegenerateLife());
 			
 			return false;
 		}

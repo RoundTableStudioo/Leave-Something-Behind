@@ -1,7 +1,5 @@
-using System.Collections.Generic;
+using RoundTableStudio.Sound;
 using UnityEngine;
-
-using RoundTableStudio.Enemies;
 
 namespace RoundTableStudio.Core
 {
@@ -19,17 +17,17 @@ namespace RoundTableStudio.Core
 
         #endregion
 
+        [Header("References")]
+        [Tooltip("Player Prefab")]
         public GameObject Player;
-        public List<Enemy> Enemies;
-
-        public int MinutesToEnd = 30;
         
         private GridGenerator _map;
 
         private void Start() {
             _map = GetComponent<GridGenerator>();
-            
+
             RespawnPlayer();
+            SoundManager.Instance.Play("MainTheme");
         }
 
         private void RespawnPlayer() {
@@ -51,8 +49,6 @@ namespace RoundTableStudio.Core
             }
         }
 
-        private void RespawnEnemies() {
-            
-        }
+       
     }
 }

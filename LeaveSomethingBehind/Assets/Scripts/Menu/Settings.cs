@@ -1,12 +1,15 @@
-using System;
 using System.Collections.Generic;
 using RoundTableStudio.Sound;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace RoundTableStudio.Menu {
 	public class Settings : MonoBehaviour {
 		public TMP_Dropdown ResolutionDropdown;
+		public Slider GeneralSlider;
+		public Slider SoundEffectsSlider;
+		public Slider MusicSlider;
 
 		private Animator _animator;
 		private SoundManager _soundManager;
@@ -35,6 +38,19 @@ namespace RoundTableStudio.Menu {
 			ResolutionDropdown.AddOptions(options);
 			ResolutionDropdown.value = currentResolutionIndex;
 			ResolutionDropdown.RefreshShownValue();
+
+			if (!PlayerPrefs.HasKey("GeneralVolume") && !PlayerPrefs.HasKey("SoundEffectsVolume") &&
+			    !PlayerPrefs.HasKey("MusicVolume")) {
+				GeneralSlider.value = 5;
+				SoundEffectsSlider.value = 5;
+				MusicSlider.value = 5;
+			} else LoadSliderValues();
+		}
+
+		private void LoadSliderValues() {
+			GeneralSlider.value = PlayerPrefs.GetFloat("GeneralVolume");
+			SoundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume");
+			MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
 		}
 
 		public void SetResolution(int resolutionIndex) {
@@ -46,19 +62,19 @@ namespace RoundTableStudio.Menu {
 		public void OnGeneralVolumeChange(float volume) {
 			_soundManager.GeneralVolume = volume;
 
-			_soundManager.UpdateMixerVolume();
+			_soundManager.UpdateGeneralMixerVolume();
 		}
 		
 		public void OnMusicVolumeChange(float volume) {
 			_soundManager.MusicVolume = volume;
 
-			_soundManager.UpdateMixerVolume();
+			_soundManager.UpdateMusicMixerVolume();
 		}
 		
 		public void OnSoundEffectVolumeChange(float volume) {
 			_soundManager.SoundEffectsVolume = volume;
 
-			_soundManager.UpdateMixerVolume();
+			_soundManager.UpdateSoundEffectsMixerVolume();
 		}
 
 		public void OnBackButton() {

@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -99.70599, y: -609.9994}
+  m_AnchoredPosition: {x: -99.70599, y: -16.99939}
   m_SizeDelta: {x: 49.077, y: 397.9382}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &148203373
@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.914612, y: -610}
+  m_AnchoredPosition: {x: -18.914612, y: -17}
   m_SizeDelta: {x: 49.077, y: 397.9382}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1262130103
@@ -1064,6 +1064,7 @@ GameObject:
   - component: {fileID: 8488840134168683974}
   - component: {fileID: 432980222878466815}
   - component: {fileID: 4436930244004232156}
+  - component: {fileID: 4552224733850175567}
   - component: {fileID: 8488840134168683972}
   - component: {fileID: 6721786151784748976}
   m_Layer: 3
@@ -1124,6 +1125,7 @@ MonoBehaviour:
   Input: {fileID: 0}
   Mana: {fileID: 0}
   Stamina: {fileID: 0}
+  Life: {fileID: 0}
   Attack: {fileID: 0}
 --- !u!114 &8488840134168683974
 MonoBehaviour:
@@ -1153,7 +1155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bar: {fileID: 2140561526}
   RegenerationCooldown: 2
-  _currentStamina: 0
 --- !u!114 &4436930244004232156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,6 +1169,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bar: {fileID: 2133348622}
   RegenerationCooldown: 5
+--- !u!114 &4552224733850175567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488840134168683968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd2b5a0883d5cb4c9070a17b5c51f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bar: {fileID: 6786741152583374470}
+  RegenerationCooldown: 60
 --- !u!50 &8488840134168683972
 Rigidbody2D:
   serializedVersion: 4

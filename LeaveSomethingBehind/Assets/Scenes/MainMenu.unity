@@ -439,9 +439,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1763290162}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -492,8 +492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 164}
-  m_SizeDelta: {x: 369.1567, y: 369.1567}
+  m_AnchoredPosition: {x: 0, y: 162}
+  m_SizeDelta: {x: 413.4275, y: 413.4275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139829310
 MonoBehaviour:
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: 3f1f62c360e537f4997b16a9ba52ae6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b50773071dd4d54080dfcf747e298ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -705,6 +705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResolutionDropdown: {fileID: 1121326925}
+  GeneralSlider: {fileID: 124623444}
+  SoundEffectsSlider: {fileID: 1702989812}
+  MusicSlider: {fileID: 264464448}
 --- !u!222 &239900965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -810,9 +813,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1964104323}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1778,6 +1781,46 @@ MonoBehaviour:
     Loop: 0
     PlayOnAwake: 0
     Audio: {fileID: 8300000, guid: 6d88f6e5f708102458a333d064eb8c07, type: 3}
+    Source: {fileID: 0}
+  - Name: MainTheme
+    Type: 0
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    PlayOnAwake: 0
+    Audio: {fileID: 8300000, guid: e4ebdb3aa912ed1408232eb953926713, type: 3}
+    Source: {fileID: 0}
+  - Name: Arrow
+    Type: 1
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    PlayOnAwake: 0
+    Audio: {fileID: 8300000, guid: cdcd1f07765dbbf4190bc7dabbeeb216, type: 3}
+    Source: {fileID: 0}
+  - Name: Goblin
+    Type: 1
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    PlayOnAwake: 0
+    Audio: {fileID: 8300000, guid: 3f02509fd26231942bd3ffad8e855f07, type: 3}
+    Source: {fileID: 0}
+  - Name: Human
+    Type: 1
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    PlayOnAwake: 0
+    Audio: {fileID: 8300000, guid: 184615055192ce1449c4572c0ad35eb5, type: 3}
+    Source: {fileID: 0}
+  - Name: ObjectSelection
+    Type: 1
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    PlayOnAwake: 0
+    Audio: {fileID: 8300000, guid: db88feed48bc8484d918407406b35448, type: 3}
     Source: {fileID: 0}
 --- !u!4 &519154626
 Transform:
@@ -2763,7 +2806,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 239900963}
+        m_TargetAssemblyTypeName: RoundTableStudio.Menu.Settings, Project.Menu
+        m_MethodName: SetResolution
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1121326926
 MonoBehaviour:
@@ -3924,9 +3979,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 874555045}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4362,7 +4417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000022888184}
+  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: 67.1472}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1839936289

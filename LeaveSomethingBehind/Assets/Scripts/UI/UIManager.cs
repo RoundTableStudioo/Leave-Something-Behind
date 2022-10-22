@@ -9,6 +9,7 @@ using RoundTableStudio.Items;
 namespace RoundTableStudio.UI {
 	public class UIManager : MonoBehaviour {
 		public static UIManager Instance;
+		
 		private void Awake() {
 			if (Instance != null) return;
 			
@@ -18,24 +19,19 @@ namespace RoundTableStudio.UI {
 		[Header("Images & Text")]
 		[Tooltip("Images representing the objects that you have")]
 		public List<Image> ObjectImages;
-		[Tooltip("Text that represents the timer")]
-		public TextMeshProUGUI TimerText;
-		
+
 		[Space(10)]
 		[Header("Unity References")]
 		[Tooltip("Animator selector")]
 		public Animator ItemSelectorAnimator;
 		[Tooltip("Pause Menu Animator")] 
 		public Animator PauseMenuAnimator;
+		[Tooltip("Game timer")] 
+		public Timer Timer;
 
 		private ItemButton[] _buttons;
 		private ItemManager _itemManager;
 		private GameStates _gameStates;
-
-		private const int _MINUTES_PER_PHASE = 1;
-		private float _timer;
-		private float _secondsCount;
-		public int MinutesCount;
 
 		private bool _itemPicked;
 		private int _lastPickMinute;
@@ -54,19 +50,13 @@ namespace RoundTableStudio.UI {
 		}
 
 		private void Update() {
-			if (_gameStates.GetPauseState()) {
-				return;
-			}
-			
-			HandleTimer();
-
-			if (MinutesCount != _lastPickMinute)
+			if (Timer.MinutesCount != _lastPickMinute)
 				_itemPicked = false;
 
-			if (MinutesCount % _MINUTES_PER_PHASE == 0 && MinutesCount != 0 && !_itemPicked) {
+			if (Timer.MinutesCount % Timer.MinutesPerPhase == 0 && Timer.MinutesCount != 0 && !_itemPicked) {
 					HandleItemSelector();
 					_itemPicked = true;
-					_lastPickMinute = MinutesCount;
+					_lastPickMinute = Timer.MinutesCount;
 			}
 		}
 		
@@ -91,14 +81,6 @@ namespace RoundTableStudio.UI {
 			for (int i = 0; i < _itemManager.UserItems.Count; i++) {
 				ChangeItemImage(_itemManager.UserItems[i].Icon, i);
 			}
-		}
-
-		private void HandleTimer() {
-			_timer += Time.deltaTime;
-			MinutesCount = Mathf.FloorToInt(_timer / 60);
-			_secondsCount = Mathf.FloorToInt(_timer % 60);
-			
-			TimerText.text = $"{MinutesCount:00}:{_secondsCount:00}";
 		}
 
 		private void HandleItemSelector() {

@@ -52,6 +52,18 @@ namespace RoundTableStudio.Sound {
 			}
 		}
 
+		private void Start() {
+			if(PlayerPrefs.HasKey("GeneralVolume") && 
+			   PlayerPrefs.HasKey("SoundEffectsVolume") && 
+			   PlayerPrefs.HasKey("MusicVolume"))
+				LoadVolume();
+			else {
+				PlayerPrefs.SetFloat("GeneralVolume", 5);
+				PlayerPrefs.SetFloat("SoundEffectsVolume", 5);
+				PlayerPrefs.SetFloat("MusicVolume", 5);
+			}
+		}
+
 		public void Play(string name) {
 			Sound s = Array.Find(Sounds, sound => sound.Name == name);
 
@@ -74,10 +86,25 @@ namespace RoundTableStudio.Sound {
 			s.Source.Stop();
 		}
 
-		public void UpdateMixerVolume() {
+		private void LoadVolume() {
+			GeneralMixerGroup.audioMixer.SetFloat("GeneralVolume", PlayerPrefs.GetFloat("GeneralVolume"));
+			SoundEffectMixerGroup.audioMixer.SetFloat("SoundEffectsVolume", PlayerPrefs.GetFloat("SoundEffectsVolume"));
+			MusicMixerGroup.audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume"));
+		}
+
+		public void UpdateGeneralMixerVolume() {
 			GeneralMixerGroup.audioMixer.SetFloat("GeneralVolume", GeneralVolume);
+			PlayerPrefs.SetFloat("GeneralVolume", GeneralVolume);
+		}
+
+		public void UpdateSoundEffectsMixerVolume() {
 			SoundEffectMixerGroup.audioMixer.SetFloat("SoundEffectsVolume", SoundEffectsVolume);
-			MusicMixerGroup.audioMixer.SetFloat("MusicVolume", MusicVolume);
+			PlayerPrefs.SetFloat("SoundEffectsVolume", SoundEffectsVolume);
+		}
+
+		public void UpdateMusicMixerVolume() {
+			MusicMixerGroup.audioMixer.SetFloat("MusicVolume", MusicVolume); 
+			PlayerPrefs.SetFloat("MusicVolume", MusicVolume);
 		}
 
 	}
