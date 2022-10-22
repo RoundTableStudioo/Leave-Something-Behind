@@ -589,6 +589,7 @@ MonoBehaviour:
   TimerText: {fileID: 1154151962}
   ItemSelectorAnimator: {fileID: 2057476330}
   PauseMenuAnimator: {fileID: 934701539}
+  MinutesCount: 0
 --- !u!1 &162080106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,7 +3822,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d5dde8b982d2b1f49add065183b0f49b, type: 2}
   - {fileID: 11400000, guid: fb154b5eb4da0254194327cc7e087a49, type: 2}
   - {fileID: 11400000, guid: 70bc118430ec64c43839bcecb4759a57, type: 2}
-  _playerCellPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1555708132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3835,8 +3835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 8488840134168683968, guid: 4a6a772737e81ba4793ec52d2f5d8a3d, type: 3}
-  UI: {fileID: 160081121}
   Enemies: []
+  MinutesToEnd: 30
 --- !u!114 &1555708133
 MonoBehaviour:
   m_ObjectHideFlags: 0

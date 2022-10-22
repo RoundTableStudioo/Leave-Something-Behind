@@ -36,7 +36,7 @@ namespace RoundTableStudio.UI {
 		private const int _MINUTES_PER_PHASE = 1;
 		private float _timer;
 		private float _secondsCount;
-		private int _minutesCount;
+		public int MinutesCount;
 
 		private bool _itemPicked;
 		private int _lastPickMinute;
@@ -50,6 +50,8 @@ namespace RoundTableStudio.UI {
 			
 			InputHandler.Instance.Control.Interaction.Escape.performed += i => HandlePauseMenu();
 			_onPause = false;
+			
+			HandleItemsImages();
 		}
 
 		private void Update() {
@@ -59,13 +61,13 @@ namespace RoundTableStudio.UI {
 			
 			HandleTimer();
 
-			if (_minutesCount != _lastPickMinute)
+			if (MinutesCount != _lastPickMinute)
 				_itemPicked = false;
 
-			if (_minutesCount % _MINUTES_PER_PHASE == 0 && _minutesCount != 0 && !_itemPicked) {
+			if (MinutesCount % _MINUTES_PER_PHASE == 0 && MinutesCount != 0 && !_itemPicked) {
 					HandleItemSelector();
 					_itemPicked = true;
-					_lastPickMinute = _minutesCount;
+					_lastPickMinute = MinutesCount;
 			}
 		}
 		
@@ -94,10 +96,10 @@ namespace RoundTableStudio.UI {
 
 		private void HandleTimer() {
 			_timer += Time.deltaTime;
-			_minutesCount = Mathf.FloorToInt(_timer / 60);
+			MinutesCount = Mathf.FloorToInt(_timer / 60);
 			_secondsCount = Mathf.FloorToInt(_timer % 60);
 			
-			TimerText.text = $"{_minutesCount:00}:{_secondsCount:00}";
+			TimerText.text = $"{MinutesCount:00}:{_secondsCount:00}";
 		}
 
 		private void HandleItemSelector() {

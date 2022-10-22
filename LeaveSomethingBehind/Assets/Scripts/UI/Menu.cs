@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using RoundTableStudio.Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement; //cambiar escenas
 
 namespace RoundTableStudio.UI {
-
-
+    
     public class Menu : MonoBehaviour
     {
-        public GameObject options;
+        public GameObject Options;
+
+        private void Start() {
+            SoundManager.Instance.Play("MenuMusic");
+        }
 
         public void PlayGame() //para comenzar el juego
         {
@@ -23,12 +25,12 @@ namespace RoundTableStudio.UI {
 
         public void OptionsOn() //menu de opciones 
         {
-            options.SetActive(true); //aparece
+            Options.SetActive(true); //aparece
         }
 
         public void OptionsOff()
         {
-            options.SetActive(false); //desaparece
+            Options.SetActive(false); //desaparece
         }
 
         public void Return() //regresar

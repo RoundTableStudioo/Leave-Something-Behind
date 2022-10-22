@@ -2,9 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using RoundTableStudio.Enemies;
-using RoundTableStudio.Items;
-using RoundTableStudio.Player;
-using RoundTableStudio.UI;
 
 namespace RoundTableStudio.Core
 {
@@ -23,25 +20,16 @@ namespace RoundTableStudio.Core
         #endregion
 
         public GameObject Player;
-        public UIManager UI;
         public List<Enemy> Enemies;
+
+        public int MinutesToEnd = 30;
         
         private GridGenerator _map;
-        private ItemManager _itemManager;
 
         private void Start() {
             _map = GetComponent<GridGenerator>();
-            _itemManager = ItemManager.Instance;
-
-            _map.GenerateMap();
+            
             RespawnPlayer();
-
-            _itemManager.Player = Player.GetComponent<PlayerManager>();
-            
-            _itemManager.InitializeUserItems();
-            _itemManager.ApplyItemFunctions();
-            
-            UI.HandleItemsImages();
         }
 
         private void RespawnPlayer() {
@@ -64,7 +52,7 @@ namespace RoundTableStudio.Core
         }
 
         private void RespawnEnemies() {
-            // TO DO
+            
         }
     }
 }

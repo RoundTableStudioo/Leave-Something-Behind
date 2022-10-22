@@ -87,15 +87,19 @@ namespace RoundTableStudio.Core
 
         #endregion
 
+        #region Private Fields
+
         private Cell[,] _grid;
-        [SerializeField]
         private Vector3Int _playerCellPosition;
+
         private int _currentGridHeightUp;
         private int _currentGridHeightDown;
         private int _currentGridWidthRight;
         private int _currentGridWidthLeft;
 
-        public void GenerateMap() {
+        #endregion
+
+        public void Start() {
             GenerateRandomGrid();
             ColorGrid();
 
@@ -119,7 +123,7 @@ namespace RoundTableStudio.Core
         private void InfiniteGeneration() {
             if (_playerCellPosition.y >= _currentGridHeightUp - 3) { // UPPER MAP
                 for (int y = 1; y < 3; y++) 
-                    for (int x = -_currentGridWidthLeft +1; x <= _currentGridWidthRight ; x++) {
+                    for (int x = -_currentGridWidthLeft + 1; x <= _currentGridWidthRight ; x++) {
                         Vector3Int pos = new Vector3Int(x, _currentGridHeightUp + y, 0);
                         Vector3Int deletePos = new Vector3Int(x, -_currentGridHeightDown + y, 0);
                         
@@ -131,7 +135,7 @@ namespace RoundTableStudio.Core
             
             if (_playerCellPosition.y <= -_currentGridHeightDown + 3) { // LOWER MAP
                 for(int y = 0; y < 2; y++)
-                    for (int x = -_currentGridWidthLeft +1; x <= _currentGridWidthRight; x++) {
+                    for (int x = -_currentGridWidthLeft + 1; x <= _currentGridWidthRight; x++) {
                         Vector3Int pos = new Vector3Int(x, -_currentGridHeightDown - y, 0);
                         Vector3Int deletePos = new Vector3Int(x, _currentGridHeightUp + y, 0);
                         
@@ -144,7 +148,7 @@ namespace RoundTableStudio.Core
             }
             
             if (_playerCellPosition.x >= _currentGridWidthRight - 3) { // RIGHT MAP
-                for (int y = -_currentGridHeightDown +1; y <= _currentGridHeightUp; y++)
+                for (int y = -_currentGridHeightDown + 1; y <= _currentGridHeightUp; y++)
                     for (int x = 1; x < 3; x++) {
                         Vector3Int pos = new Vector3Int(_currentGridWidthRight + x, y, 0);
                         Vector3Int deletePos = new Vector3Int(-_currentGridWidthLeft + x, y, 0);
@@ -157,8 +161,7 @@ namespace RoundTableStudio.Core
             }
             
             if (_playerCellPosition.x <= -_currentGridWidthLeft + 10) { // LEFT MAP
-                Debug.Log("left");
-                for (int y = -_currentGridHeightDown +1; y <= _currentGridHeightUp; y++) 
+                for (int y = -_currentGridHeightDown + 1; y <= _currentGridHeightUp; y++) 
                     for (int x = 0; x < 2; x++) {
                         Vector3Int pos = new Vector3Int(-_currentGridWidthLeft - x, y, 0);
                         Vector3Int deletePos = new Vector3Int(_currentGridWidthRight + x, y, 0);

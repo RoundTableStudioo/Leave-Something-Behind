@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
 using RoundTableStudio.Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace RoundTableStudio.Items {
     public class ItemManager : MonoBehaviour {
-        #region Singleton
+        #region Singleton && Initalization
 
         public static ItemManager Instance;
         
@@ -12,6 +14,11 @@ namespace RoundTableStudio.Items {
             if (Instance != null) return;
                 
             Instance = this;
+            
+            _initialBuffItems = BuffItems;
+            _initialHistoryItems = HistoryItems;
+
+            InitializeUserItems();
         }
 
         #endregion
@@ -23,7 +30,6 @@ namespace RoundTableStudio.Items {
         public List<Item> HistoryItems;
 
         // References
-        [HideInInspector]
         public PlayerManager Player;
         // Booleans
         [HideInInspector] 
@@ -36,14 +42,15 @@ namespace RoundTableStudio.Items {
         public List<Item> UserItems;
         private List<Item> _initialBuffItems;
         private List<Item> _initialHistoryItems;
-        
+
 
         private void Start() {
-            _initialBuffItems = BuffItems;
-            _initialHistoryItems = HistoryItems;
+            Player = FindObjectOfType<PlayerManager>();
+            
+            ApplyItemFunctions();
         }
 
-        public void InitializeUserItems() {
+        private void InitializeUserItems() {
             UserItems = new List<Item>();
             
             // Buffs items
@@ -63,7 +70,7 @@ namespace RoundTableStudio.Items {
             }
         }
 
-        public void ApplyItemFunctions() {
+        private void ApplyItemFunctions() {
             foreach (Item item in UserItems) {
                 item.ItemFunction();
             }
