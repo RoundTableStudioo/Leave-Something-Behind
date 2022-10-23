@@ -50,6 +50,8 @@ namespace  RoundTableStudio.Player {
         public void AddMana(){
             if(_currentMana < _maxMana)
                 _currentMana = _maxMana;
+            
+            Bar.fillAmount = _currentMana / _maxMana;
         }
     }
 }

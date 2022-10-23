@@ -669,7 +669,7 @@ RectTransform:
   - {fileID: 934701536}
   - {fileID: 2138815805}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -712,7 +712,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1154151962}
-  MinutesPerPhase: 5
+  MinutesPerPhase: 2
+  SecondsPerPhase: 30
+  SecondsCount: 0
   MinutesCount: 0
 --- !u!1 &162080106
 GameObject:
@@ -1195,7 +1197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 211199983}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 160081121}
+        m_TargetAssemblyTypeName: RoundTableStudio.UI.UIManager, Project.UI
+        m_MethodName: OnExitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &245101007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,17 +1792,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d892e6f6b254948a1cf79c1303385c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HumanEnemies:
-  - {fileID: 2420781065006214814, guid: 4fb3f4ecd08be2841bfa5a494d90c55d, type: 3}
-  ElfEnemies: []
-  GoblinEnemies:
-  - {fileID: 1338962697311811762, guid: e614d014b0bf4f441a65ec2462df5e57, type: 3}
-  OrcEnemies: []
-  MinutesToEnd: 30
-  PhasesNumber: 3
+  WaterMage: {fileID: 2420781065006214814, guid: 4fb3f4ecd08be2841bfa5a494d90c55d, type: 3}
+  FireMage: {fileID: 6797626049844399546, guid: f36da1f1ac8df2f42ae9403f4b986f07, type: 3}
+  WindMage: {fileID: 5941191349278181409, guid: 3550400abf129844ca687b18953a533a, type: 3}
+  GroundMage: {fileID: 4830412104919478842, guid: d87bf5f4c3933c04597397868a06b072, type: 3}
+  Goblin: {fileID: 1338962697311811762, guid: e614d014b0bf4f441a65ec2462df5e57, type: 3}
+  Orcs: []
+  MinutesToEnd: 15
+  PhasesNumber: 6
   MaxEnemyNumber: 25
   Timer: {fileID: 160081122}
   Map: {fileID: 1177135041}
+  EnemyCount: 0
 --- !u!4 &431319922
 Transform:
   m_ObjectHideFlags: 0
@@ -1802,7 +1817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475071466
 GameObject:
@@ -2269,7 +2284,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &725806978
 GameObject:
@@ -2300,7 +2315,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &775890109
 GameObject:
@@ -3291,7 +3306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029790955
 GameObject:
@@ -3803,7 +3818,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202915681
 GameObject:
@@ -4059,7 +4074,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Has sido traido al pasado con 6 objetos de tu tiempo. Cada uno de ellos
+  m_text: Has sido llevado al pasado con 6 objetos de tu tiempo. Cada uno de ellos
     te da una ventaja. Sin embargo, cada 3 minutos deberas dejar uno si no quieres
     desaparecer. Elige sabiamente. Tu objetivo es aguantar vivo 15 minutos.
   m_isRightToLeft: 0
@@ -4881,7 +4896,7 @@ Transform:
   - {fileID: 1491954070}
   - {fileID: 1507668909}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463592916
 GameObject:
@@ -5150,7 +5165,7 @@ GameObject:
   - component: {fileID: 1507668911}
   - component: {fileID: 1507668910}
   - component: {fileID: 1507668912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Structures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5275,52 +5290,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1 &1555708129
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1555708130}
-  - component: {fileID: 1555708132}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1555708130
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555708129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1555708132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555708129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2dc501591d52714295ebad12c4c8747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameState: 0
-  GameTime: 30
 --- !u!1 &1567212352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,7 +5338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614773401
 GameObject:
@@ -5400,7 +5369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616478071
 GameObject:
@@ -5448,7 +5417,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1616478075
 MonoBehaviour:

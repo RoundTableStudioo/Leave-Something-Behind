@@ -4,8 +4,10 @@ using RoundTableStudio.Core;
 using RoundTableStudio.Input;
 using RoundTableStudio.Shared;
 using RoundTableStudio.Items;
+using RoundTableStudio.Sound;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace RoundTableStudio.UI {
@@ -49,7 +51,9 @@ namespace RoundTableStudio.UI {
 			if (Timer.MinutesCount != _lastPickMinute)
 				_itemPicked = false;
 
-			if (Timer.MinutesCount % Timer.MinutesPerPhase == 0 && Timer.MinutesCount != 0 && !_itemPicked) {
+			if (Timer.MinutesCount % Timer.MinutesPerPhase == 0 && 
+			    Timer.SecondsPerPhase % Timer.SecondsPerPhase == 0 && 
+			    Timer.MinutesCount != 0 && !_itemPicked) {
 					HandleItemSelector();
 					_itemPicked = true;
 					_lastPickMinute = Timer.MinutesCount;
@@ -76,6 +80,13 @@ namespace RoundTableStudio.UI {
 		public void OnContinueButton() {
 			TutorialAnimator.SetTrigger(Animator.StringToHash("Close"));
 			_gameManager.SetGameState(GameStates.Started);
+		}
+
+		public void OnExitButton() {
+			SoundManager.Instance.Stop("MainTheme");
+			GameManager.Instance.SetGameState(GameStates.Menu);
+			SceneManager.LoadScene(0);
+			SoundManager.Instance.Play("MenuMusic");
 		}
 
 		private void HandleItemsImages() {

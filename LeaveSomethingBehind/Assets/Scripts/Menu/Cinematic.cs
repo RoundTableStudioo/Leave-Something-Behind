@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace RoundTableStudio.UI {
-	public class IntroductionScreen : MonoBehaviour {
+	public class Cinematic : MonoBehaviour {
 		[Header("Text fields")]
 		[Tooltip("Text that will appear")]
 		[TextArea(3, 10)] public string[] Sentences;
@@ -69,15 +69,15 @@ namespace RoundTableStudio.UI {
 			_animator.SetTrigger(Animator.StringToHash("Finish"));
 		}
 
-		public IEnumerator OnAnimationFinish() {
-			Sound.Sound sound = _soundManager.GetSound("IntroductionMusic");
+		public IEnumerator OnAnimationFinish(string musicName) {
+			Sound.Sound sound = _soundManager.GetSound(musicName);
 
 			while (sound.Source.volume > 0) {
 				sound.Source.volume -= 0.01f;
 				yield return new WaitForSeconds(0.1f);
 			}
 
-			_soundManager.Stop("IntroductionMusic");
+			_soundManager.Stop(musicName);
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 			GameManager.Instance.StartGame();
 		}

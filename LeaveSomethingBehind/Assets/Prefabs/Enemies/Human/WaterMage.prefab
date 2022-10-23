@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3662062757231620892}
   - component: {fileID: 1123801378583804162}
   - component: {fileID: 8138873823721158927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WaterMageSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 7996319573145975318}
   - component: {fileID: 7918834085507162397}
   - component: {fileID: 3902899058209398810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WaterMage
   m_TagString: Enemy
   m_Icon: {fileID: 0}

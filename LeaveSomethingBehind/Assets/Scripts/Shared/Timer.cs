@@ -7,10 +7,13 @@ namespace RoundTableStudio.Shared {
 		[Tooltip("Text that represents the timer")]
 		public TextMeshProUGUI TimerText;
 		[Tooltip("How much time a phase remains")]
-		public int MinutesPerPhase = 1;
+		public float MinutesPerPhase = 2;
+		[Tooltip("Hoy much seconds a phase remains")]
+		public float SecondsPerPhase = 30f;
 		
 		private float _timer;
-		private float _secondsCount;
+		[HideInInspector]
+		public float SecondsCount;
 		[HideInInspector]
 		public int MinutesCount;
 
@@ -28,9 +31,9 @@ namespace RoundTableStudio.Shared {
 		private void HandleTimer() {
 			_timer += Time.deltaTime;
 			MinutesCount = Mathf.FloorToInt(_timer / 60);
-			_secondsCount = Mathf.FloorToInt(_timer % 60);
+			SecondsCount = Mathf.FloorToInt(_timer % 60);
 			
-			TimerText.text = $"{MinutesCount:00}:{_secondsCount:00}";
+			TimerText.text = $"{MinutesCount:00}:{SecondsCount:00}";
 		}
 	}
 }

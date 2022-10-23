@@ -28,7 +28,7 @@ namespace RoundTableStudio.Core
         #endregion
 
         public GameStates GameState;
-        public int GameTime = 30;
+        public int GameTime = 15;
 
         public bool IsGamePaused() {
             return GameState == GameStates.Paused;

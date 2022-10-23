@@ -85,15 +85,16 @@ namespace RoundTableStudio.Enemies {
 
 		private void Die() {
 			HandleEnemyDrop();
+			FindObjectOfType<EnemyRespawn>().EnemyCount--;
 			Destroy(gameObject);
 		}
 
 		private void HandleEnemyDrop() {
-			float dropProbability = Random.Range(0, 1);
+			float dropProbability = Random.Range(0f, 1f);
 
-			if (!(dropProbability <= _DROP_PROBABILITY)) return;
+			if (dropProbability > _DROP_PROBABILITY) return;
 			
-			float potionProbability = Random.Range(0, 1);
+			float potionProbability = Random.Range(0f, 1f);
 
 			if (potionProbability <= _MANA_DROP_PROBABILITY)
 				DropManaPotion();
