@@ -5,12 +5,14 @@ using Random = UnityEngine.Random;
 
 namespace RoundTableStudio.Core
 {
-    public class GridGenerator : MonoBehaviour {
+    public class MapGenerator : MonoBehaviour {
         #region Unity Fields
         
         [Header("Unity Fields")] 
         [Tooltip("Main camera of the scene")]
         public Camera MainCamera;
+        [Tooltip("Prefab of the player")] 
+        public GameObject Player;
 
         #endregion
 
@@ -31,31 +33,24 @@ namespace RoundTableStudio.Core
         #endregion
 
         #region Density Properties
-
         
         [Space(10)]
         [Header("Density Properties")]
-        [Tooltip("Percentage of flowers around the map")]
+        [Tooltip("Percentage of flowers and rocks around the map")]
         [Range(0, 1)]
-        public float FlowerDensity;
-        [Tooltip("Percentage of rocks around the map")]
-        [Range(0, 1)] 
-        public float RockDensity;
+        public float TerrainDensity;
         [Tooltip("Percentage of trees around the map")]
         [Range(0, 1)]
         public float TreeDensity;
-        [Tooltip("Number of hays")]
-        [Range(0, 7)]
-        public int HaysNumber;
-        [Tooltip("Number of cars")] 
-        [Range(0, 7)]
-        public int CarsNumber;
-        [Tooltip("Number of lights")] 
-        [Range(0, 7)]
-        public int LightsNumbers;
-        [Tooltip("Number of towers")] 
-        [Range(0, 5)]
-        public int TowersNumber;
+        [Tooltip("Percentage of props around the map")] 
+        [Range(0, 1)]
+        public float PropDensity;
+        [Tooltip("Percentage of lights around the map")] 
+        [Range(0, 1)]
+        public int LightsDensity;
+        [Tooltip("Percentage of towers around the map")] 
+        [Range(0, 1)]
+        public int TowersDensity;
 
         #endregion
 
@@ -77,13 +72,15 @@ namespace RoundTableStudio.Core
         [Space(10)]
         [Header("Tiles")]
         [Tooltip("Tiles of the grass")]
-        public Tile[] GrassTile;
-        [Tooltip("Tiles of the rocks")]
-        public Tile[] RockTiles;
+        public Tile[] TerrainTiles;
         [Tooltip("Tiles of the trees")]
         public Tile[] TreeTiles;
-        [Tooltip("Tiles of the props")]
-        public Tile[] PropsTiles;
+        [Tooltip("Tiles of the props")] 
+        public Tile[] PropTiles;
+        [Tooltip("Tiles of the light structure")]
+        public Tile[] LightTile;
+        [Tooltip("Tiles of the tower structure")]
+        public Tile[] TowerTile;
 
         #endregion
 
@@ -100,7 +97,7 @@ namespace RoundTableStudio.Core
 
         #endregion
 
-        public void Start() {
+        public void OnEnable() {
             GenerateRandomGrid();
             ColorGrid();
 
@@ -109,15 +106,17 @@ namespace RoundTableStudio.Core
             
             _currentGridWidthRight = GridWidth / 2;
             _currentGridWidthLeft = GridWidth / 2;
+            
+            RespawnPlayer();
         }
 
         private void Update() {
-            PlayerCellPosition =  GrassTileMap.WorldToCell(GameManager.Instance.Player.transform.position);
+            PlayerCellPosition =  GrassTileMap.WorldToCell(Player.transform.position);
             
             InfiniteGeneration();
         }
 
-        public Cell GetGridCell(int x, int y) {
+        private Cell GetGridCell(int x, int y) {
             return _grid[x, y];
         }
 
@@ -179,7 +178,7 @@ namespace RoundTableStudio.Core
 
         private void GenerateTerrain(Vector3Int pos, Vector3Int deletePos) {
             // Generation
-            GrassTileMap.SetTile(pos, GrassTile[0]);
+            GrassTileMap.SetTile(pos, TerrainTiles[0]);
             
             // Delete
             GrassTileMap.SetTile(deletePos, null);
@@ -203,15 +202,10 @@ namespace RoundTableStudio.Core
 
                     if (x != 0 && y != 0) {
                         if (!_grid[x, y - 1].IsTreeBottom) {
-                            cell.IsFlower = flowerNoiseValue < FlowerDensity;
-
-                            if (!cell.IsFlower) {
-                                cell.IsRock = rockNoiseValue < RockDensity;
-                            }
+                            cell.IsTerrain = flowerNoiseValue < TerrainDensity;
                         }
 
-                        if (!cell.IsFlower && !cell.IsRock
-                                           &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
+                        if (!cell.IsTerrain &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
                             cell.IsTreeBottom = treeNoiseValue < TreeDensity;
 
                         if (cell.IsTreeBottom || cell.IsProp)
@@ -237,29 +231,67 @@ namespace RoundTableStudio.Core
                     if (rotation == -1) rotationAmount = -90;
                     else if (rotation == 1) rotationAmount = 90;
 
-                    if (cell.IsFlower) {
-                        int flowerNum = Random.Range(1, GrassTile.Length - 1);
+                    if (cell.IsTerrain) {
                         
-                        DecorationTileMap.SetTile(pos, GrassTile[flowerNum]);
+                        int terrainNum = Random.Range(1, TerrainTiles.Length);
+                        DecorationTileMap.SetTile(pos, TerrainTiles[terrainNum]);
                         DecorationTileMap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0f, 0f, rotationAmount)));
+                        
                     }
-                    if (cell.IsRock) {
-                        int rockNum = Random.Range(0, RockTiles.Length - 1);
-
-                        DecorationTileMap.SetTile(pos, RockTiles[rockNum]);
-                        DecorationTileMap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0f, 0f, rotationAmount)));
-                    }
-                    if (cell.IsTreeBottom) {
+                    else if (cell.IsTreeBottom) {
                         if (x != GridWidth - 1 && y != GridHeight - 1) {
-
+                            
                             StructureTileMap.SetTile(pos, TreeTiles[0]);
-
                             StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), TreeTiles[1]);
                             _grid[x, y + 1].IsTreeTop = true;
+                            
                         }
                     }
+                    else if (cell.IsLightBottom) {
+                        if (x != GridWidth - 1 && y != GridHeight - 1) {
+                            
+                            StructureTileMap.SetTile(pos, LightTile[0]);
+                            StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), LightTile[1]);
+                            _grid[x, y + 1].IsLightTop = true;
+                            
+                        }
+                    }
+                    else if (cell.IsTowerBottom) {
+                        if (x != GridWidth - 1 && y != GridHeight - 1) {
+                            
+                            StructureTileMap.SetTile(pos, TowerTile[0]);
+                            StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), TowerTile[0]);
+                            _grid[x, y + 1].IsTowerTop = true;
+                            
+                        }
+                    }
+                    else if (cell.IsProp) {
+                        int propNum = Random.Range(0, PropTiles.Length);
+                        DecorationTileMap.SetTile(pos, PropTiles[propNum]);
+                    }
 
-                    GrassTileMap.SetTile(pos, GrassTile[0]);
+                    GrassTileMap.SetTile(pos, TerrainTiles[0]);
+                }
+            }
+        }
+        
+        private void RespawnPlayer() {
+            bool placed = false;
+
+            while (!placed) {
+                // TO DO - Bug: Look [x-1, y-1], [x-1, y+1]... Solve with a while
+                int x = Random.Range(GridWidth / 2 - 5, GridWidth / 2 + 5);
+                int y = GridHeight / 2;
+
+                if (GetGridCell(x, y).IsEmpty && 
+                    GetGridCell(x + 1, y).IsEmpty && GetGridCell(x - 1, y).IsEmpty
+                    && GetGridCell(x, y + 1).IsEmpty && GetGridCell(x, y - 1).IsEmpty
+                    && GetGridCell(x + 1, y + 1).IsEmpty && GetGridCell(x - 1, y - 1).IsEmpty
+                    && GetGridCell(x + 1, y - 1).IsEmpty && GetGridCell(x - 1, y + 1).IsEmpty)
+                {
+                    Vector3Int pos = new Vector3Int(-x + GridWidth / 2, -y + GridHeight / 2, 0);
+                    Player = Instantiate(Player, pos, Quaternion.identity);
+                    placed = true;
                 }
             }
         }

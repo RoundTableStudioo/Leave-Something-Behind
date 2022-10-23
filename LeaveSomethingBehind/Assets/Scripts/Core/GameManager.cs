@@ -3,6 +3,12 @@ using UnityEngine;
 
 namespace RoundTableStudio.Core
 {
+    public enum GameStates {
+        Menu,
+        Started,
+        Paused
+    }
+    
     public class GameManager : MonoBehaviour
     {
         #region Singleton
@@ -13,42 +19,25 @@ namespace RoundTableStudio.Core
             if (Instance != null) return;
 
             Instance = this;
+            
+            DontDestroyOnLoad(gameObject);
         }
 
         #endregion
 
-        [Header("References")]
-        [Tooltip("Player Prefab")]
-        public GameObject Player;
-        
-        private GridGenerator _map;
+        public GameStates GameState;
 
-        private void Start() {
-            _map = GetComponent<GridGenerator>();
-
-            RespawnPlayer();
-            SoundManager.Instance.Play("MainTheme");
+        public bool IsGamePaused() {
+            return GameState == GameStates.Paused;
         }
 
-        private void RespawnPlayer() {
-            bool placed = false;
+        public void SetGameState(GameStates state) {
+            GameState = state;
+        }
 
-            while (!placed) {
-                // TO DO - Bug: Look [x-1, y-1], [x-1, y+1]... Solve with a while
-                int x = Random.Range(_map.GridWidth / 2 - 5, _map.GridWidth / 2 + 5);
-                int y = _map.GridHeight / 2;
-
-                if (_map.GetGridCell(x, y).IsEmpty && 
-                    _map.GetGridCell(x + 1, y).IsEmpty && _map.GetGridCell(x - 1, y).IsEmpty
-                    && _map.GetGridCell(x, y + 1).IsEmpty && _map.GetGridCell(x, y - 1).IsEmpty
-                    && _map.GetGridCell(x + 1, y + 1).IsEmpty && _map.GetGridCell(x - 1, y - 1).IsEmpty
-                    && _map.GetGridCell(x + 1, y - 1).IsEmpty && _map.GetGridCell(x - 1, y + 1).IsEmpty)
-                {
-                    Vector3Int pos = new Vector3Int(-x + _map.GridWidth / 2, -y + _map.GridHeight / 2, 0);
-                    Player = Instantiate(Player, pos, Quaternion.identity);
-                    placed = true;
-                }
-            }
+        public void StartGame() {
+            GameState = GameStates.Started;
+            SoundManager.Instance.Play("MainTheme");
         }
 
        

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using RoundTableStudio.Shared;
+using RoundTableStudio.Sound;
 using UnityEngine.EventSystems;
 
 namespace RoundTableStudio.Player {
@@ -56,6 +57,7 @@ namespace RoundTableStudio.Player {
 			if (_manager.Input.RangeAttackInput && _rangeCooldownTick <= 0) {
 				if(_manager.Stamina.UseStamina(RangeStaminaCost)) {
 					Shoot();
+					SoundManager.Instance.Play("Arrow");
 					_rangeCooldownTick = RangeCooldown;
 				}
 			}
@@ -63,6 +65,7 @@ namespace RoundTableStudio.Player {
 			if (_manager.Input.MagicAttackInput && _magicCooldownTick <= 0) {
 				if(_manager.Mana.UseMana(ManaCost)) {
 					Cast();
+					SoundManager.Instance.Play("Magic");
 					_magicCooldownTick = MagicCooldown;
 				}
 			}

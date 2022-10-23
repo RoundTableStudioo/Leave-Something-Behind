@@ -12,7 +12,7 @@ namespace RoundTableStudio.Player {
         private Vector2 _movement;
         private Vector2 _mousePosition;
         
-        private void OnEnable() {
+        private void Start() {
             _rb = GetComponent<Rigidbody2D>();
             _manager = GetComponent<PlayerManager>();
         }

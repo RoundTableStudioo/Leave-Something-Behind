@@ -1,4 +1,4 @@
-using System;
+using RoundTableStudio.Core;
 using UnityEngine;
 using TMPro;
 
@@ -15,7 +15,7 @@ namespace RoundTableStudio.Shared {
 		public int MinutesCount;
 
 		private void Update() {
-			if (GameStates.Instance.GetPauseState()) {
+			if (GameManager.Instance.IsGamePaused()) {
 				return;
 			}
 			

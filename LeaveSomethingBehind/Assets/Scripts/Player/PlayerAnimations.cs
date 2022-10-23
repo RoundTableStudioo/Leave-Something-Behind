@@ -12,7 +12,7 @@ namespace RoundTableStudio {
 		private Vector2 _moveDirection;
 		private Vector2 _lastMoveDirection;
 
-		private void OnEnable() {
+		private void Start() {
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_animator = GetComponent<Animator>();
 			_input = InputHandler.Instance;

@@ -1,6 +1,8 @@
+using System;
 using RoundTableStudio.Input;
 using RoundTableStudio.Shared;
 using System.Collections;
+using RoundTableStudio.Core;
 using UnityEngine;
 
 namespace RoundTableStudio.Player
@@ -25,9 +27,8 @@ namespace RoundTableStudio.Player
         
         private const float _IMMUNE_TIME = 1f;
         private float _lastImmune;
-
-        public void OnEnable() {
-            Input = InputHandler.Instance;
+        
+        private void OnEnable() {
             Mana = GetComponent<Mana>();
             Stamina = GetComponent<Stamina>();
             Life = GetComponent<Life>();
@@ -38,8 +39,12 @@ namespace RoundTableStudio.Player
             _animations = GetComponentInChildren<PlayerAnimations>();
         }
 
+        private void Start() {
+            Input = InputHandler.Instance;
+        }
+
         public void Update() {
-            if (GameStates.Instance.GetPauseState()) return;
+            if (GameManager.Instance.IsGamePaused()) return;
             
             _playerMovement.TickUpdate();
             Input.TickUpdate();
@@ -48,13 +53,13 @@ namespace RoundTableStudio.Player
         }
 
         public void FixedUpdate() {
-            if (GameStates.Instance.GetPauseState()) return;
+            if (GameManager.Instance.IsGamePaused()) return;
             
             _playerMovement.FixedTickUpdate();
         }
 
         public void LateUpdate() {
-            if (GameStates.Instance.GetPauseState()) return;
+            if (GameManager.Instance.IsGamePaused()) return;
             
             Input.LateTickUpdate();
         }

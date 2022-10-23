@@ -23,20 +23,22 @@ namespace RoundTableStudio.Core {
 		public int PhasesNumber = 3;
 		[Tooltip("Max enemy number")] 
 		public int MaxEnemyNumber = 25;
+		[Space(10)]
+		[Header("Unity fields")]
+		[Tooltip("Timer game object")]
+		public Timer Timer;
+		[Tooltip("Map game object")]
+		public MapGenerator Map;
+		
 		
 		private int _currentPhase;
 		private int _minutesPerWave;
 		private int _minutesPerPhase;
 		private int _enemyCount;
-		private Timer _timer;
-		private GridGenerator _grid;
 		private Vector3Int _playerPosition;
 		private bool _respawning;
 
 		private void Start() {
-			_timer = GetComponent<Timer>();
-			_grid = GetComponent<GridGenerator>();
-			
 			_currentPhase = 1;
 			_minutesPerPhase = MinutesToEnd / PhasesNumber;
 			_minutesPerWave = _minutesPerPhase / 2;
@@ -46,20 +48,20 @@ namespace RoundTableStudio.Core {
 		}
 
 		private void Update() {
-			_playerPosition = _grid.PlayerCellPosition;
+			_playerPosition = Map.PlayerCellPosition;
 			
 			if(!_respawning && _enemyCount < MaxEnemyNumber)
 				RespawnEnemies();
 		}
 
 		private void RespawnEnemies() {
-			if (_timer.MinutesCount == _minutesPerPhase * _currentPhase) {
+			if (Timer.MinutesCount == _minutesPerPhase * _currentPhase) {
 				_currentPhase++;
 			}
 			
 			switch (_currentPhase) {
 				case 1:
-					if (_timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 5) {
+					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 5) {
 						_respawning = true;
 						StartCoroutine(SpawnHuman(3, 2));
 						StartCoroutine(SpawnGoblin(4, 4));
@@ -69,7 +71,7 @@ namespace RoundTableStudio.Core {
 					}
 					break;
 				case 2:
-					if (_timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 15) {
+					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 15) {
 						
 					}
 					else {
@@ -77,7 +79,7 @@ namespace RoundTableStudio.Core {
 					}
 					break;
 				case 3:
-					if (_timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 25) {
+					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 25) {
 						
 					}
 					else {

@@ -30,6 +30,8 @@ namespace RoundTableStudio.Input {
 			if (Instance != null) return;
 
 			Instance = this;
+			
+			Control.Enable();
 		}
 
 		public void TickUpdate() {
@@ -53,10 +55,6 @@ namespace RoundTableStudio.Input {
 
 		private void HandleMagicInput() {
 			Control.Interaction.RightMouse.performed += i => MagicAttackInput = true;
-		}
-
-		private void OnEnable() {
-			Control.Enable();
 		}
 
 		private void OnDisable() {

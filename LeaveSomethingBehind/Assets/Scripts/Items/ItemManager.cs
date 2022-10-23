@@ -12,7 +12,7 @@ namespace RoundTableStudio.Items {
         
         private List<Item> _initialItems;
         
-        private void Awake() {
+        private void OnEnable() {
             if (Instance != null) return;
                 
             Instance = this;

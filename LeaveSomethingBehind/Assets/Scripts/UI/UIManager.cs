@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using RoundTableStudio.Core;
 using RoundTableStudio.Input;
 using TMPro;
 using UnityEngine;
@@ -8,14 +9,6 @@ using RoundTableStudio.Items;
 
 namespace RoundTableStudio.UI {
 	public class UIManager : MonoBehaviour {
-		public static UIManager Instance;
-		
-		private void Awake() {
-			if (Instance != null) return;
-			
-			Instance = this;
-		}
-
 		[Header("Images & Text")]
 		[Tooltip("Images representing the objects that you have")]
 		public List<Image> ObjectImages;
@@ -31,7 +24,7 @@ namespace RoundTableStudio.UI {
 
 		private ItemButton[] _buttons;
 		private ItemManager _itemManager;
-		private GameStates _gameStates;
+		private GameManager _gameManager;
 
 		private bool _itemPicked;
 		private int _lastPickMinute;
@@ -41,7 +34,7 @@ namespace RoundTableStudio.UI {
 		private void Start() {
 			_buttons = GetComponentsInChildren<ItemButton>(true);
 			_itemManager = ItemManager.Instance;
-			_gameStates = GameStates.Instance;
+			_gameManager = GameManager.Instance;
 			
 			InputHandler.Instance.Control.Interaction.Escape.performed += i => HandlePauseMenu();
 			_onPause = false;
@@ -68,13 +61,15 @@ namespace RoundTableStudio.UI {
 			if (_onPause) {
 				PauseMenuAnimator.SetBool(Animator.StringToHash("Pause"), false);
 				_onPause = false;
+				_gameManager.SetGameState(GameStates.Started);
 			}
 			else {
 				PauseMenuAnimator.SetBool(Animator.StringToHash("Pause"), true);
 				_onPause = true;
+				_gameManager.SetGameState(GameStates.Paused);
 			}
 
-			_gameStates.SetPauseState(_onPause);
+			
 		}
 
 		private void HandleItemsImages() {
@@ -96,7 +91,7 @@ namespace RoundTableStudio.UI {
 			_buttons[0].SetContainedItem(_itemManager.UserItems[first]);
 			_buttons[1].SetContainedItem(_itemManager.UserItems[second]);
 
-			_gameStates.SetPauseState(true);
+			_gameManager.SetGameState(GameStates.Paused);
 		}
 	}
 	

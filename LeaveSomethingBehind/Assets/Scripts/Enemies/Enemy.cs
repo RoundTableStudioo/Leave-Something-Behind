@@ -1,4 +1,5 @@
 using System.Collections;
+using RoundTableStudio.Core;
 using UnityEngine;
 using RoundTableStudio.Shared;
 using UnityEngine.UI;
@@ -49,7 +50,7 @@ namespace RoundTableStudio.Enemies {
 		}
 
 		private void FixedUpdate() {
-			if (GameStates.Instance.GetPauseState()) return;
+			if (GameManager.Instance.IsGamePaused()) return;
 			
 			FollowPlayer();
 		}
