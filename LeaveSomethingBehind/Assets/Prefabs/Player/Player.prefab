@@ -1107,8 +1107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stats:
     MaxHp: 15
-    Damage: 2
-    Speed: 2
+    Damage: 0
+    Speed: 2.5
     PhysicalDefense: 0
     RangeDefense: 0
     MagicDefense: 0

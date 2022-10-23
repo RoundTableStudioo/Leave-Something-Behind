@@ -46,6 +46,8 @@ namespace RoundTableStudio.Core {
 		}
 
 		private void Update() {
+			_playerPosition = _grid.PlayerCellPosition;
+			
 			if(!_respawning && _enemyCount < MaxEnemyNumber)
 				RespawnEnemies();
 		}
@@ -59,8 +61,8 @@ namespace RoundTableStudio.Core {
 				case 1:
 					if (_timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 5) {
 						_respawning = true;
-						StartCoroutine(SpawnHuman(3, 15));
-						StartCoroutine(SpawnGoblin(4, 10));
+						StartCoroutine(SpawnHuman(3, 2));
+						StartCoroutine(SpawnGoblin(4, 4));
 					}
 					else {
 						
@@ -92,10 +94,9 @@ namespace RoundTableStudio.Core {
 				int randomXPosition, randomYPosition;
 				
 				do {
-					_playerPosition = _grid.PlayerCellPosition;
 					randomXPosition = Random.Range(-1, 2) * 6 + _playerPosition.x;
 					randomYPosition = Random.Range(-1, 2) * 6 + _playerPosition.y;
-				} while (randomXPosition == 0 && randomYPosition == 0);
+				} while (randomXPosition == _playerPosition.x && randomYPosition == _playerPosition.y);
 
 				Vector3 pos = new Vector3(randomXPosition, randomYPosition);
 
@@ -114,10 +115,9 @@ namespace RoundTableStudio.Core {
 				int randomXPosition, randomYPosition;
 				
 				do {
-					_playerPosition = _grid.PlayerCellPosition;
 					randomXPosition = Random.Range(-1, 2) * 6 + _playerPosition.x;
 					randomYPosition = Random.Range(-1, 2) * 6 + _playerPosition.y;
-				} while (randomXPosition == 0 && randomYPosition == 0);
+				} while (randomXPosition == _playerPosition.x && randomYPosition == _playerPosition.y);
 
 				Vector3 pos = new Vector3(randomXPosition, randomYPosition);
 

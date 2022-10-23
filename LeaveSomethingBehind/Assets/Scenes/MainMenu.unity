@@ -1762,9 +1762,6 @@ MonoBehaviour:
   GeneralMixerGroup: {fileID: 24300002, guid: f12a1b7a5f9cf07479c1f2d16048923f, type: 2}
   MusicMixerGroup: {fileID: 7722820649023035696, guid: f12a1b7a5f9cf07479c1f2d16048923f, type: 2}
   SoundEffectMixerGroup: {fileID: 407945522846951296, guid: f12a1b7a5f9cf07479c1f2d16048923f, type: 2}
-  GeneralVolume: 0
-  MusicVolume: 0
-  SoundEffectsVolume: 0
   Sounds:
   - Name: MenuMusic
     Type: 0
@@ -1784,7 +1781,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Name: MainTheme
     Type: 0
-    Volume: 1
+    Volume: 0.2
     Pitch: 1
     Loop: 1
     PlayOnAwake: 0
@@ -1822,6 +1819,9 @@ MonoBehaviour:
     PlayOnAwake: 0
     Audio: {fileID: 8300000, guid: db88feed48bc8484d918407406b35448, type: 3}
     Source: {fileID: 0}
+  GeneralVolume: 0
+  MusicVolume: 0
+  SoundEffectsVolume: 0
 --- !u!4 &519154626
 Transform:
   m_ObjectHideFlags: 0
@@ -3152,8 +3152,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RoundTableStudio.UI.Menu, Project.UI
+      - m_Target: {fileID: 1920124969}
+        m_TargetAssemblyTypeName: RoundTableStudio.Menu.Menu, Project.Menu
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -5405,7 +5405,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4caab23bf6a22e5499647fbfcd036f5a, type: 2}
   m_sharedMaterial: {fileID: 3795884320774758189, guid: 4caab23bf6a22e5499647fbfcd036f5a, type: 2}

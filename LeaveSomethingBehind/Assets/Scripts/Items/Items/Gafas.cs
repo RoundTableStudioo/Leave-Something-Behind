@@ -4,11 +4,11 @@ namespace RoundTableStudio.Items {
 	[CreateAssetMenu(fileName = "Gafas", menuName = "Items/Gafas")]
 	public class Gafas : Item {
 		public override void ItemFunction() {
-			base.ItemFunction();
+			ItemManager.Instance.Player.Stats.RangeDamage += 2;
 		}
 
 		public override void ReverseItemFunction() {
-			base.ReverseItemFunction();
+			
 		}
 	}
 }

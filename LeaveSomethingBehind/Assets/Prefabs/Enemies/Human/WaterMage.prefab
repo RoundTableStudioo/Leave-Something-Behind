@@ -176,8 +176,10 @@ MonoBehaviour:
   Stats:
     MaxHp: 6
     Damage: 3
-    Speed: 0.5
+    Speed: 0.75
   PushForce: 50
+  ManaPotion: {fileID: 6378672115787000438, guid: e3e76012fe8caf54791ab26d03913f57, type: 3}
+  LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
 --- !u!70 &3902899058209398810
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

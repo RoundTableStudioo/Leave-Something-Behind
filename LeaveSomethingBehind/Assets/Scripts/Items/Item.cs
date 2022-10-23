@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RoundTableStudio.Items
 {
-    public class Item : ScriptableObject {
+    public abstract class Item : ScriptableObject {
         [Header("General")]
         [Tooltip("Icon of the item shown at the UI")]
         public Sprite Icon;
@@ -14,12 +14,8 @@ namespace RoundTableStudio.Items
         [Tooltip("What the item does")]
         public string TechnicalDescription;
 
-        public virtual void ItemFunction() {
-            Debug.LogWarning("TO DO - Implement function on " + Name);
-        }
+        public abstract void ItemFunction();
 
-        public virtual void ReverseItemFunction() {
-            Debug.LogWarning("TO DO - Implement reverse item function on " + Name);
-        }
+        public abstract void ReverseItemFunction();
     }
 }

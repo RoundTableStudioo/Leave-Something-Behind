@@ -189,11 +189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2ff4bc3142b9d49a12fb91067cbd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ContainedItem: {fileID: 0}
   ItemImage: {fileID: 1311411055}
   NameText: {fileID: 869826741}
   DescriptionText: {fileID: 843341046}
   TechnicalDescriptionText: {fileID: 806806661}
+  ContainedItem: {fileID: 0}
 --- !u!1 &61777914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,11 +1464,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2ff4bc3142b9d49a12fb91067cbd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ContainedItem: {fileID: 0}
   ItemImage: {fileID: 124668987}
   NameText: {fileID: 314084701}
   DescriptionText: {fileID: 1732385296}
   TechnicalDescriptionText: {fileID: 275307946}
+  ContainedItem: {fileID: 0}
 --- !u!1 &475071466
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,7 +3849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355a4d542064be24292de6f013245760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuffItems:
+  Items:
   - {fileID: 11400000, guid: a1ce198479e220b4abc253b6e20e0860, type: 2}
   - {fileID: 11400000, guid: f4e1239da656e8c44acc335cb4acc04f, type: 2}
   - {fileID: 11400000, guid: 55d34239b70f2a34da32dae95b81e451, type: 2}
@@ -3858,11 +3858,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9691ab26e2fa85c4d86ed52d72a5d856, type: 2}
   - {fileID: 11400000, guid: 5d3baa90c8f2df6458dcd9570635b69f, type: 2}
   - {fileID: 11400000, guid: bcf247ea2e156d44fa856b9713af97d9, type: 2}
+  - {fileID: 11400000, guid: e58f9d5b8c3afd94f915caebeb685a3b, type: 2}
+  - {fileID: 11400000, guid: 21195de144483374e846693144e9af00, type: 2}
   - {fileID: 11400000, guid: 2680fba0cab33af44b25aaa755b32215, type: 2}
   - {fileID: 11400000, guid: 137433b4469a7f248b4d579bc3f55b7e, type: 2}
-  HistoryItems:
-  - {fileID: 11400000, guid: 21195de144483374e846693144e9af00, type: 2}
-  - {fileID: 11400000, guid: e58f9d5b8c3afd94f915caebeb685a3b, type: 2}
   Player: {fileID: 0}
   ShowEnemyHealth: 0
   UserItems: []
@@ -3909,7 +3908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1154151962}
-  MinutesPerPhase: 1
+  MinutesPerPhase: 5
   MinutesCount: 0
 --- !u!114 &1555708137
 MonoBehaviour:

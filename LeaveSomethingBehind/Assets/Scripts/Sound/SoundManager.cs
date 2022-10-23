@@ -17,6 +17,8 @@ namespace RoundTableStudio.Sound {
 		private AudioMixerGroup MusicMixerGroup;
 		[SerializeField]
 		private AudioMixerGroup SoundEffectMixerGroup;
+		[SerializeField]
+		private Sound[] Sounds;
 
 		[HideInInspector] 
 		public float GeneralVolume;
@@ -25,8 +27,6 @@ namespace RoundTableStudio.Sound {
 		[HideInInspector] 
 		public float SoundEffectsVolume;
 
-		[SerializeField]
-		private Sound[] Sounds;
 
 		private void Awake() {
 			if (Instance != null) return;
@@ -41,14 +41,16 @@ namespace RoundTableStudio.Sound {
 				s.Source.volume = s.Volume;
 				s.Source.pitch = s.Pitch;
 
-				if (s.Type == AudioType.Music)
+				if (s.Type == AudioType.Music)	
 					s.Source.outputAudioMixerGroup = MusicMixerGroup;
 				else if (s.Type == AudioType.SoundEffect)
 					s.Source.outputAudioMixerGroup = SoundEffectMixerGroup;
 
-				if (!s.PlayOnAwake) return;
+				s.Source.loop = s.Loop;
 
-				s.Source.Play();
+				if (s.PlayOnAwake) {
+					s.Source.Play();
+				}
 			}
 		}
 

@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 namespace RoundTableStudio.UI {
 	public class ItemButton : MonoBehaviour {
-		public Item ContainedItem;
 		public Image ItemImage;
 		public TextMeshProUGUI NameText;
 		public TextMeshProUGUI DescriptionText;
 		public TextMeshProUGUI TechnicalDescriptionText;
 
+		[HideInInspector]
+		public Item ContainedItem;
 		private ItemManager _itemManager;
 		private UIManager _ui;
 
