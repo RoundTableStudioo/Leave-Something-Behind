@@ -1,3 +1,4 @@
+using System;
 using RoundTableStudio.Sound;
 using UnityEngine;
 
@@ -6,7 +7,8 @@ namespace RoundTableStudio.Core
     public enum GameStates {
         Menu,
         Started,
-        Paused
+        Paused,
+        Ended
     }
     
     public class GameManager : MonoBehaviour
@@ -26,6 +28,7 @@ namespace RoundTableStudio.Core
         #endregion
 
         public GameStates GameState;
+        public int GameTime = 30;
 
         public bool IsGamePaused() {
             return GameState == GameStates.Paused;
@@ -36,10 +39,13 @@ namespace RoundTableStudio.Core
         }
 
         public void StartGame() {
-            GameState = GameStates.Started;
+            GameState = GameStates.Paused;
             SoundManager.Instance.Play("MainTheme");
         }
 
-       
+        public void EndGame() {
+            GameState = GameStates.Ended;
+            Debug.Log("End the game");
+        }
     }
 }

@@ -20,6 +20,9 @@ namespace RoundTableStudio.Shared {
 			}
 			
 			HandleTimer();
+			
+			if(MinutesCount == GameManager.Instance.GameTime)
+				GameManager.Instance.EndGame();
 		}
 
 		private void HandleTimer() {

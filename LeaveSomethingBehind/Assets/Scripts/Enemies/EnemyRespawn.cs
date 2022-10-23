@@ -49,9 +49,11 @@ namespace RoundTableStudio.Core {
 
 		private void Update() {
 			_playerPosition = Map.PlayerCellPosition;
-			
-			if(!_respawning && _enemyCount < MaxEnemyNumber)
+
+			if (!_respawning && _enemyCount < MaxEnemyNumber) {
+				_respawning = true;
 				RespawnEnemies();
+			}
 		}
 
 		private void RespawnEnemies() {
@@ -62,12 +64,12 @@ namespace RoundTableStudio.Core {
 			switch (_currentPhase) {
 				case 1:
 					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 5) {
-						_respawning = true;
 						StartCoroutine(SpawnHuman(3, 2));
 						StartCoroutine(SpawnGoblin(4, 4));
 					}
 					else {
-						
+						StartCoroutine(SpawnGoblin(4, 3));
+						StartCoroutine(SpawnOrc(2, 10));
 					}
 					break;
 				case 2:

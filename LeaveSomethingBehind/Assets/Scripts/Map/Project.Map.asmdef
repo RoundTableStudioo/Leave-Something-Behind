@@ -1,3 +1,16 @@
 {
-	"name": "Project.Map"
+    "name": "Project.Map",
+    "rootNamespace": "",
+    "references": [
+        "GUID:23b29949f39c5d74c84795b06211a83a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

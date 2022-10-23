@@ -1,7 +1,6 @@
-using System;
+using RoundTableStudio.Shared;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Random = UnityEngine.Random;
 
 namespace RoundTableStudio.Core
 {
@@ -13,6 +12,8 @@ namespace RoundTableStudio.Core
         public Camera MainCamera;
         [Tooltip("Prefab of the player")] 
         public GameObject Player;
+        [Tooltip("Timer of the game")] 
+        public Timer Timer;
 
         #endregion
 
@@ -47,10 +48,10 @@ namespace RoundTableStudio.Core
         public float PropDensity;
         [Tooltip("Percentage of lights around the map")] 
         [Range(0, 1)]
-        public int LightsDensity;
+        public float LightsDensity;
         [Tooltip("Percentage of towers around the map")] 
         [Range(0, 1)]
-        public int TowersDensity;
+        public float TowersDensity;
 
         #endregion
 
@@ -64,7 +65,7 @@ namespace RoundTableStudio.Core
         public Tilemap DecorationTileMap;
         [Tooltip("Tilemap where the structures will be drawn")]
         public Tilemap StructureTileMap;
-        
+
         #endregion
 
         #region Tiles
@@ -81,6 +82,8 @@ namespace RoundTableStudio.Core
         public Tile[] LightTile;
         [Tooltip("Tiles of the tower structure")]
         public Tile[] TowerTile;
+        [Tooltip("Tiles of the corruption")]
+        public Tile[] CorruptionTiles;
 
         #endregion
 
@@ -95,6 +98,9 @@ namespace RoundTableStudio.Core
         private int _currentGridWidthRight;
         private int _currentGridWidthLeft;
 
+        private bool _corrupted;
+        private int _lastMinute;
+
         #endregion
 
         public void OnEnable() {
@@ -107,6 +113,8 @@ namespace RoundTableStudio.Core
             _currentGridWidthRight = GridWidth / 2;
             _currentGridWidthLeft = GridWidth / 2;
             
+            _corrupted = false;
+
             RespawnPlayer();
         }
 
@@ -114,6 +122,15 @@ namespace RoundTableStudio.Core
             PlayerCellPosition =  GrassTileMap.WorldToCell(Player.transform.position);
             
             InfiniteGeneration();
+
+            if (_lastMinute != Timer.MinutesCount)
+                _corrupted = false;
+
+            if (Timer.MinutesCount % 1 == 0 && Timer.MinutesCount != 0 && !_corrupted) {
+                CorruptTerrain();
+                _corrupted = true;
+                _lastMinute = Timer.MinutesCount;
+            }
         }
 
         private Cell GetGridCell(int x, int y) {
@@ -123,7 +140,7 @@ namespace RoundTableStudio.Core
         private void InfiniteGeneration() {
             if (PlayerCellPosition.y >= _currentGridHeightUp - 3) { // UPPER MAP
                 for (int y = 1; y < 3; y++) 
-                    for (int x = -_currentGridWidthLeft + 1; x <= _currentGridWidthRight +1; x++) {
+                    for (int x = -_currentGridWidthLeft + 1; x <= _currentGridWidthRight + 1; x++) {
                         Vector3Int pos = new Vector3Int(x, _currentGridHeightUp + y, 0);
                         Vector3Int deletePos = new Vector3Int(x, -_currentGridHeightDown + y, 0);
                         
@@ -135,7 +152,7 @@ namespace RoundTableStudio.Core
             
             if (PlayerCellPosition.y <= -_currentGridHeightDown + 3) { // LOWER MAP
                 for(int y = 0; y < 2; y++)
-                    for (int x = -_currentGridWidthLeft + 1; x <= _currentGridWidthRight +1; x++) {
+                    for (int x = -_currentGridWidthLeft + 1; x <= _currentGridWidthRight + 1; x++) {
                         Vector3Int pos = new Vector3Int(x, -_currentGridHeightDown - y, 0);
                         Vector3Int deletePos = new Vector3Int(x, _currentGridHeightUp + y, 0);
                         
@@ -148,7 +165,7 @@ namespace RoundTableStudio.Core
             }
             
             if (PlayerCellPosition.x >= _currentGridWidthRight - 3) { // RIGHT MAP
-                for (int y = -_currentGridHeightDown + 1; y <= _currentGridHeightUp +1; y++)
+                for (int y = -_currentGridHeightDown + 1; y <= _currentGridHeightUp + 1; y++)
                     for (int x = 1; x < 3; x++) {
                         Vector3Int pos = new Vector3Int(_currentGridWidthRight + x, y, 0);
                         Vector3Int deletePos = new Vector3Int(-_currentGridWidthLeft + x, y, 0);
@@ -161,7 +178,7 @@ namespace RoundTableStudio.Core
             }
             
             if (PlayerCellPosition.x <= -_currentGridWidthLeft + 3) { // LEFT MAP
-                for (int y = -_currentGridHeightDown + 1; y <= _currentGridHeightUp +1; y++) 
+                for (int y = -_currentGridHeightDown + 1; y <= _currentGridHeightUp + 1; y++) 
                     for (int x = 0; x < 2; x++) {
                         Vector3Int pos = new Vector3Int(-_currentGridWidthLeft - x, y, 0);
                         Vector3Int deletePos = new Vector3Int(_currentGridWidthRight + x, y, 0);
@@ -186,6 +203,15 @@ namespace RoundTableStudio.Core
             StructureTileMap.SetTile(deletePos, null);
         }
 
+        private void CorruptTerrain() {
+            bool corrupted = false;
+            const int maxCorruptedTiles = 1000;
+            const float corruptProbability = 0.1f;
+            Vector3 corruptionBegin = new Vector3(PlayerCellPosition.x + 10, PlayerCellPosition.y + 10);
+
+            int corruptedTiles = 0;
+        }
+
         private void GenerateRandomGrid() {
             _grid = new Cell[GridWidth, GridHeight];
             float xOffset = Random.Range(-10000f, 10000f);
@@ -193,25 +219,62 @@ namespace RoundTableStudio.Core
             
             for (int y = 0; y < GridHeight; y++) {
                 for (int x = 0; x < GridWidth; x++) {
-
-                    float flowerNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y * Scale + yOffset);
-                    float rockNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y + Scale * yOffset);
-                    float treeNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y * Scale * yOffset);
-
                     Cell cell = new Cell();
 
                     if (x != 0 && y != 0) {
-                        if (!_grid[x, y - 1].IsTreeBottom) {
-                            cell.IsTerrain = flowerNoiseValue < TerrainDensity;
-                        }
+                        // Checks if the cell below is a tree
+                        if (_grid[x, y - 1].IsTreeBottom)
+                            cell.IsTreeTop = true;
 
-                        if (!cell.IsTerrain &&!_grid[x, y - 1].IsTreeBottom && !cell.IsTreeTop && !cell.IsTreeBottom)
+                        // Checks if the cell below is a light
+                        if (_grid[x, y - 1].IsLightBottom)
+                            cell.IsLightTop = true;
+
+                        // Checks if the cell below is a tower
+                        if (_grid[x, y - 1].IsTowerBottom)
+                            cell.IsTowerTop = true;
+
+                        // The cell is not a tree, light or tower
+                        if (!cell.IsTreeTop && !cell.IsLightTop && !cell.IsTowerTop) {
+                            float flowerNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y * Scale + yOffset);
+                            cell.IsTerrain = flowerNoiseValue < TerrainDensity; // Checks if the cell is terrain
+                            
+                            //Checks if its a tree
+                            xOffset = Random.Range(-10000f, 10000f);
+                            yOffset = Random.Range(-10000f, 10000f);
+                            float treeNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y * Scale * yOffset);
                             cell.IsTreeBottom = treeNoiseValue < TreeDensity;
 
-                        if (cell.IsTreeBottom || cell.IsProp)
+                            // If is not a tree and is not terrain, checks if its a prop
+                            if (!cell.IsTreeBottom) {
+                                xOffset = Random.Range(-10000f, 10000f);
+                                yOffset = Random.Range(-10000f, 10000f);
+                                float propNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y + Scale * yOffset);
+                                cell.IsProp = propNoiseValue < PropDensity;
+                            }
+                            // If is not a prop, terrain or a tree, checks if its a light or a tower
+                            if (!cell.IsTreeBottom && !cell.IsProp) {
+                                xOffset = Random.Range(-10000f, 10000f);
+                                yOffset = Random.Range(-10000f, 10000f);
+                                float lightNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y + Scale * yOffset);
+                                cell.IsLightBottom = lightNoiseValue < LightsDensity;
+
+                                if (!cell.IsLightBottom) {
+                                    xOffset = Random.Range(-10000f, 10000f);
+                                    yOffset = Random.Range(-10000f, 10000f);
+                                    float towerNoiseValue = Mathf.PerlinNoise(x * Scale + xOffset, y + Scale * yOffset);
+                                    cell.IsTowerBottom = towerNoiseValue < TowersDensity;
+                                }
+                            }
+                        }
+
+                        // Checks if the cell is empty
+                        if (cell.IsTreeBottom || cell.IsTreeTop || cell.IsProp ||
+                            cell.IsLightBottom || cell.IsLightTop || cell.IsTowerBottom || cell.IsTowerTop) {
+                            
                             cell.IsEmpty = false;
-                        else
-                            cell.IsEmpty = true;
+                        }
+                        else cell.IsEmpty = true;
                     }
 
                     _grid[x, y] = cell;
@@ -243,8 +306,7 @@ namespace RoundTableStudio.Core
                             
                             StructureTileMap.SetTile(pos, TreeTiles[0]);
                             StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), TreeTiles[1]);
-                            _grid[x, y + 1].IsTreeTop = true;
-                            
+
                         }
                     }
                     else if (cell.IsLightBottom) {
@@ -252,22 +314,20 @@ namespace RoundTableStudio.Core
                             
                             StructureTileMap.SetTile(pos, LightTile[0]);
                             StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), LightTile[1]);
-                            _grid[x, y + 1].IsLightTop = true;
-                            
+
                         }
                     }
                     else if (cell.IsTowerBottom) {
                         if (x != GridWidth - 1 && y != GridHeight - 1) {
                             
                             StructureTileMap.SetTile(pos, TowerTile[0]);
-                            StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), TowerTile[0]);
-                            _grid[x, y + 1].IsTowerTop = true;
-                            
+                            StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), TowerTile[1]);
+
                         }
                     }
                     else if (cell.IsProp) {
                         int propNum = Random.Range(0, PropTiles.Length);
-                        DecorationTileMap.SetTile(pos, PropTiles[propNum]);
+                        StructureTileMap.SetTile(pos, PropTiles[propNum]);
                     }
 
                     GrassTileMap.SetTile(pos, TerrainTiles[0]);
@@ -280,7 +340,7 @@ namespace RoundTableStudio.Core
 
             while (!placed) {
                 // TO DO - Bug: Look [x-1, y-1], [x-1, y+1]... Solve with a while
-                int x = Random.Range(GridWidth / 2 - 5, GridWidth / 2 + 5);
+                int x = Random.Range(GridWidth / 2 - 50, GridWidth / 2 + 50);
                 int y = GridHeight / 2;
 
                 if (GetGridCell(x, y).IsEmpty && 

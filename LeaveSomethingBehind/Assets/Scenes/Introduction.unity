@@ -123,57 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &645131746
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 645131748}
-  - component: {fileID: 645131747}
-  m_Layer: 0
-  m_Name: Director
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!320 &645131747
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645131746}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: e5534d16ead27864b970924cd9b47384, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 8309128880731792282, guid: e5534d16ead27864b970924cd9b47384, type: 2}
-    value: {fileID: 1466223417}
-  m_ExposedReferences:
-    m_References: []
---- !u!4 &645131748
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645131746}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.308661, y: -2.631675, z: -2.1027837}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859599945
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +301,7 @@ RectTransform:
   m_Children:
   - {fileID: 1466223415}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -370,6 +319,7 @@ GameObject:
   - component: {fileID: 1080416638}
   - component: {fileID: 1080416640}
   - component: {fileID: 1080416639}
+  - component: {fileID: 1080416641}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -394,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -0.000020027}
-  m_SizeDelta: {x: 1265.6416, y: 262.7391}
+  m_AnchoredPosition: {x: -8, y: 0}
+  m_SizeDelta: {x: 1800, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080416639
 MonoBehaviour:
@@ -494,6 +444,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080416637}
   m_CullTransparentMesh: 1
+--- !u!225 &1080416641
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080416637}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1466223414
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,9 +512,9 @@ MonoBehaviour:
   Sentences:
   - "\xBFD-donde estoy...?"
   - Hace un momento estaba en mi habitacion...
-  - c
-  - d
-  - e
+  - Parece que estoy en una especie de mundo de fantasia...
+  - "Espera, \xBFeso es un goblin?"
+  - "\xA1\xBFPor que me esta persiguiendo?!"
   CinematicText: {fileID: 1080416639}
 --- !u!95 &1466223417
 Animator:
@@ -678,5 +640,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

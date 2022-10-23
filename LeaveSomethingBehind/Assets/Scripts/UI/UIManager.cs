@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+
 using RoundTableStudio.Core;
 using RoundTableStudio.Input;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 using RoundTableStudio.Shared;
 using RoundTableStudio.Items;
+
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace RoundTableStudio.UI {
 	public class UIManager : MonoBehaviour {
@@ -19,6 +20,8 @@ namespace RoundTableStudio.UI {
 		public Animator ItemSelectorAnimator;
 		[Tooltip("Pause Menu Animator")] 
 		public Animator PauseMenuAnimator;
+		[Tooltip("Tutorial Animator")] 
+		public Animator TutorialAnimator;
 		[Tooltip("Game timer")] 
 		public Timer Timer;
 
@@ -57,7 +60,7 @@ namespace RoundTableStudio.UI {
 			ObjectImages[index].sprite = item;
 		}
 
-		public void HandlePauseMenu() {
+		private void HandlePauseMenu() {
 			if (_onPause) {
 				PauseMenuAnimator.SetBool(Animator.StringToHash("Pause"), false);
 				_onPause = false;
@@ -68,8 +71,11 @@ namespace RoundTableStudio.UI {
 				_onPause = true;
 				_gameManager.SetGameState(GameStates.Paused);
 			}
+		}
 
-			
+		public void OnContinueButton() {
+			TutorialAnimator.SetTrigger(Animator.StringToHash("Close"));
+			_gameManager.SetGameState(GameStates.Started);
 		}
 
 		private void HandleItemsImages() {

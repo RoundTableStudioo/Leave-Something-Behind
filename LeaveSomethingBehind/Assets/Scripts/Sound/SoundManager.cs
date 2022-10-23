@@ -54,6 +54,16 @@ namespace RoundTableStudio.Sound {
 			}
 		}
 
+		public Sound GetSound(string name) {
+			Sound sound = Array.Find(Sounds, sound => sound.Name == name);
+
+			if (sound != null) return sound;
+			
+			Debug.LogWarning("Sound " + name + " not found");
+			return null;
+
+		}
+
 		private void Start() {
 			if(PlayerPrefs.HasKey("GeneralVolume") && 
 			   PlayerPrefs.HasKey("SoundEffectsVolume") && 
