@@ -218,12 +218,15 @@ namespace RoundTableStudio.Core
 
             int x = Random.Range(-1, 2);
             int y = 0;
-            if (x == 0) y = Random.Range(-1, 2);
-            else do { y = Random.Range(-1, 2); } while (y == 0);
+            if (x == 0) 
+                y = Random.Range(-1, 2);
+            else
+                do {
+                    y = Random.Range(-1, 2);
+                } while (y == 0);
 
-            int z = Random.Range(0, CorruptionTiles.Length + 1);
-
-
+            int z = Random.Range(0, CorruptionTiles.Length);
+            
             GrassTileMap.SetTile(new Vector3Int(_expansionTile.x + x, _expansionTile.y + y, 0), CorruptionTiles[z]);
             Debug.Log("generado  tile en:" + _expansionTile.x + x + _expansionTile.y + y + "con el sprite: " + z);
 

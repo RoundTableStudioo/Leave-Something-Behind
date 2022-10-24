@@ -74,8 +74,8 @@ namespace RoundTableStudio.Core {
 			switch (_currentPhase) {
 				case 1:
 					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 2) {
-						StartCoroutine(SpawnEnemy(3, 2, Goblin));
-						StartCoroutine(SpawnEnemy(4, 4, WindMage));
+						//StartCoroutine(SpawnEnemy(3, 2, Goblin));
+						//StartCoroutine(SpawnEnemy(4, 4, WindMage));
 					}
 					else {
 						StartCoroutine(SpawnEnemy(2, 10, Orcs[0]));
@@ -121,6 +121,9 @@ namespace RoundTableStudio.Core {
 
 				Instantiate(enemy, pos, Quaternion.identity);
 				EnemyCount++;
+
+				if (EnemyCount >= MaxEnemyNumber) break;
+				
 				yield return new WaitForSeconds(frequency);
 			}
 			

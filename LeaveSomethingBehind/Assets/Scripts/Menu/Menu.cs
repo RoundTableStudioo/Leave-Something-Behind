@@ -48,5 +48,9 @@ namespace RoundTableStudio.Menu {
             _soundManager.Play("IntroductionMusic");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+        public void OnCreditsButton() {
+            SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+        }
     }
 }

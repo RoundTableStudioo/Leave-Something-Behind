@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace RoundTableStudio.Shared {
@@ -22,6 +23,10 @@ namespace RoundTableStudio.Shared {
             Rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
+        private void Update() {
+            Destroy(gameObject, 6);
+        }
+
         private void OnCollisionEnter2D(Collision2D col) {
             if (col.collider.CompareTag("Player")) {
                 switch (ProjectileType) {
@@ -31,18 +36,16 @@ namespace RoundTableStudio.Shared {
                     case Element.Ground: // Te dejan paralizado 1 segundo
                         col.collider.SendMessage("TakeDamage", ProjectileDamage);
                         break;
-                        break;
                     case Element.Water: // Te reducen la velocidad un 25% durante 1 segundo
                         col.collider.SendMessage("TakeDamage", ProjectileDamage);
-                        break;
                         break;
                     case Element.Wind: // Bola de viento normal
                         col.collider.SendMessage("TakeDamage", ProjectileDamage);
                         break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
-            
-            Destroy(gameObject);
         }
     }
 }
