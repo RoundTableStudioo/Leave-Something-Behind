@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3767133767783026716}
   - component: {fileID: 4235600847793732049}
   - component: {fileID: 5505093564622290377}
+  - component: {fileID: 1831308065669710777}
   m_Layer: 8
   m_Name: FireMage
   m_TagString: Enemy
@@ -93,6 +94,26 @@ MonoBehaviour:
   LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
   ProjectilePrefab: {fileID: 996015815200935009, guid: f3e5415291a03cb40a3ee2193d141188, type: 3}
   ShootingCooldown: 5
+--- !u!95 &1831308065669710777
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797626049844399546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa0824926a455a94cb3c12e770db7c48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8699521813919567368
 GameObject:
   m_ObjectHideFlags: 0

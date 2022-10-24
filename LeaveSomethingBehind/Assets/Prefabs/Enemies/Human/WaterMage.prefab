@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 7996319573145975318}
   - component: {fileID: 3902899058209398810}
   - component: {fileID: -8838480546975808038}
+  - component: {fileID: 3752059391442606064}
   m_Layer: 8
   m_Name: WaterMage
   m_TagString: Enemy
@@ -198,3 +199,23 @@ MonoBehaviour:
   LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
   ProjectilePrefab: {fileID: 2234441590409212868, guid: 3bf59c6aa4ee67a40bc70b042700c60c, type: 3}
   ShootingCooldown: 5
+--- !u!95 &3752059391442606064
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420781065006214814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04f034a9f0e2c8e46a5ac1d2c71e5f66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

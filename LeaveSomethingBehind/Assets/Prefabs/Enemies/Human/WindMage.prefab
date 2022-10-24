@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7263823014137351347}
   - component: {fileID: 7845193771604586316}
   - component: {fileID: 3383790674694050385}
+  - component: {fileID: 716906493044795000}
   m_Layer: 8
   m_Name: WindMage
   m_TagString: Enemy
@@ -177,3 +178,23 @@ MonoBehaviour:
   LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
   ProjectilePrefab: {fileID: 5820601220589740488, guid: 8ae98148e033f7d4c80446df4e7f608b, type: 3}
   ShootingCooldown: 5
+--- !u!95 &716906493044795000
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941191349278181409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bebe65f0fdc57834db2e0acb6c04ca9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

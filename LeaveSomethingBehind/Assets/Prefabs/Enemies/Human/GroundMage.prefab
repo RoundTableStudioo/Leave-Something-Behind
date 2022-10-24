@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5984845930126422227}
   - component: {fileID: 2396408663967717928}
   - component: {fileID: -3467151069626131752}
+  - component: {fileID: -2867506248345758635}
   m_Layer: 8
   m_Name: GroundMage
   m_TagString: Enemy
@@ -93,6 +94,26 @@ MonoBehaviour:
   LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
   ProjectilePrefab: {fileID: 4931216061419559003, guid: c79ef91bc5bf32f49addcf021dbe475a, type: 3}
   ShootingCooldown: 5
+--- !u!95 &-2867506248345758635
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830412104919478842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 069942d66306e474f9ba0cca1de1c382, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7326242923598476788
 GameObject:
   m_ObjectHideFlags: 0
