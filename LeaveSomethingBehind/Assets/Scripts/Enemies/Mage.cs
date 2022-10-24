@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using RoundTableStudio.Player;
 using RoundTableStudio.Shared;
@@ -11,25 +12,19 @@ namespace RoundTableStudio.Enemies {
         public float ShootingCooldown;
         
         private float _shootingTick;
-
-        private void Update() {
-            if (_shootingTick <= 0) return;
-
-            _shootingTick -= Time.deltaTime;
-        }
+        private bool shooting;
 
         protected override void EnemyBehavior() {
-            Vector3 objective = (Player.position - transform.position).normalized;
+            Vector3 objective = Stats.Speed * Time.fixedDeltaTime * (Player.position - transform.position).normalized;
             float distance = Vector3.Distance(transform.position, Player.position);
 
             if (!Damaged) {
                 if (distance > 2.5f) {
-                    Rb.MovePosition(transform.position + Stats.Speed * Time.fixedDeltaTime * objective);
+                    Rb.MovePosition(transform.position + objective);
                 }
-                else {
+                else if(!shooting) {
                     Rb.MovePosition(transform.position);
-                    if (_shootingTick <= 0) ;
-                    //Shoot();
+                    StartCoroutine(Shoot());
                 }
             }
             else {
@@ -38,16 +33,21 @@ namespace RoundTableStudio.Enemies {
             }
         }
 
-        private void Shoot() {
+        private IEnumerator Shoot() {
+            shooting = true;
+            
             Vector2 dir = Player.position - transform.position;
 
             Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
 
             GameObject projectileGo = Instantiate(ProjectilePrefab, transform.position, rotation);
-            Projectile projectile = projectileGo.GetComponent<Projectile>();
+            EnemyProjectile projectile = projectileGo.GetComponent<EnemyProjectile>();
 
             projectile.Rigidbody2D.velocity = new Vector2(dir.x, dir.y) * projectile.Speed;
-            _shootingTick = ShootingCooldown;
+
+            yield return new WaitForSeconds(ShootingCooldown);
+
+            shooting = false;
         }
 
         protected override void OnCollisionStay2D(Collision2D col) {
