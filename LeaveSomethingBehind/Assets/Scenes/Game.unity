@@ -520,7 +520,7 @@ RectTransform:
   m_GameObject: {fileID: 152129883}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1307287971}
@@ -4076,7 +4076,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Has sido llevado al pasado con 6 objetos de tu tiempo. Cada uno de ellos
     te da una ventaja. Sin embargo, cada 3 minutos deberas dejar uno si no quieres
-    desaparecer. Elige sabiamente. Tu objetivo es aguantar vivo 15 minutos.
+    desaparecer. Elige sabiamente. Tu objetivo es sobrevivir.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0c824604427e134fbb116d3a755df89, type: 2}
   m_sharedMaterial: {fileID: -1348641800015496999, guid: e0c824604427e134fbb116d3a755df89, type: 2}

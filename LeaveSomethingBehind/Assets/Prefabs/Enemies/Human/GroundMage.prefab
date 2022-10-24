@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3386989835060070436}
   - component: {fileID: 5984845930126422227}
-  - component: {fileID: 3714555386416755276}
   - component: {fileID: 2396408663967717928}
+  - component: {fileID: -3467151069626131752}
   m_Layer: 8
   m_Name: GroundMage
   m_TagString: Enemy
@@ -56,25 +56,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3714555386416755276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4830412104919478842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263eda188040ef24593dbba746962251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stats:
-    MaxHp: 10
-    Damage: 3
-    Speed: 1
-  PushForce: 50
-  ManaPotion: {fileID: 6378672115787000438, guid: e3e76012fe8caf54791ab26d03913f57, type: 3}
-  LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
 --- !u!70 &2396408663967717928
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -91,6 +72,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.000000007450581, y: -0.025504053}
   m_Size: {x: 0.17694835, y: 0.8877821}
   m_Direction: 0
+--- !u!114 &-3467151069626131752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830412104919478842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8f0a2f1e9cda8419d30231335bbdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats:
+    MaxHp: 10
+    Damage: 6
+    Speed: 1
+  PushForce: 25
+  ManaPotion: {fileID: 6378672115787000438, guid: e3e76012fe8caf54791ab26d03913f57, type: 3}
+  LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
+  ProjectilePrefab: {fileID: 4931216061419559003, guid: c79ef91bc5bf32f49addcf021dbe475a, type: 3}
+  ShootingCooldown: 5
 --- !u!1 &7326242923598476788
 GameObject:
   m_ObjectHideFlags: 0

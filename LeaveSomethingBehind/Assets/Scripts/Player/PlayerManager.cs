@@ -50,6 +50,7 @@ namespace RoundTableStudio.Player
             Input.TickUpdate();
             _animations.TickUpdate();
             Attack.TickUpdate();
+            Life.TickUpdate();
         }
 
         public void FixedUpdate() {
@@ -68,6 +69,10 @@ namespace RoundTableStudio.Player
             if (Time.time - _lastImmune < _IMMUNE_TIME) return;
 
             _lastImmune = Time.time;
+
+            if (damage.isPhysical) damage.Amount -= Stats.PhysicalDefense;
+            if (damage.isMagical) damage.Amount -= Stats.MagicDefense;
+            
             if (Life.LoseHp(damage.Amount)) {
                 Die();
             }

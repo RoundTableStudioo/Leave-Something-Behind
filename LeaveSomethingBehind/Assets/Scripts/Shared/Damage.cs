@@ -11,5 +11,9 @@ namespace RoundTableStudio.Shared
         public Vector3 PushOrigin;
         [Tooltip("Force that the attack will push it objective")]
         public float PushForce;
+        [Tooltip("The attack is physical")] 
+        public bool isPhysical;
+        [Tooltip("The attack is magical")]
+        public bool isMagical;
     }
 }

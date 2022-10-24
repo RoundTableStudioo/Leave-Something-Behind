@@ -1,5 +1,6 @@
 using System.Collections;
 using RoundTableStudio.Core;
+using RoundTableStudio.Player;
 using UnityEngine;
 using RoundTableStudio.Shared;
 using UnityEngine.UI;
@@ -20,19 +21,19 @@ namespace RoundTableStudio.Enemies {
 		[Tooltip("Life potion game object")] 
 		public GameObject LifePotion;
 
-		private Rigidbody2D _rb;
+		protected Rigidbody2D Rb;
 		private SpriteRenderer _spriteRenderer;
 
 		private Image _healthBar;
 
 		private float _immuneTime;
 		private float _lastImmune;
+		protected PlayerManager PlayerManager;
 		
-		private Transform _player;
-		private Vector3 _pushDirection;
-		private Vector2 _movement;
+		protected Transform Player;
+		protected Vector3 PushDirection;
 
-		private bool _damaged;
+		protected bool Damaged;
 		
 		private float _currentHp;
 
@@ -40,11 +41,13 @@ namespace RoundTableStudio.Enemies {
 		private const float _MANA_DROP_PROBABILITY = 0.65f;
 
 		private void OnEnable() {
-			_rb = GetComponent<Rigidbody2D>();
+			Rb = GetComponent<Rigidbody2D>();
 			_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-			if (GameObject.FindGameObjectWithTag("Player").transform != null)
-				_player = GameObject.FindGameObjectWithTag("Player").transform;
+			if (GameObject.FindGameObjectWithTag("Player").transform != null) {
+				Player = GameObject.FindGameObjectWithTag("Player").transform;
+				PlayerManager = FindObjectOfType<PlayerManager>();
+			}
 
 			_currentHp = Stats.MaxHp;
 		}
@@ -52,7 +55,7 @@ namespace RoundTableStudio.Enemies {
 		private void FixedUpdate() {
 			if (GameManager.Instance.IsGamePaused()) return;
 			
-			FollowPlayer();
+			EnemyBehavior();
 		}
 
 		private void TakeDamage(Damage damage) {
@@ -60,10 +63,10 @@ namespace RoundTableStudio.Enemies {
 
 			_lastImmune = Time.time;
 			_currentHp -= damage.Amount;
-			_pushDirection = (transform.position - damage.PushOrigin).normalized * damage.PushForce;
+			PushDirection = (transform.position - damage.PushOrigin).normalized * damage.PushForce;
 
 			StartCoroutine(ChangeColor());
-			_damaged = true;
+			Damaged = true;
 
 			if (_currentHp <= 0) {
 				Die();
@@ -71,16 +74,8 @@ namespace RoundTableStudio.Enemies {
 
 		}
 
-		private void FollowPlayer() {
-
-			Vector3 objective = Stats.Speed * Time.fixedDeltaTime * (_player.position - transform.position).normalized;
-			
-			if(!_damaged)
-				_rb.MovePosition(transform.position + objective);
-			else {
-				_rb.MovePosition(transform.position + (_pushDirection * Time.fixedDeltaTime));
-				_damaged = false;
-			}
+		protected virtual void EnemyBehavior() {
+			Debug.Log("To implement Behavior on " + name);
 		}
 
 		private void Die() {
@@ -116,13 +111,8 @@ namespace RoundTableStudio.Enemies {
 			_spriteRenderer.color = Color.white;
 		}
 
-		private void OnCollisionStay2D(Collision2D col) {
-			if (!col.collider.CompareTag("Player")) return;
-
-			Damage damage = new Damage { Amount = Stats.Damage, PushOrigin = transform.position, PushForce = PushForce };
-
-			col.collider.SendMessage("TakeDamage", damage);
-			
+		protected virtual  void OnCollisionStay2D(Collision2D col) {
+			Debug.Log("To implement collider on " + name);
 		}
 	}
 }

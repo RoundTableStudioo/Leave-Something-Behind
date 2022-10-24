@@ -115,8 +115,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6549505082839251036}
   - component: {fileID: 7996319573145975318}
-  - component: {fileID: 7918834085507162397}
   - component: {fileID: 3902899058209398810}
+  - component: {fileID: -8838480546975808038}
   m_Layer: 8
   m_Name: WaterMage
   m_TagString: Enemy
@@ -161,25 +161,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7918834085507162397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2420781065006214814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263eda188040ef24593dbba746962251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stats:
-    MaxHp: 6
-    Damage: 3
-    Speed: 0.75
-  PushForce: 50
-  ManaPotion: {fileID: 6378672115787000438, guid: e3e76012fe8caf54791ab26d03913f57, type: 3}
-  LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
 --- !u!70 &3902899058209398810
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -196,3 +177,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.010343313, y: -0.021720886}
   m_Size: {x: 0.20625067, y: 0.8944986}
   m_Direction: 0
+--- !u!114 &-8838480546975808038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420781065006214814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8f0a2f1e9cda8419d30231335bbdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats:
+    MaxHp: 6
+    Damage: 6
+    Speed: 0.8
+  PushForce: 25
+  ManaPotion: {fileID: 6378672115787000438, guid: e3e76012fe8caf54791ab26d03913f57, type: 3}
+  LifePotion: {fileID: 1096007546883306029, guid: fe1859d5fa2e12a4eb5df906c8eac964, type: 3}
+  ProjectilePrefab: {fileID: 2234441590409212868, guid: 3bf59c6aa4ee67a40bc70b042700c60c, type: 3}
+  ShootingCooldown: 5

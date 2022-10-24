@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450c2e816637571459bcd6350433b143
+      spriteID: 4e8e05cb9cb63014fa7c8a60b002521b
       internalID: 1890372003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magic_Proyectile
+      name: PlayerProjectile
       rect:
         serializedVersion: 2
         x: 120
@@ -140,8 +140,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 556d2d5b14b28324db0c3a147e370242
-      internalID: -730222738
+      spriteID: 9db7215a23371964c8eb3a6ac7dcba00
+      internalID: -1157874073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterProjectile
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7544de7353dc96c40ae3f1ee23b592ad
+      internalID: 1388283548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireProjectile
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cb1677e5c26f1439f66c332fd5bf01
+      internalID: -142269507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundProjectile
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a81793c3387004d8c1ead7510c215d
+      internalID: -272896125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindProjectile
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee88d65599b99bb4e92f621d3b136153
+      internalID: 2100338826
       vertices: []
       indices: 
       edges: []
@@ -157,8 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      GroundProjectile: -272896125
+      WaterProjectile: 1388283548
       Arrow: 1890372003
-      Magic_Proyectile: -730222738
+      FireProjectile: -142269507
+      WindProjectile: 2100338826
+      PlayerProjectile: -1157874073
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

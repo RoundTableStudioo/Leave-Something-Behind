@@ -74,7 +74,7 @@ namespace RoundTableStudio.Core {
 			switch (_currentPhase) {
 				case 1:
 					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 2) {
-						StartCoroutine(SpawnEnemy(3, 2, Goblin));
+						//StartCoroutine(SpawnEnemy(3, 2, Goblin));
 						StartCoroutine(SpawnEnemy(4, 4, WindMage));
 					}
 					else {

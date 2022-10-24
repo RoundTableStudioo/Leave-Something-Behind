@@ -511,10 +511,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sentences:
   - "\xBFD-donde estoy...?"
-  - Hace un momento estaba en mi habitacion...
-  - Parece que estoy en una especie de mundo de fantasia...
-  - "Espera, \xBFeso es un goblin?"
-  - "\xA1\xBFPor que me esta persiguiendo?!"
+  - "Se suponia que debia llegar al a\xF1o 2348 d.C"
+  - "\xBFSon estos los nuevos robots del futuro con forma de goblin?"
+  - Es posible que mi conjuto haya fallado...
+  - "\xA1\xBFPor que todos parecen tan enfadados conmigo?!"
   CinematicText: {fileID: 1080416639}
 --- !u!95 &1466223417
 Animator:

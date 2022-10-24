@@ -8,7 +8,7 @@ namespace RoundTableStudio.Items {
 		}
 
 		public override void ReverseItemFunction() {
-			
+			ItemManager.Instance.Player.Stats.RangeDamage -= 2;
 		}
 	}
 }

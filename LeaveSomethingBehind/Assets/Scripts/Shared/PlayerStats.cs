@@ -8,14 +8,14 @@ namespace RoundTableStudio.Shared
         [Header("Defense Stats")]
         [Tooltip("Damage reduction from physical attacks")]
         public int PhysicalDefense;
-        [Tooltip("Damage reduction from projectiles")]
-        public int RangeDefense;
         [Tooltip("Damage reduction from magic attacks")]
         public int MagicDefense;
         [Tooltip("Damage reduction against human units")]
         public int HumanDefense;
-        [Tooltip("Damage reduction against elf units")]
+        [Tooltip("Damage reduction against goblin units")]
         public int GoblinDefense;
+        [Tooltip("Damage reduction against orc units")]
+        public int OrcDefense;
             
         [Space(10)]
         [Header("Stamina Stats")]

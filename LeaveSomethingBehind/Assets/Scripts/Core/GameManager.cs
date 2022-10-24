@@ -1,4 +1,3 @@
-using System;
 using RoundTableStudio.Sound;
 using UnityEngine;
 
@@ -29,6 +28,10 @@ namespace RoundTableStudio.Core
 
         public GameStates GameState;
         public int GameTime = 15;
+
+        public void StopMainTheme() {
+            SoundManager.Instance.Stop("MainTheme");
+        }
 
         public bool IsGamePaused() {
             return GameState == GameStates.Paused;
