@@ -915,7 +915,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 325622836}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.5523519
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2401,6 +2401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949132892}
   - component: {fileID: 949132891}
+  - component: {fileID: 949132893}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2437,6 +2438,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &949132893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949132890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23925da3d64d489478371b11bbe94bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movement: {x: 0, y: 0}
+  MovementAmount: 0
+  MousePosition: {x: 0, y: 0}
+  RangeAttackInput: 0
+  MagicAttackInput: 0
+  PauseInput: 0
 --- !u!1 &980792227
 GameObject:
   m_ObjectHideFlags: 0

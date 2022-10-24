@@ -97,10 +97,9 @@ namespace RoundTableStudio.UI {
 		}
 
 		public void OnExitButton() {
-			SoundManager.Instance.Stop("MainTheme");
+			SoundManager.Instance.Play("MenuMusic");
 			GameManager.Instance.SetGameState(GameStates.Menu);
 			SceneManager.LoadScene(0);
-			SoundManager.Instance.Play("MenuMusic");
 		}
 
 		private void HandleItemsImages() {

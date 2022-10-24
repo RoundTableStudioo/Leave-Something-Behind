@@ -55,7 +55,13 @@ namespace RoundTableStudio.Enemies {
 
 		private void FixedUpdate() {
 			if (GameManager.Instance.IsGamePaused() || GameManager.Instance.IsGameEnded()) return;
-			
+
+			if (Vector3.Distance(transform.position, Player.position) >= 20f) {
+				Destroy(gameObject);
+				FindObjectOfType<EnemyRespawn>().EnemyCount--;
+				return;
+			}
+
 			EnemyBehavior();
 		}
 

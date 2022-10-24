@@ -32,6 +32,8 @@ namespace RoundTableStudio.Input {
 			Instance = this;
 			
 			Control.Enable();
+			
+			DontDestroyOnLoad(gameObject);
 		}
 
 		public void TickUpdate() {

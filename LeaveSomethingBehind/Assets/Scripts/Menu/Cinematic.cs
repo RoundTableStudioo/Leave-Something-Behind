@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using RoundTableStudio.Core;
+using RoundTableStudio.Input;
 using RoundTableStudio.Sound;
 using TMPro;
 using UnityEngine;
@@ -24,8 +25,16 @@ namespace RoundTableStudio.UI {
 			_animator = GetComponent<Animator>();
 			_sentences = new Queue<string>();
 			_soundManager = SoundManager.Instance;
+
+			InputHandler.Instance.Control.Interaction.Escape.performed += i => SkipCinematic();
 			
 			StartCoroutine(StartCinematic());
+		}
+
+		private void SkipCinematic() {
+			_soundManager.Stop("IntroductionMusic");
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			GameManager.Instance.StartGame();
 		}
 
 		private IEnumerator StartCinematic() {
