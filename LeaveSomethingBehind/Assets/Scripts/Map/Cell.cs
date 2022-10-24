@@ -7,6 +7,7 @@ namespace RoundTableStudio.Core {
 		
 		// Terrain
 		public bool IsTerrain;
+		public int numTerrain;
 		// Tree
 		public bool IsTreeBottom;
 		public bool IsTreeTop;

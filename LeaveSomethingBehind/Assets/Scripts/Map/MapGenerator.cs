@@ -1,6 +1,8 @@
 using RoundTableStudio.Shared;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace RoundTableStudio.Core
 {
@@ -99,9 +101,12 @@ namespace RoundTableStudio.Core
         private int _currentGridWidthLeft;
 
         private bool _corrupted;
-        private int _lastMinute;
+        private float _lastSecond;
+        private bool _generating;
 
-        private Vector3Int _expansionTile = new Vector3Int(0, 0, 0);
+        private bool[,] _corruptMap;  
+
+        private List<Vector3Int> _expansionTiles;
 
         #endregion
 
@@ -118,6 +123,8 @@ namespace RoundTableStudio.Core
             _corrupted = false;
 
             RespawnPlayer();
+            _expansionTiles = new List<Vector3Int>();
+            _expansionTiles.Add(new Vector3Int(0, 0, 0));
         }
 
         private void Update() {
@@ -125,14 +132,17 @@ namespace RoundTableStudio.Core
             
             InfiniteGeneration();
 
-            if (_lastMinute != Timer.MinutesCount)
+            if (_lastSecond != Timer.SecondsCount)
                 _corrupted = false;
 
-            if (Timer.MinutesCount % 1 == 0 && Timer.MinutesCount != 0 && !_corrupted) {
-                CorruptTerrain();
+            if (Timer.SecondsCount % 30 == 0) {
+                //NewExpansionTile();
                 _corrupted = true;
-                _lastMinute = Timer.MinutesCount;
+                _lastSecond = Timer.SecondsCount;
             }
+
+            if(_generating==false) StartCoroutine(CorruptTerrain());
+
         }
 
         private Cell GetGridCell(int x, int y) {
@@ -205,31 +215,41 @@ namespace RoundTableStudio.Core
             StructureTileMap.SetTile(deletePos, null);
         }
 
-        private void CorruptTerrain() {
-            /*
-            bool corrupted = false;
-            const int maxCorruptedTiles = 1000;
-            const float corruptProbability = 0.1f;
-            Vector3 corruptionBegin = new Vector3(PlayerCellPosition.x + 10, PlayerCellPosition.y + 10);
+        private IEnumerator CorruptTerrain() {
+            _generating = true;
+            int initCount = _expansionTiles.Count;
 
-            int corruptedTiles = 0;
-            */
-
-
-            int x = Random.Range(-1, 2);
-            int y = 0;
-            if (x == 0) 
-                y = Random.Range(-1, 2);
-            else
-                do {
+            for (int i = 0; i < initCount; i++)
+            {
+                int x = Random.Range(-1, 2);
+                int y = 0;
+                if (x == 0)
                     y = Random.Range(-1, 2);
-                } while (y == 0);
+                else
+                    do
+                    {
+                        y = Random.Range(-1, 2);
+                    } while (y == 0);
 
-            int z = Random.Range(0, CorruptionTiles.Length);
-            
-            GrassTileMap.SetTile(new Vector3Int(_expansionTile.x + x, _expansionTile.y + y, 0), CorruptionTiles[z]);
-            Debug.Log("generado  tile en:" + _expansionTile.x + x + _expansionTile.y + y + "con el sprite: " + z);
+                Vector3Int tile = new Vector3Int(_expansionTiles[i].x + x, _expansionTiles[i].y + y, 0);
+                GrassTileMap.SetTile(tile, CorruptionTiles[_grid[x, y].numTerrain]);
+                Debug.Log("FOR: " + i + " generado  tile en:" + (_expansionTiles[i].x + x) + "," + (_expansionTiles[i].y + y) + "," + "con el sprite: " + _grid[x,y].numTerrain);
+                Debug.Log("     A PARTIR DE: " + _expansionTiles[i].x + "," + _expansionTiles[i].y);
 
+                _expansionTiles.RemoveAt(i);
+                _expansionTiles.Add(tile);
+
+                yield return new WaitForSeconds(1);
+            }
+            _generating = false;
+        }
+
+        private void NewExpansionTile()
+        {
+            int x = Random.Range(-6, 7);
+            int y = Random.Range(-6, 7);
+
+            _expansionTiles.Add(new Vector3Int(PlayerCellPosition.x + x, PlayerCellPosition.y + y, 0));
         }
 
         private void GenerateRandomGrid() {
@@ -317,6 +337,7 @@ namespace RoundTableStudio.Core
                     if (cell.IsTerrain) {
                         
                         int terrainNum = Random.Range(1, TerrainTiles.Length);
+                        cell.numTerrain = terrainNum;
                         DecorationTileMap.SetTile(pos, TerrainTiles[terrainNum]);
                         DecorationTileMap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0f, 0f, rotationAmount)));
                         
