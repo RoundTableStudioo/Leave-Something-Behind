@@ -45,7 +45,11 @@ namespace RoundTableStudio.Shared {
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+                
+                Destroy(gameObject);
             }
+            
+            Destroy(gameObject);
         }
     }
 }

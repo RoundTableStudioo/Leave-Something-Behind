@@ -1,4 +1,5 @@
 
+using System;
 using RoundTableStudio.Shared;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace RoundTableStudio.Enemies {
                 Rb.MovePosition(transform.position + objective);
             else {
                 Rb.MovePosition(transform.position + (PushDirection * Time.fixedDeltaTime));
+                DoEnemySound("Goblin");
                 Damaged = false;
             }
         }
@@ -18,7 +20,7 @@ namespace RoundTableStudio.Enemies {
         protected override void OnCollisionStay2D(Collision2D col) {
             if (!col.collider.CompareTag("Player")) return;
 			
-            Damage damage = new Damage { Amount = Stats.Damage - PlayerManager.Stats.GoblinDefense - PlayerManager.Stats.PhysicalDefense, 
+            Damage damage = new Damage { Amount = Stats.Damage * (1 - PlayerManager.Stats.GoblinDefense),
                 PushOrigin = transform.position, 
                 PushForce = PushForce,
                 isPhysical = true,

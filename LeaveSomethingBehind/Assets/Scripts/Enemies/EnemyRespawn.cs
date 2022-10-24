@@ -41,8 +41,6 @@ namespace RoundTableStudio.Core {
 		
 		
 		private int _currentPhase;
-		private int _minutesPerWave;
-		private int _minutesPerPhase;
 		[HideInInspector]
 		public int EnemyCount;
 		private Vector3Int _playerPosition;
@@ -50,8 +48,6 @@ namespace RoundTableStudio.Core {
 
 		private void Start() {
 			_currentPhase = 1;
-			_minutesPerPhase = MinutesToEnd / PhasesNumber;
-			_minutesPerWave = _minutesPerPhase / 2;
 
 			_respawning = false;
 			EnemyCount = 0;
@@ -67,43 +63,37 @@ namespace RoundTableStudio.Core {
 		}
 
 		private void RespawnEnemies() {
-			if (Timer.MinutesCount == _minutesPerPhase * _currentPhase) {
+			if (Timer.MinutesCount >= 2) {
 				_currentPhase++;
 			}
 			
 			switch (_currentPhase) {
 				case 1:
-					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 2) {
-						//StartCoroutine(SpawnEnemy(3, 2, Goblin));
-						//StartCoroutine(SpawnEnemy(4, 4, WindMage));
-					}
-					else {
-						StartCoroutine(SpawnEnemy(2, 10, Orcs[0]));
-						StartCoroutine(SpawnEnemy(2, 5, FireMage));
-					}
+					StartCoroutine(SpawnEnemy(3, 2, Goblin));
+					StartCoroutine(SpawnEnemy(4, 4, WindMage));
 					break;
-				
 				case 2:
-					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 7) {
-						StartCoroutine(SpawnEnemy(5, 3, Goblin));
-						StartCoroutine(SpawnEnemy(2, 5, WaterMage));
-					}
-					else {
-						StartCoroutine(SpawnEnemy(4, 15, Orcs[0]));
-						StartCoroutine(SpawnEnemy(2, 5, GroundMage));
-					}
+					StartCoroutine(SpawnEnemy(2, 10, Orcs[0]));
+					StartCoroutine(SpawnEnemy(2, 5, FireMage));
 					break;
 				
 				case 3:
-					if (Timer.MinutesCount % (_minutesPerPhase * _currentPhase) <= 12) {
-						StartCoroutine(SpawnEnemy(4, 3, Goblin));
-						StartCoroutine(SpawnEnemy(2, 5, FireMage));
-					}
-					else {
-						StartCoroutine(SpawnEnemy(3, 12, Orcs[0]));
-						StartCoroutine(SpawnEnemy(2, 5, WindMage));
-						StartCoroutine(SpawnEnemy(2, 5, WaterMage));
-					}
+					StartCoroutine(SpawnEnemy(5, 3, Goblin));
+					StartCoroutine(SpawnEnemy(2, 5, WaterMage));
+					break;
+				case 4:
+					StartCoroutine(SpawnEnemy(4, 15, Orcs[0]));
+					StartCoroutine(SpawnEnemy(2, 5, GroundMage));
+					break;
+				
+				case 5:
+					StartCoroutine(SpawnEnemy(4, 3, Goblin));
+					StartCoroutine(SpawnEnemy(2, 5, FireMage));
+					break;
+				case 6: 
+					StartCoroutine(SpawnEnemy(3, 12, Orcs[0]));
+					StartCoroutine(SpawnEnemy(2, 5, WindMage));
+					StartCoroutine(SpawnEnemy(2, 5, WaterMage));
 					break;
 			}
 		}

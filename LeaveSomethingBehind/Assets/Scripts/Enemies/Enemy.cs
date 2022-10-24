@@ -3,6 +3,7 @@ using RoundTableStudio.Core;
 using RoundTableStudio.Player;
 using UnityEngine;
 using RoundTableStudio.Shared;
+using RoundTableStudio.Sound;
 using UnityEngine.UI;
 
 namespace RoundTableStudio.Enemies {
@@ -53,7 +54,7 @@ namespace RoundTableStudio.Enemies {
 		}
 
 		private void FixedUpdate() {
-			if (GameManager.Instance.IsGamePaused()) return;
+			if (GameManager.Instance.IsGamePaused() || GameManager.Instance.IsGameEnded()) return;
 			
 			EnemyBehavior();
 		}
@@ -113,6 +114,10 @@ namespace RoundTableStudio.Enemies {
 
 		protected virtual  void OnCollisionStay2D(Collision2D col) {
 			Debug.Log("To implement collider on " + name);
+		}
+
+		protected void DoEnemySound(string sound) {
+			SoundManager.Instance.Play(sound);
 		}
 	}
 }

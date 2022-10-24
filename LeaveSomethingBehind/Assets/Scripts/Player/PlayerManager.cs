@@ -70,8 +70,8 @@ namespace RoundTableStudio.Player
 
             _lastImmune = Time.time;
 
-            if (damage.isPhysical) damage.Amount -= Stats.PhysicalDefense;
-            if (damage.isMagical) damage.Amount -= Stats.MagicDefense;
+            if (damage.isPhysical) damage.Amount *= 1 - Stats.PhysicalDefense;
+            if (damage.isMagical) damage.Amount *= 1 - Stats.MagicDefense;
             
             if (Life.LoseHp(damage.Amount)) {
                 Die();
@@ -83,7 +83,22 @@ namespace RoundTableStudio.Player
         }
 
         private void Die() {
-            Debug.LogWarning("TO DO - Finish the game");
+            GameManager.Instance.EndGame();
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision) {
+            if (!collision.collider.CompareTag("Corruption")) return;
+
+            Damage corruptionDamage = new Damage {
+                Amount = 1f,
+                PushOrigin = collision.collider.ClosestPoint(transform.position),
+                PushForce = 25f,
+                isMagical = false,
+                isPhysical = false
+            };
+
+            _animations.ChangePlayerColor(Color.magenta);
+            TakeDamage(corruptionDamage);
         }
     }
 }

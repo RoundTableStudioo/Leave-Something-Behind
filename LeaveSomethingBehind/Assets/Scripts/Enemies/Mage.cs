@@ -20,10 +20,12 @@ namespace RoundTableStudio.Enemies {
 
             if (!Damaged) {
                 if (distance > 2.5f) {
+                    Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                     Rb.MovePosition(transform.position + objective);
                 }
                 else if(!shooting) {
-                    Rb.MovePosition(transform.position);
+                    Rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                    DoEnemySound("Human");
                     StartCoroutine(Shoot());
                 }
             }
@@ -53,7 +55,7 @@ namespace RoundTableStudio.Enemies {
         protected override void OnCollisionStay2D(Collision2D col) {
             if (!col.collider.CompareTag("Player")) return;
 			
-            Damage damage = new Damage { Amount = Stats.Damage - PlayerManager.Stats.HumanDefense - PlayerManager.Stats.PhysicalDefense, 
+            Damage damage = new Damage { Amount = Stats.Damage * (1 - PlayerManager.Stats.HumanDefense), 
                 PushOrigin = transform.position, 
                 PushForce = PushForce,
                 isPhysical = true,

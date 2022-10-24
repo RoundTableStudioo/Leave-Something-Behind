@@ -1,5 +1,6 @@
 using RoundTableStudio.Sound;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RoundTableStudio.Core
 {
@@ -37,6 +38,10 @@ namespace RoundTableStudio.Core
             return GameState == GameStates.Paused;
         }
 
+        public bool IsGameEnded() {
+            return GameState == GameStates.Ended;
+        }
+
         public void SetGameState(GameStates state) {
             GameState = state;
         }
@@ -48,7 +53,14 @@ namespace RoundTableStudio.Core
 
         public void EndGame() {
             GameState = GameStates.Ended;
-            Debug.Log("End the game");
+            SoundManager.Instance.Stop("MainTheme");
+        }
+
+        public void WinGame() {
+            GameState = GameStates.Ended;
+            SoundManager.Instance.Stop("MainTheme");
+            SoundManager.Instance.Play("Final");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

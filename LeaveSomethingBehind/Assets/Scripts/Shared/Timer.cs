@@ -9,7 +9,7 @@ namespace RoundTableStudio.Shared {
 		[Tooltip("How much time a phase remains")]
 		public float MinutesPerPhase = 2;
 		[Tooltip("Hoy much seconds a phase remains")]
-		public float SecondsPerPhase = 30f;
+		public int SecondsPerPhase = 30;
 		
 		private float _timer;
 		[HideInInspector]
@@ -18,14 +18,14 @@ namespace RoundTableStudio.Shared {
 		public int MinutesCount;
 
 		private void Update() {
-			if (GameManager.Instance.IsGamePaused()) {
+			if (GameManager.Instance.IsGamePaused() || GameManager.Instance.IsGameEnded()) {
 				return;
 			}
 			
 			HandleTimer();
 			
 			if(MinutesCount == GameManager.Instance.GameTime)
-				GameManager.Instance.EndGame();
+				GameManager.Instance.WinGame();
 		}
 
 		private void HandleTimer() {

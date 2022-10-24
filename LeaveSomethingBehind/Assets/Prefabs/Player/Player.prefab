@@ -222,7 +222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -730222738, guid: 3f6bdec47605f144d9e0160a0628f2a1, type: 3}
+  m_Sprite: {fileID: -1157874073, guid: 3f6bdec47605f144d9e0160a0628f2a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1183,6 +1183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bar: {fileID: 6786741152583374470}
   RegenerationCooldown: 60
+  _currentHp: 0
 --- !u!50 &8488840134168683972
 Rigidbody2D:
   serializedVersion: 4

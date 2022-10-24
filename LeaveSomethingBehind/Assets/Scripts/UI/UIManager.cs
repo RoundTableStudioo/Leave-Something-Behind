@@ -24,6 +24,8 @@ namespace RoundTableStudio.UI {
 		public Animator PauseMenuAnimator;
 		[Tooltip("Tutorial Animator")] 
 		public Animator TutorialAnimator;
+		[Tooltip("Lose Menu Animator")] 
+		public Animator LoseMenuAnimator;
 		[Tooltip("Game timer")] 
 		public Timer Timer;
 
@@ -35,6 +37,7 @@ namespace RoundTableStudio.UI {
 		private int _lastPickMinute;
 
 		private bool _onPause;
+		private bool _onLoseMenu;
 
 		private void Start() {
 			_buttons = GetComponentsInChildren<ItemButton>(true);
@@ -43,11 +46,15 @@ namespace RoundTableStudio.UI {
 			
 			InputHandler.Instance.Control.Interaction.Escape.performed += i => HandlePauseMenu();
 			_onPause = false;
+			_onLoseMenu = false;
 			
 			HandleItemsImages();
 		}
 
 		private void Update() {
+			if (GameManager.Instance.IsGameEnded() && !_onLoseMenu)
+				HandleLoseMenu();
+			
 			if (Timer.MinutesCount != _lastPickMinute)
 				_itemPicked = false;
 
@@ -77,7 +84,14 @@ namespace RoundTableStudio.UI {
 			}
 		}
 
+		private void HandleLoseMenu() {
+			_onLoseMenu = true;
+			SoundManager.Instance.Play("Lose");
+			LoseMenuAnimator.SetTrigger(Animator.StringToHash("Lose"));
+		}
+
 		public void OnContinueButton() {
+			SoundManager.Instance.Play("Button");
 			TutorialAnimator.SetTrigger(Animator.StringToHash("Close"));
 			_gameManager.SetGameState(GameStates.Started);
 		}
@@ -97,6 +111,8 @@ namespace RoundTableStudio.UI {
 
 		private void HandleItemSelector() {
 			ItemSelectorAnimator.SetTrigger(Animator.StringToHash("Open"));
+			SoundManager.Instance.Stop("MainTheme");
+			SoundManager.Instance.Play("TenseMusic");
 
 			int first, second;
 

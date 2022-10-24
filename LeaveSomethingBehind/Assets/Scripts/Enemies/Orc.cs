@@ -10,6 +10,7 @@ namespace RoundTableStudio.Enemies {
                 Rb.MovePosition(transform.position + objective);
             else {
                 Rb.MovePosition(transform.position + (PushDirection * Time.fixedDeltaTime));
+                DoEnemySound("Orc");
                 Damaged = false;
             }
         }
@@ -17,9 +18,12 @@ namespace RoundTableStudio.Enemies {
         protected override void OnCollisionStay2D(Collision2D col) {
             if (!col.collider.CompareTag("Player")) return;
 			
-            Damage damage = new Damage { Amount = Stats.Damage - PlayerManager.Stats.OrcDefense - PlayerManager.Stats.PhysicalDefense, 
+            Damage damage = new Damage { Amount = Stats.Damage * (1 - PlayerManager.Stats.OrcDefense), 
                 PushOrigin = transform.position, 
-                PushForce = PushForce };
+                PushForce = PushForce,
+                isPhysical = true,
+                isMagical = false
+            };
 
             col.collider.SendMessage("TakeDamage", damage);
         }

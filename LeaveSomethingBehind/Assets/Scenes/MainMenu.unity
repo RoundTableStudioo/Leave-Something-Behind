@@ -1867,6 +1867,14 @@ MonoBehaviour:
     PlayOnAwake: 0
     Audio: {fileID: 8300000, guid: 12fbfc5da709a294eb2a72b24c73daf5, type: 3}
     Source: {fileID: 0}
+  - Name: Orc
+    Type: 1
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    PlayOnAwake: 0
+    Audio: {fileID: 8300000, guid: 870b06302994eef4ab0886bbdd16a54f, type: 3}
+    Source: {fileID: 0}
   GeneralVolume: 0
   MusicVolume: 0
   SoundEffectsVolume: 0

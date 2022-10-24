@@ -67,6 +67,8 @@ namespace RoundTableStudio.Core
         public Tilemap DecorationTileMap;
         [Tooltip("Tilemap where the structures will be drawn")]
         public Tilemap StructureTileMap;
+        [Tooltip("Tilemap where the corruption are generated")]
+        public Tilemap CorruptionTileMap;
 
         #endregion
 
@@ -134,14 +136,16 @@ namespace RoundTableStudio.Core
 
             if (_lastSecond != Timer.SecondsCount)
                 _corrupted = false;
-
-            if (Timer.SecondsCount % 30 == 0) {
-                //NewExpansionTile();
+            
+            if (_generating == false) {
+                StartCoroutine(CorruptTerrain());
+            }
+            
+            if (Timer.SecondsCount % 30 == 0 && !_corrupted && Timer.SecondsCount != 0) {
+                NewExpansionTile();
                 _corrupted = true;
                 _lastSecond = Timer.SecondsCount;
             }
-
-            if(_generating==false) StartCoroutine(CorruptTerrain());
 
         }
 
@@ -208,13 +212,86 @@ namespace RoundTableStudio.Core
         private void GenerateTerrain(Vector3Int pos, Vector3Int deletePos) {
             // Generation
             GrassTileMap.SetTile(pos, TerrainTiles[0]);
+
+            if (StructureTileMap.GetTile(pos) == TreeTiles[1] ||
+                StructureTileMap.GetTile(pos) == LightTile[1] ||
+                StructureTileMap.GetTile(pos) == TowerTile[1]) {
+                
+                GrassTileMap.SetTile(deletePos, null);
+                DecorationTileMap.SetTile(deletePos, null);
+                StructureTileMap.SetTile(deletePos, null);
+                
+                return;
+            }
+
+            bool finish = false;
+
+            float xOffset = Random.Range(-10000f, 10000f);
+            float yOffset = Random.Range(-10000f, 10000f);
+            float flowerNoiseValue = Mathf.PerlinNoise(Scale + xOffset, Scale + yOffset);
+
+            if (flowerNoiseValue <= TerrainDensity) {
+                int rotationAmount = 0;
+                int rotation = Random.Range(-1, 1);
+
+                if (rotation == -1) rotationAmount = -90;
+                else if (rotation == 1) rotationAmount = 90;
+
+                int terrainNum = Random.Range(0, TerrainTiles.Length);
+                DecorationTileMap.SetTile(pos, TerrainTiles[terrainNum]);
+                DecorationTileMap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0f, 0f, rotationAmount)));
+                finish = true;
+            }
             
+            xOffset = Random.Range(-10000f, 10000f);
+            yOffset = Random.Range(-10000f, 10000f);
+            float propNoiseValue = Mathf.PerlinNoise(Scale + xOffset, Scale * yOffset);
+
+            if (!finish && propNoiseValue <= PropDensity) {
+                int propNum = Random.Range(0, PropTiles.Length);
+                
+                DecorationTileMap.SetTile(pos, PropTiles[propNum]);
+                finish = true;
+            }
+
+            xOffset = Random.Range(-10000f, 10000f);
+            yOffset = Random.Range(-10000f, 10000f);
+            float treeNoiseValue = Mathf.PerlinNoise(Scale + xOffset, Scale * yOffset);
+
+            if (!finish && treeNoiseValue <= TreeDensity) {
+                
+                StructureTileMap.SetTile(pos, TreeTiles[0]);
+                StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), TreeTiles[1]);
+                finish = true;
+            }
+
+            xOffset = Random.Range(-10000f, 10000f);
+            yOffset = Random.Range(-10000f, 10000f);
+            float lightNoiseValue = Mathf.PerlinNoise(Scale + xOffset, Scale * yOffset);
+            
+            if (!finish && lightNoiseValue <= LightsDensity) {
+                
+                StructureTileMap.SetTile(pos, LightTile[0]);
+                StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), LightTile[1]);
+                finish = true;
+            }
+            
+            xOffset = Random.Range(-10000f, 10000f);
+            yOffset = Random.Range(-10000f, 10000f);
+            float towerNoiseValue = Mathf.PerlinNoise(Scale + xOffset, Scale * yOffset);
+            
+            if (!finish && towerNoiseValue <= TowersDensity) {
+                
+                StructureTileMap.SetTile(pos, LightTile[0]);
+                StructureTileMap.SetTile(pos + new Vector3Int(0, 1, 0), LightTile[1]);
+            }
+
             // Delete
             GrassTileMap.SetTile(deletePos, null);
             DecorationTileMap.SetTile(deletePos, null);
             StructureTileMap.SetTile(deletePos, null);
         }
-
+        
         private IEnumerator CorruptTerrain() {
             _generating = true;
             int initCount = _expansionTiles.Count;
@@ -232,15 +309,29 @@ namespace RoundTableStudio.Core
                     } while (y == 0);
 
                 Vector3Int tile = new Vector3Int(_expansionTiles[i].x + x, _expansionTiles[i].y + y, 0);
-                GrassTileMap.SetTile(tile, CorruptionTiles[_grid[x, y].numTerrain]);
-                Debug.Log("FOR: " + i + " generado  tile en:" + (_expansionTiles[i].x + x) + "," + (_expansionTiles[i].y + y) + "," + "con el sprite: " + _grid[x,y].numTerrain);
-                Debug.Log("     A PARTIR DE: " + _expansionTiles[i].x + "," + _expansionTiles[i].y);
+                GrassTileMap.SetTile(tile, null);
+                CorruptionTileMap.SetTile(tile, CorruptionTiles[0]);
+
+                if (DecorationTileMap.GetTile(tile) != null) {
+                    bool placed = false;
+                    int a = 0;
+
+                    while (a < TerrainTiles.Length && !placed) {
+                        if (DecorationTileMap.GetTile(tile) == TerrainTiles[a]) {
+                            DecorationTileMap.SetTile(tile, CorruptionTiles[a]);
+                            placed = true;
+                        }
+                        
+                        a++;
+                    }
+                }
 
                 _expansionTiles.RemoveAt(i);
                 _expansionTiles.Add(tile);
-
-                yield return new WaitForSeconds(1);
             }
+            
+            yield return new WaitForSeconds(0.5f);
+            
             _generating = false;
         }
 

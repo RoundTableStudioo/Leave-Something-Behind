@@ -5,9 +5,10 @@ using UnityEngine.UI;
 namespace RoundTableStudio.Player {
 	public class Life : MonoBehaviour {
 		public Image Bar;
-		public float RegenerationCooldown = 60f;
+		public float RegenerationCooldown = 30f;
 
 		private PlayerManager _manager;
+		[SerializeField]
 		private float _currentHp;
 		private float _maxHp;
 		private float _regenerationTick;
@@ -37,6 +38,10 @@ namespace RoundTableStudio.Player {
 
 		private void RegenerateLife() {
 			_currentHp += _manager.Stats.LifeRegeneration;
+
+			if (_currentHp >= _maxHp)
+				_currentHp = _maxHp;
+			
 			Bar.fillAmount = _currentHp / _maxHp;
 
 			_regenerationTick = RegenerationCooldown;

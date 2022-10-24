@@ -1,4 +1,5 @@
 using System;
+using RoundTableStudio.Sound;
 using UnityEngine;
 
 namespace RoundTableStudio.Player  {
@@ -24,6 +25,7 @@ namespace RoundTableStudio.Player  {
 				player.Mana.AddMana();
 			}
 			
+			SoundManager.Instance.Play("Potion");
 			Destroy(gameObject);
 		}
 	}
